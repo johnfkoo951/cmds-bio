@@ -1,0 +1,221 @@
+[
+  {
+    "id": "cmdspace",
+    "title": "CMDSPACE",
+    "href": "https://cmdspace.work",
+    "filters": [
+      "work",
+      "knowledge"
+    ],
+    "icon": "brand",
+    "description": "지식의 Spotlight · AI/PKM 브랜드 허브",
+    "tags": [
+      "#CMDSPACE",
+      "#AI",
+      "#PKM",
+      "#브랜드"
+    ],
+    "title_en": "CMDSPACE",
+    "description_en": "Knowledge Spotlight · AI/PKM brand hub",
+    "tags_en": [
+      "#CMDSPACE",
+      "#AI",
+      "#PKM",
+      "#brand"
+    ]
+  },
+  {
+    "id": "class",
+    "title": "강의 · 클래스",
+    "href": "https://class.cmdspace.kr/",
+    "filters": [
+      "work"
+    ],
+    "icon": "lecture",
+    "description": "공식 교육 플랫폼 · 강의와 코호트 안내",
+    "tags": [
+      "#class.cmdspace.kr",
+      "#생성형AI",
+      "#옵시디언",
+      "#코호트"
+    ],
+    "title_en": "Classes · Programs",
+    "description_en": "Official education platform for classes and cohorts",
+    "tags_en": [
+      "#class.cmdspace.kr",
+      "#GenAI",
+      "#Obsidian",
+      "#cohort"
+    ]
+  },
+  {
+    "id": "obsidian-professional-note",
+    "title": "옵시디언 프로페셔널 노트",
+    "title_en": "Obsidian Professional Note",
+    "href": "https://product.kyobobook.co.kr/detail/S000219435979",
+    "filters": [
+      "profile",
+      "knowledge"
+    ],
+    "icon": "book-cover",
+    "image": "/assets/obsidian-professional-note-cover.jpg",
+    "description": "리코멘드 출간 · 플러그인과 AI로 만드는 지식관리 워크플로우",
+    "description_en": "Published book on Obsidian, plugins, AI and knowledge workflows",
+    "tags": [
+      "#책",
+      "#Obsidian",
+      "#AI",
+      "#지식관리"
+    ],
+    "tags_en": [
+      "#book",
+      "#Obsidian",
+      "#AI",
+      "#KM"
+    ]
+  },
+  {
+    "id": "llm-wiki",
+    "title": "LLM Wiki",
+    "href": "https://llm-wiki.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "wiki",
+    "description": "Raw Sources · Wiki · Queries 구조의 지식 베이스",
+    "tags": [
+      "#LLMWiki",
+      "#Obsidian",
+      "#Karpathy",
+      "#qmd"
+    ],
+    "title_en": "LLM Wiki",
+    "description_en": "Persistent knowledge base built from Raw Sources · Wiki · Queries",
+    "tags_en": [
+      "#LLMWiki",
+      "#Obsidian",
+      "#Karpathy",
+      "#qmd"
+    ]
+  },
+  {
+    "id": "system-files",
+    "title": "CMDS 시스템 파일",
+    "href": "https://system.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "files",
+    "description": "사람과 AI가 함께 읽는 공개 rulebook",
+    "tags": [
+      "#SystemFiles",
+      "#AGENTSmd",
+      "#CLAUDEmd",
+      "#rules"
+    ],
+    "title_en": "CMDS System Files",
+    "description_en": "Public rulebook for humans and AI agents",
+    "tags_en": [
+      "#SystemFiles",
+      "#AGENTSmd",
+      "#CLAUDEmd",
+      "#rules"
+    ]
+  },
+  {
+    "id": "cmdmd",
+    "title": "CmdMD",
+    "href": "https://cmdmd.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "md",
+    "description": "Markdown 리뷰와 connected-vault 탐색 도구",
+    "tags": [
+      "#CmdMD",
+      "#Markdown",
+      "#macOS",
+      "#Preview"
+    ],
+    "title_en": "CmdMD",
+    "description_en": "macOS Markdown review and connected-vault navigation",
+    "tags_en": [
+      "#CmdMD",
+      "#Markdown",
+      "#macOS",
+      "#Preview"
+    ]
+  },
+  {
+    "id": "youtube",
+    "title": "YouTube · 커맨드스페이스",
+    "href": "https://www.youtube.com/@cmdspace",
+    "filters": [
+      "profile"
+    ],
+    "icon": "video",
+    "description": "AI와 지식관리의 실전 가이드",
+    "tags": [
+      "#YouTube",
+      "#강의",
+      "#AI도구",
+      "#지식관리"
+    ],
+    "title_en": "YouTube · CMDSPACE",
+    "description_en": "Practical guides to AI and knowledge management",
+    "tags_en": [
+      "#YouTube",
+      "#lecture",
+      "#AITools",
+      "#KM"
+    ]
+  },
+  {
+    "id": "cmdspace-main-chat",
+    "title": "커맨드스페이스 메인방",
+    "href": "https://open.kakao.com/o/gO3Ysvof",
+    "filters": [
+      "profile"
+    ],
+    "icon": "chat",
+    "description": "가장 빠른 소통 채널 · 오픈채팅",
+    "tags": [
+      "#KakaoTalk",
+      "#커뮤니티",
+      "#공지",
+      "#네트워킹"
+    ],
+    "title_en": "CMDSPACE Main Chat",
+    "description_en": "Fastest community channel on KakaoTalk",
+    "tags_en": [
+      "#KakaoTalk",
+      "#community",
+      "#updates",
+      "#networking"
+    ]
+  },
+  {
+    "id": "thebetter",
+    "title": "더배러 커뮤니티",
+    "href": "https://open.kakao.com/o/gOy1iNrf",
+    "filters": [
+      "profile"
+    ],
+    "icon": "users",
+    "description": "AI·지식관리 커뮤니티 오픈채팅",
+    "tags": [
+      "#thebetter",
+      "#AI",
+      "#지식관리",
+      "#커뮤니티"
+    ],
+    "title_en": "The Better Community",
+    "description_en": "Open community for AI and knowledge management",
+    "tags_en": [
+      "#thebetter",
+      "#AI",
+      "#KM",
+      "#community"
+    ]
+  }
+]
