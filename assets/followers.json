@@ -2,12 +2,54 @@
   "asOf": "2026-07-03",
   "note": "scripts/refresh-followers.sh 로 갱신. LinkedIn은 공개 API가 없어 수동 관리(count: null 유지 또는 직접 입력).",
   "platforms": [
-    { "id": "linkedin", "label": "LinkedIn", "count": null, "display": "", "approx": false },
-    { "id": "x", "label": "X", "count": 427, "display": "427", "approx": false },
-    { "id": "threads", "label": "Threads", "count": 2500, "display": "2.5K", "approx": true },
-    { "id": "instagram", "label": "Instagram", "count": 481, "display": "481", "approx": false },
-    { "id": "youtube", "label": "YouTube", "count": 12600, "display": "12.6K", "approx": true },
-    { "id": "github", "label": "GitHub", "count": 32, "display": "32", "approx": false },
-    { "id": "email", "label": "Email", "count": null, "display": "", "approx": false }
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "count": null,
+      "display": "",
+      "approx": false
+    },
+    {
+      "id": "x",
+      "label": "X",
+      "count": 427,
+      "display": "427",
+      "approx": false
+    },
+    {
+      "id": "threads",
+      "label": "Threads",
+      "count": 2500,
+      "display": "2.5K",
+      "approx": true
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "count": 481,
+      "display": "481",
+      "approx": false
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "count": 12600,
+      "display": "12.6K",
+      "approx": true
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "count": 32,
+      "display": "32",
+      "approx": false
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "count": null,
+      "display": "",
+      "approx": false
+    }
   ]
 }
