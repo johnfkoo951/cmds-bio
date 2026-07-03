@@ -19,6 +19,7 @@
                 var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
                 document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
             } catch (e) {}
+            document.documentElement.className += " js";
         })();
     </script>
 
@@ -42,17 +43,15 @@
     <meta name="twitter:image:alt" content="구요한 Yohan Koo · CMDSPACE bio card">
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
     <style>
         :root {
             --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Pretendard Variable", "Pretendard", sans-serif;
             --brand: #134538;
-            --brand-hover: #1a5d4b;
             --brand-bright: #22896a;
-            --brand-glow: #2fb488;
             --pink: #E985A2;
             --pink-light: #F4A4B8;
-            --gold: #D4A574;
             --bg: #fbfbfa;
             --bg-elev: #ffffff;
             --bg-subtle: #f5f6f4;
@@ -299,44 +298,77 @@
             font-weight: 800;
         }
 
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            margin-top: 22px;
-            text-align: left;
-        }
-        .proof {
-            min-height: 82px;
+        .cred-list {
+            margin-top: 20px;
             border: 1px solid var(--border);
             border-radius: 20px;
             background: var(--bg-subtle);
-            padding: 14px;
+            padding: 4px 16px;
+            text-align: left;
         }
-        .proof strong {
+        .cred {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 2px 10px;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.45;
+        }
+        .cred:last-child { border-bottom: 0; }
+        .cred strong {
+            flex: 0 0 auto;
+            min-width: 76px;
+            color: var(--fg);
+            font-size: 14.5px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            font-variant-numeric: tabular-nums;
+        }
+        .cred span {
+            flex: 1 1 12rem;
+            color: var(--fg-muted);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .sns-total {
+            padding: 20px 26px 0;
+            text-align: center;
+        }
+        .sns-total strong {
             display: block;
             color: var(--fg);
-            font-size: 20px;
+            font-size: 27px;
+            font-weight: 850;
             line-height: 1.05;
             letter-spacing: -0.04em;
+            font-variant-numeric: tabular-nums;
         }
-        .proof span {
+        .sns-total span {
             display: block;
-            margin-top: 7px;
-            color: var(--fg-muted);
-            font-size: 12.5px;
+            margin-top: 5px;
+            color: var(--fg-subtle);
+            font-size: 12px;
             font-weight: 650;
-            line-height: 1.35;
         }
 
         .socials {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: flex-start;
             gap: 10px;
-            padding: 18px 26px 12px;
+            padding: 14px 26px 12px;
         }
         .social {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            color: var(--fg-muted);
+        }
+        .social-ico {
             display: grid;
             width: 43px;
             height: 43px;
@@ -344,19 +376,30 @@
             border: 1px solid var(--border);
             border-radius: 999px;
             background: var(--bg-subtle);
-            color: var(--fg-muted);
-            transition: transform .15s, border-color .15s, color .15s, background .15s;
+            transition: transform .15s, border-color .15s, background .15s;
         }
-        .social:hover {
+        .social:hover { color: var(--accent); }
+        .social:hover .social-ico {
             transform: translateY(-2px);
             border-color: var(--accent);
-            color: var(--accent);
             background: var(--bg-elev);
         }
-        .social:focus-visible, .link:focus-visible, .filter-btn:focus-visible, .contact-cta:focus-visible, .copy-btn:focus-visible {
+        .social-count {
+            min-height: 14px;
+            color: var(--fg-subtle);
+            font-size: 10.5px;
+            font-weight: 750;
+            line-height: 1.3;
+            font-variant-numeric: tabular-nums;
+            transition: color .15s;
+        }
+        .social:hover .social-count { color: var(--accent); }
+        .link:focus-visible, .filter-btn:focus-visible, .contact-cta:focus-visible, .copy-btn:focus-visible {
             outline: none;
             box-shadow: var(--focus);
         }
+        .social:focus-visible { outline: none; }
+        .social:focus-visible .social-ico { box-shadow: var(--focus); }
         .social svg { width: 19px; height: 19px; }
 
         .action-panel {
@@ -418,6 +461,35 @@
             font-weight: 650;
             white-space: nowrap;
         }
+
+        .section-desc {
+            padding: 0 24px 12px;
+            color: var(--fg-muted);
+            font-size: 13.5px;
+            line-height: 1.65;
+        }
+        .updated-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin: 0 24px 14px;
+            padding: 6px 11px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: var(--bg-subtle);
+            color: var(--fg-subtle);
+            font-size: 11.5px;
+            font-weight: 700;
+        }
+        .updated-chip::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: var(--brand-bright);
+        }
+        [data-theme="dark"] .updated-chip::before { background: var(--accent); }
+        .updated-chip a { color: var(--accent); font-weight: 800; }
 
         .filterbar {
             display: flex;
@@ -731,8 +803,12 @@
             .identity { padding: 24px 20px 8px; }
             .role { font-size: 13.7px; }
             .lede { font-size: 14px; }
-            .proof-grid { grid-template-columns: 1fr; }
-            .proof { min-height: auto; }
+            .cred-list { padding: 2px 14px; }
+            .cred strong { min-width: 68px; font-size: 14px; }
+            .cred span { font-size: 12.5px; }
+            .sns-total { padding: 18px 20px 0; }
+            .section-desc { padding-left: 18px; padding-right: 18px; }
+            .updated-chip { margin-left: 18px; margin-right: 18px; }
             .action-panel {
                 grid-template-columns: 1fr;
                 margin: 18px 18px 0;
@@ -754,6 +830,11 @@
             .focus { margin-inline: 18px; padding: 18px; }
             .focus-list { grid-template-columns: 1fr; }
         }
+
+        html:not(.js) .hero-controls,
+        html:not(.js) .copy-btn,
+        html:not(.js) .filterbar { display: none; }
+        html:not(.js) .gallery-item { cursor: default; pointer-events: none; }
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -809,9 +890,9 @@
     </script>
 </head>
 <body>
-    <a class="skip" href="#links">링크 목록으로 이동</a>
+    <a class="skip" href="#links" data-ko="링크 목록으로 이동" data-en="Skip to links">링크 목록으로 이동</a>
     <main class="page">
-        <article class="bio-card" aria-label="구요한 CMDSPACE 링크인바이오">
+        <article class="bio-card" aria-label="구요한 CMDSPACE 링크인바이오" data-label-ko="구요한 CMDSPACE 링크인바이오" data-label-en="Yohan Koo CMDSPACE link-in-bio">
             <header class="hero">
                 <div class="hero-controls">
                     <button class="lang-btn" id="langBtn" type="button" aria-label="Switch to English">EN</button>
@@ -821,7 +902,7 @@
                 </div>
                 <div class="hero-lockup">
                     <span class="hero-brand" lang="en"><img src="/assets/cmds-icon-white.png" alt="" aria-hidden="true">CMDSPACE</span>
-                    <img class="hero-photo" src="/assets/profile-yohan-headshot.jpg" alt="구요한 대표사진">
+                    <img class="hero-photo" src="/assets/profile-yohan-headshot.jpg" alt="구요한 대표사진" data-alt-ko="구요한 대표사진" data-alt-en="Portrait of Yohan Koo" width="900" height="900">
                     <div class="hero-copy">
                         <strong lang="en"><span>COMMAND KNOWLEDGE</span><span>CONNECT IDEAS</span><span>ORCHESTRATE SPACES</span></strong>
                         <span class="hero-subtitle" lang="ko" data-ko="AI 전환, 지식 시스템, 임원 코칭을 한곳에." data-en="AI transformation, knowledge systems, and executive coaching from CMDSPACE.">AI 전환, 지식 시스템, 임원 코칭을 한곳에.</span>
@@ -831,29 +912,34 @@
 
             <section class="identity" aria-labelledby="profile-name">
                 <h1 class="name" id="profile-name">구요한 <span>Yohan Koo</span>
-                    <svg class="verified" viewBox="0 0 24 24" fill="currentColor" aria-label="verified"><path d="M12 1l2.4 2.1 3.1-.5 1.3 2.9 2.9 1.3-.5 3.1L23 12l-2.3 2.6.5 3.1-2.9 1.3-1.3 2.9-3.1-.5L12 23l-2.4-2.1-3.1.5-1.3-2.9-2.9-1.3.5-3.1L1 12l2.3-2.6-.5-3.1 2.9-1.3L7 2.6l3.1.5L12 1z"/><path d="M10.6 14.6l-2.2-2.2-1.2 1.2 3.4 3.4 6-6-1.2-1.2-4.8 4.8z" fill="#fff"/></svg>
+                    <svg class="verified" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="verified"><path d="M12 1l2.4 2.1 3.1-.5 1.3 2.9 2.9 1.3-.5 3.1L23 12l-2.3 2.6.5 3.1-2.9 1.3-1.3 2.9-3.1-.5L12 23l-2.4-2.1-3.1.5-1.3-2.9-2.9-1.3.5-3.1L1 12l2.3-2.6-.5-3.1 2.9-1.3L7 2.6l3.1.5L12 1z"/><path d="M10.6 14.6l-2.2-2.2-1.2 1.2 3.4 3.4 6-6-1.2-1.2-4.8 4.8z" fill="#fff"/></svg>
                 </h1>
                 <p class="role" data-ko="커맨드스페이스 대표 · 차의과학대 겸임교수 · KIRD 객원교수" data-en="Founder of CMDSPACE · Adjunct Professor at CHA University · KIRD Visiting Professor">커맨드스페이스 대표 · 차의과학대 겸임교수 · KIRD 객원교수</p>
                 <p class="lede" data-ko-html="생성형 AI, 임원코칭, Obsidian 지식관리 시스템을 현장으로 가져옵니다. <strong>바로 쓸 수 있는 것만, 깊이 있게.</strong>" data-en-html="I bring generative AI, executive coaching, and Obsidian-based knowledge systems into real work. <strong>Practical, deep, and ready to use.</strong>">생성형 AI, 임원코칭, Obsidian 지식관리 시스템을 현장으로 가져옵니다. <strong>바로 쓸 수 있는 것만, 깊이 있게.</strong></p>
-                <div class="proof-grid" aria-label="대표 활동 하이라이트">
-                    <div class="proof"><strong data-ko="LG 회장단" data-en="LG Chairmen">LG 회장단</strong><span data-ko="그룹 코칭 · CEO 1:1 AI 코칭" data-en="Group coaching · CEO 1:1 AI coaching">그룹 코칭 · CEO 1:1 AI 코칭</span></div>
-                    <div class="proof"><strong data-ko="900명" data-en="900+">900명</strong><span data-ko="LG 그룹 임원 AX Camp" data-en="LG Group executive AX Camp">LG 그룹 임원 AX Camp</span></div>
-                    <div class="proof"><strong data-ko="10,000+" data-en="10,000+">10,000+</strong><span data-ko="Obsidian 노트 기반 CMDS 운영" data-en="Obsidian notes powering CMDS">Obsidian 노트 기반 CMDS 운영</span></div>
-                    <div class="proof"><strong data-ko="2026–2028" data-en="2026–2028">2026–2028</strong><span data-ko="KIRD 객원교수 임기" data-en="KIRD Visiting Professor term">KIRD 객원교수 임기</span></div>
+                <div class="cred-list" aria-label="대표 활동 하이라이트" data-label-ko="대표 활동 하이라이트" data-label-en="Career highlights">
+                    <p class="cred"><strong data-ko="LG 회장단" data-en="LG Chairmen">LG 회장단</strong><span data-ko="그룹 코칭 · CEO 1:1 AI 코칭" data-en="Group coaching · CEO 1:1 AI coaching">그룹 코칭 · CEO 1:1 AI 코칭</span></p>
+                    <p class="cred"><strong data-ko="900명" data-en="900+">900명</strong><span data-ko="LG 그룹 임원 AX Camp 교육" data-en="LG Group executive AX Camp">LG 그룹 임원 AX Camp 교육</span></p>
+                    <p class="cred"><strong data-ko="450+" data-en="450+">450+</strong><span data-ko="누적 강의·코칭·자문 — 전체 이력은 cmdspace.work" data-en="Lectures, coaching &amp; advisory to date — full log on cmdspace.work">누적 강의·코칭·자문 — 전체 이력은 cmdspace.work</span></p>
+                    <p class="cred"><strong data-ko="10,000+" data-en="10,000+">10,000+</strong><span data-ko="Obsidian 노트 기반 CMDS 운영" data-en="Obsidian notes powering CMDS">Obsidian 노트 기반 CMDS 운영</span></p>
+                    <p class="cred"><strong data-ko="2026–2028" data-en="2026–2028">2026–2028</strong><span data-ko="KIRD 객원교수 임기" data-en="KIRD Visiting Professor term">KIRD 객원교수 임기</span></p>
                 </div>
             </section>
 
-            <nav class="socials" aria-label="소셜 링크">
-                <a class="social" href="https://www.linkedin.com/in/yohan-koo-a1baa3138/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.46-.03-3.33-2.03-3.33-2.03 0-2.34 1.58-2.34 3.22V21H9z"/></svg></a>
-                <a class="social" href="https://x.com/YohanKoo" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.6-8.7L1.5 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z"/></svg></a>
-                <a class="social" href="https://www.threads.com/@cmds_pace" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
-                <a class="social" href="https://www.instagram.com/cmds_pace/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 3.3.15 4.8 1.7 5 5 .06 1.3.07 1.6.07 4.8s0 3.5-.07 4.8c-.15 3.3-1.7 4.8-5 5-1.3.06-1.6.07-4.9.07s-3.6 0-4.9-.07c-3.3-.15-4.8-1.7-5-5C2.04 15.5 2 15.2 2 12s0-3.5.07-4.8c.15-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-2.4.1-3.3 1-3.4 3.4C3.8 8.7 3.8 9 3.8 12s0 3.3.07 4.5c.1 2.4 1 3.3 3.4 3.4 1.2.06 1.6.07 4.7.07s3.5 0 4.7-.07c2.4-.1 3.3-1 3.4-3.4.06-1.2.07-1.5.07-4.5s0-3.3-.07-4.5c-.1-2.4-1-3.3-3.4-3.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5-2.4a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg></a>
-                <a class="social" href="https://www.youtube.com/@cmdspace" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg></a>
-                <a class="social" href="https://github.com/johnfkoo951" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 015.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
-                <a class="social" href="mailto:johnfkoo951@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+            <div class="sns-total">
+                <strong id="snsTotal">16,000+</strong>
+                <span id="snsCaption" data-ko="SNS 팔로워·구독자 합계 · 2026-07-03 기준" data-en="Combined followers &amp; subscribers · as of 2026-07-03">SNS 팔로워·구독자 합계 · 2026-07-03 기준</span>
+            </div>
+            <nav class="socials" aria-label="소셜 링크" data-label-ko="소셜 링크" data-label-en="Social links">
+                <a class="social" href="https://www.linkedin.com/in/yohan-koo-a1baa3138/" target="_blank" rel="noopener" aria-label="LinkedIn 프로필" data-label-ko="LinkedIn 프로필" data-label-en="LinkedIn profile"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.46-.03-3.33-2.03-3.33-2.03 0-2.34 1.58-2.34 3.22V21H9z"/></svg></span><span class="social-count" data-sns="linkedin" aria-hidden="true"></span></a>
+                <a class="social" href="https://x.com/YohanKoo" target="_blank" rel="noopener" aria-label="X @YohanKoo · 팔로워 427" data-label-ko="X @YohanKoo · 팔로워 427" data-label-en="X @YohanKoo · 427 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.6-8.7L1.5 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z"/></svg></span><span class="social-count" data-sns="x" aria-hidden="true">427</span></a>
+                <a class="social" href="https://www.threads.com/@cmds_pace" target="_blank" rel="noopener" aria-label="Threads @cmds_pace · 팔로워 2.5K" data-label-ko="Threads @cmds_pace · 팔로워 2.5K" data-label-en="Threads @cmds_pace · 2.5K followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></span><span class="social-count" data-sns="threads" aria-hidden="true">2.5K</span></a>
+                <a class="social" href="https://www.instagram.com/cmds_pace/" target="_blank" rel="noopener" aria-label="Instagram @cmds_pace · 팔로워 481" data-label-ko="Instagram @cmds_pace · 팔로워 481" data-label-en="Instagram @cmds_pace · 481 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 3.3.15 4.8 1.7 5 5 .06 1.3.07 1.6.07 4.8s0 3.5-.07 4.8c-.15 3.3-1.7 4.8-5 5-1.3.06-1.6.07-4.9.07s-3.6 0-4.9-.07c-3.3-.15-4.8-1.7-5-5C2.04 15.5 2 15.2 2 12s0-3.5.07-4.8c.15-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-2.4.1-3.3 1-3.4 3.4C3.8 8.7 3.8 9 3.8 12s0 3.3.07 4.5c.1 2.4 1 3.3 3.4 3.4 1.2.06 1.6.07 4.7.07s3.5 0 4.7-.07c2.4-.1 3.3-1 3.4-3.4.06-1.2.07-1.5.07-4.5s0-3.3-.07-4.5c-.1-2.4-1-3.3-3.4-3.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5-2.4a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg></span><span class="social-count" data-sns="instagram" aria-hidden="true">481</span></a>
+                <a class="social" href="https://www.youtube.com/@cmdspace" target="_blank" rel="noopener" aria-label="YouTube @cmdspace · 구독자 12.6K" data-label-ko="YouTube @cmdspace · 구독자 12.6K" data-label-en="YouTube @cmdspace · 12.6K subscribers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg></span><span class="social-count" data-sns="youtube" aria-hidden="true">12.6K</span></a>
+                <a class="social" href="https://github.com/johnfkoo951" target="_blank" rel="noopener" aria-label="GitHub johnfkoo951 · 팔로워 32" data-label-ko="GitHub johnfkoo951 · 팔로워 32" data-label-en="GitHub johnfkoo951 · 32 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 015.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></span><span class="social-count" data-sns="github" aria-hidden="true">32</span></a>
+                <a class="social" href="mailto:johnfkoo951@gmail.com" aria-label="이메일 보내기" data-label-ko="이메일 보내기" data-label-en="Send email"><span class="social-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="social-count" data-sns="email" aria-hidden="true"></span></a>
             </nav>
 
-            <div class="action-panel" aria-label="주요 연락 액션">
+            <div class="action-panel" aria-label="주요 연락 액션" data-label-ko="주요 연락 액션" data-label-en="Primary contact actions">
                 <a class="contact-cta" href="mailto:johnfkoo951@gmail.com?subject=강의%20·%20협업%20문의" data-ko="강의 · 협업 문의하기" data-en="Invite / Collaborate">강의 · 협업 문의하기</a>
                 <button class="copy-btn" id="copyEmail" type="button" data-copy="johnfkoo951@gmail.com" data-ko="Email 복사" data-en="Copy email">Email 복사</button>
             </div>
@@ -861,9 +947,11 @@
             <section aria-labelledby="links-title" id="links">
                 <div class="section-head">
                     <h2 id="links-title" data-ko="커맨드스페이스 게이트웨이" data-en="CMDSPACE Gateway">커맨드스페이스 게이트웨이</h2>
-                    <p id="filterStatus" aria-live="polite">전체 8개 링크</p>
+                    <p id="filterStatus" aria-live="polite">전체 9개 링크</p>
                 </div>
-                <div class="filterbar" role="group" aria-label="링크 필터">
+                <p class="section-desc" data-ko="제가 하는 일과 만든 것들이 궁금하다면 여기서 시작하세요 — 강의와 코칭, 직접 쓴 책, 직접 만든 앱, 공개 지식 시스템, 함께하는 커뮤니티로 이어지는 공식 관문입니다." data-en="Curious what I do and what I build? Start here — the official gateway to my lectures &amp; coaching, the book I wrote, the apps I built, public knowledge systems, and the communities I run.">제가 하는 일과 만든 것들이 궁금하다면 여기서 시작하세요 — 강의와 코칭, 직접 쓴 책, 직접 만든 앱, 공개 지식 시스템, 함께하는 커뮤니티로 이어지는 공식 관문입니다.</p>
+                <p class="updated-chip"><span data-ko="2026-07-03 업데이트 · cmdspace.work와 상시 동기화" data-en="Updated 2026-07-03 · kept in sync with cmdspace.work">2026-07-03 업데이트 · cmdspace.work와 상시 동기화</span></p>
+                <div class="filterbar" role="group" aria-label="링크 필터" data-label-ko="링크 필터" data-label-en="Link filters">
                     <button class="filter-btn" type="button" data-filter="all" aria-pressed="true" data-ko="전체" data-en="All">전체</button>
                     <button class="filter-btn" type="button" data-filter="work" aria-pressed="false" data-ko="강의·코칭" data-en="Work">강의·코칭</button>
                     <button class="filter-btn" type="button" data-filter="knowledge" aria-pressed="false" data-ko="지식 시스템" data-en="Knowledge">지식 시스템</button>
@@ -871,49 +959,49 @@
                 </div>
 
                 <div class="links">
-                    <a class="link" href="https://cmdspace.work" target="_blank" rel="noopener" data-tags="work knowledge" data-title-ko="CMDSPACE" data-title-en="CMDSPACE" data-desc-ko="지식의 Spotlight · AI/PKM 브랜드 허브" data-desc-en="Knowledge Spotlight · AI/PKM brand hub" data-tags-ko="#CMDSPACE|#AI|#PKM|#브랜드" data-tags-en="#CMDSPACE|#AI|#PKM|#brand">
+                    <a class="link" href="https://cmdspace.work" target="_blank" rel="noopener" data-tags="work knowledge" data-title-ko="CMDSPACE" data-title-en="CMDSPACE" data-desc-ko="지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브" data-desc-en="Knowledge Spotlight · brand hub with a live log of 450+ activities" data-tags-ko="#CMDSPACE|#AI|#PKM|#브랜드" data-tags-en="#CMDSPACE|#AI|#PKM|#brand">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"/><path d="M8 4.5a3.5 3.5 0 0 0 0 7h.5M16 4.5a3.5 3.5 0 0 1 0 7h-.5M8 19.5a3.5 3.5 0 0 1 0-7h.5M16 19.5a3.5 3.5 0 0 0 0-7h-.5"/></svg></span>
-                        <span><span class="link-title">CMDSPACE</span><span class="link-sub">지식의 Spotlight · AI/PKM 브랜드 허브</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CMDSPACE</span><span class="link-tag">#AI</span><span class="link-tag">#PKM</span><span class="link-tag">#브랜드</span></span></span>
+                        <span><span class="link-title">CMDSPACE</span><span class="link-sub">지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CMDSPACE</span><span class="link-tag">#AI</span><span class="link-tag">#PKM</span><span class="link-tag">#브랜드</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://class.cmdspace.kr/" target="_blank" rel="noopener" data-tags="work" data-title-ko="강의 · 클래스" data-title-en="Classes · Programs" data-desc-ko="공식 교육 플랫폼 · 강의와 코호트 안내" data-desc-en="Official education platform for classes and cohorts" data-tags-ko="#class.cmdspace.kr|#생성형AI|#옵시디언|#코호트" data-tags-en="#class.cmdspace.kr|#GenAI|#Obsidian|#cohort">
+                    <a class="link" href="https://class.cmdspace.kr/" target="_blank" rel="noopener" data-tags="work" data-title-ko="강의 · 클래스" data-title-en="Classes · Programs" data-desc-ko="지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼" data-desc-en="See and join open classes &amp; cohorts · official education platform" data-tags-ko="#class.cmdspace.kr|#생성형AI|#옵시디언|#코호트" data-tags-en="#class.cmdspace.kr|#GenAI|#Obsidian|#cohort">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3.5 2 8.5 2 12 0v-5"/><path d="M22 10v6"/></svg></span>
-                        <span><span class="link-title">강의 · 클래스</span><span class="link-sub">공식 교육 플랫폼 · 강의와 코호트 안내</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#class.cmdspace.kr</span><span class="link-tag">#생성형AI</span><span class="link-tag">#옵시디언</span><span class="link-tag">#코호트</span></span></span>
+                        <span><span class="link-title">강의 · 클래스</span><span class="link-sub">지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#class.cmdspace.kr</span><span class="link-tag">#생성형AI</span><span class="link-tag">#옵시디언</span><span class="link-tag">#코호트</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://product.kyobobook.co.kr/detail/S000219435979" target="_blank" rel="noopener" data-tags="profile knowledge" data-title-ko="옵시디언 프로페셔널 노트" data-title-en="Obsidian Professional Note" data-desc-ko="리코멘드 출간 · 플러그인과 AI로 만드는 지식관리 워크플로우" data-desc-en="Published book on Obsidian, plugins, AI and knowledge workflows" data-tags-ko="#책|#Obsidian|#AI|#지식관리" data-tags-en="#book|#Obsidian|#AI|#KM">
+                    <a class="link" href="https://product.kyobobook.co.kr/detail/S000219435979" target="_blank" rel="noopener" data-tags="profile knowledge" data-title-ko="옵시디언 프로페셔널 노트" data-title-en="Obsidian Professional Note" data-desc-ko="제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)" data-desc-en="The book I wrote — knowledge workflows with Obsidian plugins &amp; AI (Recommend)" data-tags-ko="#책|#Obsidian|#AI|#지식관리" data-tags-en="#book|#Obsidian|#AI|#KM">
                         <span class="link-ico book-cover" aria-hidden="true"><img src="/assets/obsidian-professional-note-cover.jpg" alt="" aria-hidden="true"></span>
-                        <span><span class="link-title">옵시디언 프로페셔널 노트</span><span class="link-sub">리코멘드 출간 · 플러그인과 AI로 만드는 지식관리 워크플로우</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#책</span><span class="link-tag">#Obsidian</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span></span></span>
+                        <span><span class="link-title">옵시디언 프로페셔널 노트</span><span class="link-sub">제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#책</span><span class="link-tag">#Obsidian</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://llm-wiki.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="LLM Wiki" data-title-en="LLM Wiki" data-desc-ko="Raw Sources · Wiki · Queries 구조의 지식 베이스" data-desc-en="Persistent knowledge base built from Raw Sources · Wiki · Queries" data-tags-ko="#LLMWiki|#Obsidian|#Karpathy|#qmd" data-tags-en="#LLMWiki|#Obsidian|#Karpathy|#qmd">
+                    <a class="link" href="https://llm-wiki.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="LLM Wiki" data-title-en="LLM Wiki" data-desc-ko="AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries" data-desc-en="A living wiki grown with AI · Raw Sources → Wiki → Queries" data-tags-ko="#LLMWiki|#Obsidian|#Karpathy|#qmd" data-tags-en="#LLMWiki|#Obsidian|#Karpathy|#qmd">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H12V5H6.5A2.5 2.5 0 0 0 4 7.5v12Z"/><path d="M20 19.5A2.5 2.5 0 0 0 17.5 17H12V5h5.5A2.5 2.5 0 0 1 20 7.5v12Z"/></svg></span>
-                        <span><span class="link-title">LLM Wiki</span><span class="link-sub">Raw Sources · Wiki · Queries 구조의 지식 베이스</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#LLMWiki</span><span class="link-tag">#Obsidian</span><span class="link-tag">#Karpathy</span><span class="link-tag">#qmd</span></span></span>
+                        <span><span class="link-title">LLM Wiki</span><span class="link-sub">AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#LLMWiki</span><span class="link-tag">#Obsidian</span><span class="link-tag">#Karpathy</span><span class="link-tag">#qmd</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://system.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="CMDS 시스템 파일" data-title-en="CMDS System Files" data-desc-ko="사람과 AI가 함께 읽는 공개 rulebook" data-desc-en="Public rulebook for humans and AI agents" data-tags-ko="#SystemFiles|#AGENTSmd|#CLAUDEmd|#rules" data-tags-en="#SystemFiles|#AGENTSmd|#CLAUDEmd|#rules">
+                    <a class="link" href="https://system.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="CMDS 시스템 파일" data-title-en="CMDS System Files" data-desc-ko="사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md" data-desc-en="Public rulebook for humans and AI · my real CLAUDE.md in use" data-tags-ko="#SystemFiles|#AGENTSmd|#CLAUDEmd|#rules" data-tags-en="#SystemFiles|#AGENTSmd|#CLAUDEmd|#rules">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/></svg></span>
-                        <span><span class="link-title">CMDS 시스템 파일</span><span class="link-sub">사람과 AI가 함께 읽는 공개 rulebook</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#SystemFiles</span><span class="link-tag">#AGENTSmd</span><span class="link-tag">#CLAUDEmd</span><span class="link-tag">#rules</span></span></span>
+                        <span><span class="link-title">CMDS 시스템 파일</span><span class="link-sub">사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#SystemFiles</span><span class="link-tag">#AGENTSmd</span><span class="link-tag">#CLAUDEmd</span><span class="link-tag">#rules</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://cmdmd.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="CmdMD" data-title-en="CmdMD" data-desc-ko="Markdown 리뷰와 connected-vault 탐색 도구" data-desc-en="macOS Markdown review and connected-vault navigation" data-tags-ko="#CmdMD|#Markdown|#macOS|#Preview" data-tags-en="#CmdMD|#Markdown|#macOS|#Preview">
+                    <a class="link" href="https://cmdmd.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="CmdMD" data-title-en="CmdMD" data-desc-ko="직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터" data-desc-en="The macOS Markdown app I built · review-first editor" data-tags-ko="#CmdMD|#Markdown|#macOS|#Preview" data-tags-en="#CmdMD|#Markdown|#macOS|#Preview">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-5"/></svg></span>
-                        <span><span class="link-title">CmdMD</span><span class="link-sub">Markdown 리뷰와 connected-vault 탐색 도구</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CmdMD</span><span class="link-tag">#Markdown</span><span class="link-tag">#macOS</span><span class="link-tag">#Preview</span></span></span>
+                        <span><span class="link-title">CmdMD</span><span class="link-sub">직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CmdMD</span><span class="link-tag">#Markdown</span><span class="link-tag">#macOS</span><span class="link-tag">#Preview</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://www.youtube.com/@cmdspace" target="_blank" rel="noopener" data-tags="profile" data-title-ko="YouTube · 커맨드스페이스" data-title-en="YouTube · CMDSPACE" data-desc-ko="AI와 지식관리의 실전 가이드" data-desc-en="Practical guides to AI and knowledge management" data-tags-ko="#YouTube|#강의|#AI도구|#지식관리" data-tags-en="#YouTube|#lecture|#AITools|#KM">
+                    <a class="link" href="https://www.youtube.com/@cmdspace" target="_blank" rel="noopener" data-tags="profile" data-title-ko="YouTube · 커맨드스페이스" data-title-en="YouTube · CMDSPACE" data-desc-ko="구독자 12.6K · AI와 지식관리 실전 가이드 영상" data-desc-en="12.6K subscribers · hands-on AI &amp; PKM guides" data-tags-ko="#YouTube|#강의|#AI도구|#지식관리" data-tags-en="#YouTube|#lecture|#AITools|#KM">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="m10 9 5 3-5 3Z"/></svg></span>
-                        <span><span class="link-title">YouTube · 커맨드스페이스</span><span class="link-sub">AI와 지식관리의 실전 가이드</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#YouTube</span><span class="link-tag">#강의</span><span class="link-tag">#AI도구</span><span class="link-tag">#지식관리</span></span></span>
+                        <span><span class="link-title">YouTube · 커맨드스페이스</span><span class="link-sub">구독자 12.6K · AI와 지식관리 실전 가이드 영상</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#YouTube</span><span class="link-tag">#강의</span><span class="link-tag">#AI도구</span><span class="link-tag">#지식관리</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://open.kakao.com/o/gO3Ysvof" target="_blank" rel="noopener" data-tags="profile" data-title-ko="커맨드스페이스 메인방" data-title-en="CMDSPACE Main Chat" data-desc-ko="가장 빠른 소통 채널 · 오픈채팅" data-desc-en="Fastest community channel on KakaoTalk" data-tags-ko="#KakaoTalk|#커뮤니티|#공지|#네트워킹" data-tags-en="#KakaoTalk|#community|#updates|#networking">
+                    <a class="link" href="https://open.kakao.com/o/gO3Ysvof" target="_blank" rel="noopener" data-tags="profile" data-title-ko="커맨드스페이스 메인방" data-title-en="CMDSPACE Main Chat" data-desc-ko="새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅" data-desc-en="Where news lands first · KakaoTalk open chat" data-tags-ko="#KakaoTalk|#커뮤니티|#공지|#네트워킹" data-tags-en="#KakaoTalk|#community|#updates|#networking">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-5 3 1.7-4.6A7.5 7.5 0 1 1 21 11.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span>
-                        <span><span class="link-title">커맨드스페이스 메인방</span><span class="link-sub">가장 빠른 소통 채널 · 오픈채팅</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#KakaoTalk</span><span class="link-tag">#커뮤니티</span><span class="link-tag">#공지</span><span class="link-tag">#네트워킹</span></span></span>
+                        <span><span class="link-title">커맨드스페이스 메인방</span><span class="link-sub">새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#KakaoTalk</span><span class="link-tag">#커뮤니티</span><span class="link-tag">#공지</span><span class="link-tag">#네트워킹</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link" href="https://open.kakao.com/o/gOy1iNrf" target="_blank" rel="noopener" data-tags="profile" data-title-ko="더배러 커뮤니티" data-title-en="The Better Community" data-desc-ko="AI·지식관리 커뮤니티 오픈채팅" data-desc-en="Open community for AI and knowledge management" data-tags-ko="#thebetter|#AI|#지식관리|#커뮤니티" data-tags-en="#thebetter|#AI|#KM|#community">
+                    <a class="link" href="https://open.kakao.com/o/gOy1iNrf" target="_blank" rel="noopener" data-tags="profile" data-title-ko="더배러 커뮤니티" data-title-en="The Better Community" data-desc-ko="AI·지식관리를 함께 공부하는 오픈 커뮤니티" data-desc-en="An open community learning AI &amp; knowledge management together" data-tags-ko="#thebetter|#AI|#지식관리|#커뮤니티" data-tags-en="#thebetter|#AI|#KM|#community">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                        <span><span class="link-title">더배러 커뮤니티</span><span class="link-sub">AI·지식관리 커뮤니티 오픈채팅</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#thebetter</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span><span class="link-tag">#커뮤니티</span></span></span>
+                        <span><span class="link-title">더배러 커뮤니티</span><span class="link-sub">AI·지식관리를 함께 공부하는 오픈 커뮤니티</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#thebetter</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span><span class="link-tag">#커뮤니티</span></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                 </div>
@@ -927,85 +1015,85 @@
                 <p class="gallery-note" data-ko="강의·워크샵·코칭·컨퍼런스 현장의 기록입니다. 사진을 누르면 크게 볼 수 있습니다." data-en="Scenes from lectures, workshops, coaching sessions, and conferences. Tap a photo to enlarge it.">강의·워크샵·코칭·컨퍼런스 현장의 기록입니다. 사진을 누르면 크게 볼 수 있습니다.</p>
                 <div class="gallery-grid">
                     <button class="gallery-item" type="button" data-gallery-index="0" aria-label="현장 갤러리 사진 1 확대">
-                        <img src="/assets/gallery/photo-01.webp" alt="CMDSPACE 현장 사진 01" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-01.webp" alt="CMDSPACE 현장 사진 01" width="980" height="735">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="1" aria-label="현장 갤러리 사진 2 확대">
-                        <img src="/assets/gallery/photo-02.webp" alt="CMDSPACE 현장 사진 02" width="980" height="654">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-02.webp" alt="CMDSPACE 현장 사진 02" width="980" height="654">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="2" aria-label="현장 갤러리 사진 3 확대">
-                        <img src="/assets/gallery/photo-03.webp" alt="CMDSPACE 현장 사진 03" width="735" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-03.webp" alt="CMDSPACE 현장 사진 03" width="735" height="980">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="3" aria-label="현장 갤러리 사진 4 확대">
-                        <img src="/assets/gallery/photo-04.webp" alt="CMDSPACE 현장 사진 04" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-04.webp" alt="CMDSPACE 현장 사진 04" width="980" height="735">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="4" aria-label="현장 갤러리 사진 5 확대">
-                        <img src="/assets/gallery/photo-05.webp" alt="CMDSPACE 현장 사진 05" width="552" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-05.webp" alt="CMDSPACE 현장 사진 05" width="552" height="980">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="5" aria-label="현장 갤러리 사진 6 확대">
-                        <img src="/assets/gallery/photo-06.webp" alt="CMDSPACE 현장 사진 06" width="980" height="653">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-06.webp" alt="CMDSPACE 현장 사진 06" width="980" height="653">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="6" aria-label="현장 갤러리 사진 7 확대">
-                        <img src="/assets/gallery/photo-07.webp" alt="CMDSPACE 현장 사진 07" width="653" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-07.webp" alt="CMDSPACE 현장 사진 07" width="653" height="980">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="7" aria-label="현장 갤러리 사진 8 확대">
-                        <img src="/assets/gallery/photo-08.webp" alt="CMDSPACE 현장 사진 08" width="980" height="676">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-08.webp" alt="CMDSPACE 현장 사진 08" width="980" height="676">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="8" aria-label="현장 갤러리 사진 9 확대">
-                        <img src="/assets/gallery/photo-09.webp" alt="CMDSPACE 현장 사진 09" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-09.webp" alt="CMDSPACE 현장 사진 09" width="980" height="735">
                     </button>
                     <button class="gallery-item wide" type="button" data-gallery-index="9" aria-label="현장 갤러리 사진 10 확대">
-                        <img src="/assets/gallery/photo-10.webp" alt="CMDSPACE 현장 사진 10" width="980" height="552">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-10.webp" alt="CMDSPACE 현장 사진 10" width="980" height="552">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="10" aria-label="현장 갤러리 사진 11 확대">
-                        <img src="/assets/gallery/photo-11.webp" alt="CMDSPACE 현장 사진 11" width="735" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-11.webp" alt="CMDSPACE 현장 사진 11" width="735" height="980">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="11" aria-label="현장 갤러리 사진 12 확대">
-                        <img src="/assets/gallery/photo-12.webp" alt="CMDSPACE 현장 사진 12" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-12.webp" alt="CMDSPACE 현장 사진 12" width="980" height="735">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="12" aria-label="현장 갤러리 사진 13 확대">
-                        <img src="/assets/gallery/photo-13.webp" alt="CMDSPACE 현장 사진 13" width="735" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-13.webp" alt="CMDSPACE 현장 사진 13" width="735" height="980">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="13" aria-label="현장 갤러리 사진 14 확대">
-                        <img src="/assets/gallery/photo-14.webp" alt="CMDSPACE 현장 사진 14" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-14.webp" alt="CMDSPACE 현장 사진 14" width="980" height="735">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="14" aria-label="현장 갤러리 사진 15 확대">
-                        <img src="/assets/gallery/photo-15.webp" alt="CMDSPACE 현장 사진 15" width="735" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-15.webp" alt="CMDSPACE 현장 사진 15" width="735" height="980">
                     </button>
                     <button class="gallery-item wide" type="button" data-gallery-index="15" aria-label="현장 갤러리 사진 16 확대">
-                        <img src="/assets/gallery/photo-16.webp" alt="CMDSPACE 현장 사진 16" width="980" height="551">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-16.webp" alt="CMDSPACE 현장 사진 16" width="980" height="551">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="16" aria-label="현장 갤러리 사진 17 확대">
-                        <img src="/assets/gallery/photo-17.webp" alt="CMDSPACE 현장 사진 17" width="735" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-17.webp" alt="CMDSPACE 현장 사진 17" width="735" height="980">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="17" aria-label="현장 갤러리 사진 18 확대">
-                        <img src="/assets/gallery/photo-18.webp" alt="CMDSPACE 현장 사진 18" width="980" height="654">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-18.webp" alt="CMDSPACE 현장 사진 18" width="980" height="654">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="18" aria-label="현장 갤러리 사진 19 확대">
-                        <img src="/assets/gallery/photo-19.webp" alt="CMDSPACE 현장 사진 19" width="980" height="655">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-19.webp" alt="CMDSPACE 현장 사진 19" width="980" height="655">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="19" aria-label="현장 갤러리 사진 20 확대">
-                        <img src="/assets/gallery/photo-20.webp" alt="CMDSPACE 현장 사진 20" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-20.webp" alt="CMDSPACE 현장 사진 20" width="980" height="735">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="20" aria-label="현장 갤러리 사진 21 확대">
-                        <img src="/assets/gallery/photo-21.webp" alt="CMDSPACE 현장 사진 21" width="735" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-21.webp" alt="CMDSPACE 현장 사진 21" width="735" height="980">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="21" aria-label="현장 갤러리 사진 22 확대">
-                        <img src="/assets/gallery/photo-22.webp" alt="CMDSPACE 현장 사진 22" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-22.webp" alt="CMDSPACE 현장 사진 22" width="980" height="735">
                     </button>
                     <button class="gallery-item" type="button" data-gallery-index="22" aria-label="현장 갤러리 사진 23 확대">
-                        <img src="/assets/gallery/photo-23.webp" alt="CMDSPACE 현장 사진 23" width="980" height="735">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-23.webp" alt="CMDSPACE 현장 사진 23" width="980" height="735">
                     </button>
                     <button class="gallery-item tall" type="button" data-gallery-index="23" aria-label="현장 갤러리 사진 24 확대">
-                        <img src="/assets/gallery/photo-24.webp" alt="CMDSPACE 현장 사진 24" width="735" height="980">
+                        <img loading="lazy" decoding="async" src="/assets/gallery/photo-24.webp" alt="CMDSPACE 현장 사진 24" width="735" height="980">
                     </button>
                 </div>
             </section>
 
-            <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="현장 사진 크게 보기" hidden>
-                <button class="gallery-close" id="galleryClose" type="button" aria-label="닫기">×</button>
-                <button class="gallery-prev" id="galleryPrev" type="button" aria-label="이전 사진">‹</button>
+            <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="현장 사진 크게 보기" data-label-ko="현장 사진 크게 보기" data-label-en="View field photo" hidden>
+                <button class="gallery-close" id="galleryClose" type="button" aria-label="닫기" data-label-ko="닫기" data-label-en="Close">×</button>
+                <button class="gallery-prev" id="galleryPrev" type="button" aria-label="이전 사진" data-label-ko="이전 사진" data-label-en="Previous photo">‹</button>
                 <img id="galleryLightboxImage" src="" alt="">
-                <button class="gallery-next" id="galleryNext" type="button" aria-label="다음 사진">›</button>
+                <button class="gallery-next" id="galleryNext" type="button" aria-label="다음 사진" data-label-ko="다음 사진" data-label-en="Next photo">›</button>
                 <div class="gallery-count" id="galleryCount"></div>
             </div>
 
@@ -1013,15 +1101,15 @@
                 <h2 id="focus-title" data-ko="퍼블리시 맥락" data-en="Publishing Context">퍼블리시 맥락</h2>
                 <p data-ko="CMDSPACE는 메인 Obsidian 볼트와 LLM Wiki 위성 볼트에서 축적한 작업을 공개 가능한 형태로 압축합니다. 이 페이지는 강의·코칭 문의와 공개 지식 시스템으로 들어가는 가장 짧은 관문입니다." data-en="CMDSPACE compresses work from the main Obsidian vault and the LLM Wiki satellite into public-facing artifacts. This page is the shortest gateway to lectures, coaching, and public knowledge systems.">CMDSPACE는 메인 Obsidian 볼트와 LLM Wiki 위성 볼트에서 축적한 작업을 공개 가능한 형태로 압축합니다. 이 페이지는 강의·코칭 문의와 공개 지식 시스템으로 들어가는 가장 짧은 관문입니다.</p>
                 <div class="focus-list">
-                    <div class="focus-item"><strong>Executive AI</strong>임원·CEO 코칭과 조직 AX 교육</div>
-                    <div class="focus-item"><strong>Obsidian PKM</strong>개인 지식관리와 Second Brain</div>
-                    <div class="focus-item"><strong>System Files</strong>사람과 AI가 함께 읽는 rulebook</div>
-                    <div class="focus-item"><strong>LLM Wiki</strong>raw source가 축적되는 persistent wiki</div>
+                    <div class="focus-item"><strong>Executive AI</strong><span data-ko="임원·CEO 코칭과 조직 AX 교육" data-en="Executive &amp; CEO coaching, organizational AX training">임원·CEO 코칭과 조직 AX 교육</span></div>
+                    <div class="focus-item"><strong>Obsidian PKM</strong><span data-ko="개인 지식관리와 Second Brain" data-en="Personal knowledge management &amp; Second Brain">개인 지식관리와 Second Brain</span></div>
+                    <div class="focus-item"><strong>System Files</strong><span data-ko="사람과 AI가 함께 읽는 rulebook" data-en="A rulebook humans and AI read together">사람과 AI가 함께 읽는 rulebook</span></div>
+                    <div class="focus-item"><strong>LLM Wiki</strong><span data-ko="raw source가 축적되는 persistent wiki" data-en="A persistent wiki accumulating raw sources">raw source가 축적되는 persistent wiki</span></div>
                 </div>
             </section>
 
             <footer class="foot">
-                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a>
+                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a> · Last updated: <time id="pageUpdated" datetime="2026-07-03">2026-07-03</time>
             </footer>
         </article>
     </main>
@@ -1051,6 +1139,9 @@
                 var lightLabel = currentLang === "en" ? "Switch to dark mode" : "다크 모드로 전환";
                 btn.setAttribute("aria-label", theme === "dark" ? darkLabel : lightLabel);
                 icon.innerHTML = iconPath(theme);
+                document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+                    m.setAttribute("content", theme === "dark" ? "#06080a" : "#134538");
+                });
             }
 
             function applyLanguage(lang) {
@@ -1073,6 +1164,17 @@
                         return '<span class="link-tag">' + tag + '</span>';
                     }).join("");
                 });
+                document.querySelectorAll("[data-label-ko][data-label-en]").forEach(function (el) {
+                    el.setAttribute("aria-label", currentLang === "en" ? el.getAttribute("data-label-en") : el.getAttribute("data-label-ko"));
+                });
+                document.querySelectorAll("[data-alt-ko][data-alt-en]").forEach(function (el) {
+                    el.setAttribute("alt", currentLang === "en" ? el.getAttribute("data-alt-en") : el.getAttribute("data-alt-ko"));
+                });
+                Array.prototype.forEach.call(document.querySelectorAll("[data-gallery-index]"), function (thumb, i) {
+                    thumb.setAttribute("aria-label", currentLang === "en" ? "Enlarge field photo " + (i + 1) : "현장 갤러리 사진 " + (i + 1) + " 확대");
+                    var thumbImg = thumb.querySelector("img");
+                    if (thumbImg) thumbImg.setAttribute("alt", (currentLang === "en" ? "CMDSPACE field photo " : "CMDSPACE 현장 사진 ") + (i + 1 < 10 ? "0" : "") + (i + 1));
+                });
                 langBtn.textContent = currentLang === "en" ? "KO" : "EN";
                 langBtn.setAttribute("aria-label", currentLang === "en" ? "한국어로 전환" : "Switch to English");
                 setTheme(root.getAttribute("data-theme") || (prefersDark ? "dark" : "light"));
@@ -1083,7 +1185,6 @@
             }
 
             setTheme(saved || (prefersDark ? "dark" : "light"));
-            applyLanguage(currentLang);
             langBtn.addEventListener("click", function () { applyLanguage(currentLang === "en" ? "ko" : "en"); });
             btn.addEventListener("click", function () {
                 var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -1130,8 +1231,6 @@
                 });
             });
 
-            applyLanguage(currentLang);
-
             var copyBtn = document.getElementById("copyEmail");
             function fallbackCopy(text) {
                 var area = document.createElement("textarea");
@@ -1169,28 +1268,35 @@
 
 
             var galleryButtons = Array.prototype.slice.call(document.querySelectorAll("[data-gallery-index]"));
-            var galleryData = galleryButtons.map(function (button) {
-                var img = button.querySelector("img");
-                return { src: img.getAttribute("src"), alt: img.getAttribute("alt") || "현장 사진" };
-            });
             var galleryLightbox = document.getElementById("galleryLightbox");
             var galleryImage = document.getElementById("galleryLightboxImage");
             var galleryCount = document.getElementById("galleryCount");
+            var galleryClose = document.getElementById("galleryClose");
+            var galleryPrev = document.getElementById("galleryPrev");
+            var galleryNext = document.getElementById("galleryNext");
             var galleryIndex = 0;
+            var galleryTrigger = null;
 
             function showGallery(index) {
-                if (!galleryData.length) return;
-                galleryIndex = (index + galleryData.length) % galleryData.length;
-                galleryImage.src = galleryData[galleryIndex].src;
-                galleryImage.alt = galleryData[galleryIndex].alt;
-                galleryCount.textContent = (galleryIndex + 1) + " / " + galleryData.length;
-                galleryLightbox.hidden = false;
-                document.body.style.overflow = "hidden";
+                if (!galleryButtons.length) return;
+                galleryIndex = (index + galleryButtons.length) % galleryButtons.length;
+                var img = galleryButtons[galleryIndex].querySelector("img");
+                galleryImage.src = img.getAttribute("src");
+                galleryImage.alt = img.getAttribute("alt") || "현장 사진";
+                galleryCount.textContent = (galleryIndex + 1) + " / " + galleryButtons.length;
+                if (galleryLightbox.hidden) {
+                    galleryTrigger = document.activeElement;
+                    galleryLightbox.hidden = false;
+                    document.body.style.overflow = "hidden";
+                    galleryClose.focus();
+                }
             }
             function closeGallery() {
                 galleryLightbox.hidden = true;
                 galleryImage.removeAttribute("src");
                 document.body.style.overflow = "";
+                if (galleryTrigger && typeof galleryTrigger.focus === "function") galleryTrigger.focus();
+                galleryTrigger = null;
             }
             function stepGallery(delta) { showGallery(galleryIndex + delta); }
 
@@ -1199,9 +1305,9 @@
                     showGallery(parseInt(button.getAttribute("data-gallery-index"), 10));
                 });
             });
-            document.getElementById("galleryClose").addEventListener("click", closeGallery);
-            document.getElementById("galleryPrev").addEventListener("click", function () { stepGallery(-1); });
-            document.getElementById("galleryNext").addEventListener("click", function () { stepGallery(1); });
+            galleryClose.addEventListener("click", closeGallery);
+            galleryPrev.addEventListener("click", function () { stepGallery(-1); });
+            galleryNext.addEventListener("click", function () { stepGallery(1); });
             galleryLightbox.addEventListener("click", function (event) {
                 if (event.target === galleryLightbox) closeGallery();
             });
@@ -1210,7 +1316,68 @@
                 if (event.key === "Escape") closeGallery();
                 if (event.key === "ArrowLeft") stepGallery(-1);
                 if (event.key === "ArrowRight") stepGallery(1);
+                if (event.key === "Tab") {
+                    var order = [galleryClose, galleryPrev, galleryNext];
+                    var idx = order.indexOf(document.activeElement);
+                    event.preventDefault();
+                    var next = event.shiftKey
+                        ? (idx <= 0 ? order.length - 1 : idx - 1)
+                        : (idx === -1 || idx === order.length - 1 ? 0 : idx + 1);
+                    order[next].focus();
+                }
             });
+
+            var snsTotalEl = document.getElementById("snsTotal");
+            var snsCaptionEl = document.getElementById("snsCaption");
+
+            function snsTotalDisplay(total) {
+                if (total < 1000) return String(total);
+                return (Math.floor(total / 1000) * 1000).toLocaleString("en-US") + "+";
+            }
+            function animateSnsTotal(total) {
+                if (!snsTotalEl) return;
+                var finalText = snsTotalDisplay(total);
+                var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                if (reduced || typeof requestAnimationFrame !== "function") {
+                    snsTotalEl.textContent = finalText;
+                    return;
+                }
+                var target = total < 1000 ? total : Math.floor(total / 1000) * 1000;
+                var duration = 900;
+                var startTime = null;
+                function tick(now) {
+                    if (startTime === null) startTime = now;
+                    var t = Math.min((now - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - t, 3);
+                    snsTotalEl.textContent = t < 1 ? Math.round(target * eased).toLocaleString("en-US") : finalText;
+                    if (t < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            }
+            function applySnsData(data) {
+                if (!data || !data.platforms) return;
+                var total = 0;
+                data.platforms.forEach(function (p) {
+                    if (typeof p.count === "number") total += p.count;
+                    var el = document.querySelector('[data-sns="' + p.id + '"]');
+                    if (el) el.textContent = p.display || "";
+                });
+                if (!total || !snsCaptionEl) return;
+                var koCaption = "SNS 팔로워·구독자 합계 · " + data.asOf + " 기준";
+                var enCaption = "Combined followers & subscribers · as of " + data.asOf;
+                snsCaptionEl.setAttribute("data-ko", koCaption);
+                snsCaptionEl.setAttribute("data-en", enCaption);
+                snsCaptionEl.textContent = currentLang === "en" ? enCaption : koCaption;
+                animateSnsTotal(total);
+            }
+            try {
+                fetch("/assets/followers.json", { cache: "no-store" })
+                    .then(function (r) { return r.ok ? r.json() : null; })
+                    .then(applySnsData)
+                    .catch(function () {});
+            } catch (e) {}
+
+            applyLanguage(currentLang);
         })();
     </script>
 </body>

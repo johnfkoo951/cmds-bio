@@ -2,3 +2,11 @@
 docs
 README.md
 .gitignore
+scripts
+
+# index.html 에서 참조하지 않는 보관용 이미지 (배포 용량 절약)
+assets/cmds-logo-round.png
+assets/cmds-lockup-black.png
+assets/cmds-lockup-white.png
+assets/profile-yohan.jpg
+assets/profile-yohan-square.jpg

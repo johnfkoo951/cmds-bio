@@ -8,7 +8,7 @@
       "knowledge"
     ],
     "icon": "brand",
-    "description": "지식의 Spotlight · AI/PKM 브랜드 허브",
+    "description": "지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브",
     "tags": [
       "#CMDSPACE",
       "#AI",
@@ -16,7 +16,7 @@
       "#브랜드"
     ],
     "title_en": "CMDSPACE",
-    "description_en": "Knowledge Spotlight · AI/PKM brand hub",
+    "description_en": "Knowledge Spotlight · brand hub with a live log of 450+ activities",
     "tags_en": [
       "#CMDSPACE",
       "#AI",
@@ -32,7 +32,7 @@
       "work"
     ],
     "icon": "lecture",
-    "description": "공식 교육 플랫폼 · 강의와 코호트 안내",
+    "description": "지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼",
     "tags": [
       "#class.cmdspace.kr",
       "#생성형AI",
@@ -40,7 +40,7 @@
       "#코호트"
     ],
     "title_en": "Classes · Programs",
-    "description_en": "Official education platform for classes and cohorts",
+    "description_en": "See and join open classes & cohorts · official education platform",
     "tags_en": [
       "#class.cmdspace.kr",
       "#GenAI",
@@ -59,8 +59,8 @@
     ],
     "icon": "book-cover",
     "image": "/assets/obsidian-professional-note-cover.jpg",
-    "description": "리코멘드 출간 · 플러그인과 AI로 만드는 지식관리 워크플로우",
-    "description_en": "Published book on Obsidian, plugins, AI and knowledge workflows",
+    "description": "제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)",
+    "description_en": "The book I wrote — knowledge workflows with Obsidian plugins & AI (Recommend)",
     "tags": [
       "#책",
       "#Obsidian",
@@ -82,7 +82,7 @@
       "knowledge"
     ],
     "icon": "wiki",
-    "description": "Raw Sources · Wiki · Queries 구조의 지식 베이스",
+    "description": "AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries",
     "tags": [
       "#LLMWiki",
       "#Obsidian",
@@ -90,7 +90,7 @@
       "#qmd"
     ],
     "title_en": "LLM Wiki",
-    "description_en": "Persistent knowledge base built from Raw Sources · Wiki · Queries",
+    "description_en": "A living wiki grown with AI · Raw Sources → Wiki → Queries",
     "tags_en": [
       "#LLMWiki",
       "#Obsidian",
@@ -106,7 +106,7 @@
       "knowledge"
     ],
     "icon": "files",
-    "description": "사람과 AI가 함께 읽는 공개 rulebook",
+    "description": "사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md",
     "tags": [
       "#SystemFiles",
       "#AGENTSmd",
@@ -114,7 +114,7 @@
       "#rules"
     ],
     "title_en": "CMDS System Files",
-    "description_en": "Public rulebook for humans and AI agents",
+    "description_en": "Public rulebook for humans and AI · my real CLAUDE.md in use",
     "tags_en": [
       "#SystemFiles",
       "#AGENTSmd",
@@ -130,7 +130,7 @@
       "knowledge"
     ],
     "icon": "md",
-    "description": "Markdown 리뷰와 connected-vault 탐색 도구",
+    "description": "직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터",
     "tags": [
       "#CmdMD",
       "#Markdown",
@@ -138,7 +138,7 @@
       "#Preview"
     ],
     "title_en": "CmdMD",
-    "description_en": "macOS Markdown review and connected-vault navigation",
+    "description_en": "The macOS Markdown app I built · review-first editor",
     "tags_en": [
       "#CmdMD",
       "#Markdown",
@@ -154,7 +154,7 @@
       "profile"
     ],
     "icon": "video",
-    "description": "AI와 지식관리의 실전 가이드",
+    "description": "구독자 12.6K · AI와 지식관리 실전 가이드 영상",
     "tags": [
       "#YouTube",
       "#강의",
@@ -162,7 +162,7 @@
       "#지식관리"
     ],
     "title_en": "YouTube · CMDSPACE",
-    "description_en": "Practical guides to AI and knowledge management",
+    "description_en": "12.6K subscribers · hands-on AI & PKM guides",
     "tags_en": [
       "#YouTube",
       "#lecture",
@@ -178,7 +178,7 @@
       "profile"
     ],
     "icon": "chat",
-    "description": "가장 빠른 소통 채널 · 오픈채팅",
+    "description": "새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅",
     "tags": [
       "#KakaoTalk",
       "#커뮤니티",
@@ -186,7 +186,7 @@
       "#네트워킹"
     ],
     "title_en": "CMDSPACE Main Chat",
-    "description_en": "Fastest community channel on KakaoTalk",
+    "description_en": "Where news lands first · KakaoTalk open chat",
     "tags_en": [
       "#KakaoTalk",
       "#community",
@@ -202,7 +202,7 @@
       "profile"
     ],
     "icon": "users",
-    "description": "AI·지식관리 커뮤니티 오픈채팅",
+    "description": "AI·지식관리를 함께 공부하는 오픈 커뮤니티",
     "tags": [
       "#thebetter",
       "#AI",
@@ -210,7 +210,7 @@
       "#커뮤니티"
     ],
     "title_en": "The Better Community",
-    "description_en": "Open community for AI and knowledge management",
+    "description_en": "An open community learning AI & knowledge management together",
     "tags_en": [
       "#thebetter",
       "#AI",

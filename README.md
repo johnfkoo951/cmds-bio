@@ -14,8 +14,12 @@ cd /Users/yohankoo/DEV/cmds-bio
 
 # 1) 편집 — index.html 만 고치면 됨
 #    (링크/소셜/바이오/색상 전부 이 파일 안에)
+#    콘텐츠 변경 시 신선도 날짜 2곳 갱신: 게이트웨이 칩 + 푸터 <time id="pageUpdated">
 
-# 2) 배포
+# 2) (선택) SNS 팔로워 수 재수집 — assets/followers.json 갱신
+bash scripts/refresh-followers.sh
+
+# 3) 배포
 vercel deploy --prod --yes --scope johnfkoo951s-projects
 ```
 
@@ -35,17 +39,21 @@ cmds-bio/
 │   ├── gallery/                  # cmdspace.work 현장 갤러리 24장 WebP
 │   ├── gallery.json              # 갤러리 원본 메타데이터
 │   ├── bio-links.json            # 링크 허브 데이터 원본(JSON)
+│   ├── followers.json            # SNS 팔로워 수 + asOf (페이지가 fetch, 스크립트로 갱신)
 │   ├── obsidian-professional-note-cover.jpg # 출판 도서 표지
 │   ├── cmds-logo-round.png       # 이전 원형 로고 보존
 │   └── og-bio.png                # 1200×630 공유 카드 이미지
 ├── vercel.json         # cleanUrls 설정
-├── .vercelignore       # docs·README 는 배포 제외 (개인정보 보호)
+├── .vercelignore       # docs·README·scripts·미참조 이미지 배포 제외
+├── scripts/
+│   └── refresh-followers.sh # SNS 팔로워 재수집 → followers.json 갱신
 └── docs/               # 로컬 작업 문서 (공개 배포 안 됨)
     ├── 01-overview.md       # 구조·디자인 토큰
     ├── 02-profile.md        # 프로필·연락처·SNS (source of truth)
     ├── 03-content-guide.md  # 링크/소셜/바이오 편집법
     ├── 04-deployment.md     # 배포·도메인·DNS
-    └── 05-search-visibility.md # SEO·GEO·AEO 검색 노출성 체크
+    ├── 05-search-visibility.md # SEO·GEO·AEO 검색 노출성 체크
+    └── 06-worklog.md        # 작업 로그 (감사 결과·변경 이력·후속 TODO)
 ```
 
 ## ⚠️ 개인정보 주의
