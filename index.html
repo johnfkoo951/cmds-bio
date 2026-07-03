@@ -495,7 +495,9 @@
             display: flex;
             gap: 8px;
             overflow-x: auto;
-            padding: 0 24px 14px;
+            /* 스크롤 컨테이너는 padding box 밖을 클리핑 — hover lift(1px)·Safari 서브픽셀 잘림 방지용 상단 여유 */
+            padding: 5px 24px 14px;
+            margin-top: -5px;
             scrollbar-width: none;
         }
         .filterbar::-webkit-scrollbar { display: none; }

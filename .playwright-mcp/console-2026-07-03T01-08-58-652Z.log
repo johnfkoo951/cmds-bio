@@ -1,0 +1,5 @@
+[     637ms] [ERROR] Not signed in with the identity provider. @ https://x.com/YohanKoo:0
+[     772ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://api.x.com/1.1/jot/external_referer.json:0
+[     905ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/onboarding/referrer.json:0
+[    3472ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://api.x.com/1.1/graphql/viewer_context.json:0
+[    3474ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://api.x.com/1.1/graphql/viewer_context.json:0

@@ -1,0 +1,3 @@
+[    2133ms] [ERROR] Not signed in with the identity provider. @ https://x.com/YohanKoo:0
+[    2475ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://api.x.com/1.1/jot/external_referer.json:0
+[    2546ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/onboarding/referrer.json:0

@@ -23,6 +23,38 @@ bash scripts/refresh-followers.sh
 vercel deploy --prod --yes --scope johnfkoo951s-projects
 ```
 
+## SNS 집계 자동 갱신 (헤드리스 — omnicontrol 스케줄러용)
+
+```bash
+# 권장: 순수 셸 원샷 (수집 → JSON 갱신 → prod 배포)
+cd /Users/yohankoo/DEV/cmds-bio && bash scripts/refresh-followers.sh --deploy
+
+# LinkedIn 포함 (cmux 앱 실행 중 + LinkedIn 로그인 세션 필요)
+cd /Users/yohankoo/DEV/cmds-bio && bash scripts/refresh-followers.sh --linkedin-cmux --deploy
+
+# LinkedIn 수동 입력
+bash scripts/refresh-followers.sh --linkedin 1234
+
+# Claude 경유 (HTML 폴백 동기화·worklog 기록까지 위임)
+cd /Users/yohankoo/DEV/cmds-bio && claude -p "/bio-sns-refresh" --dangerously-skip-permissions
+```
+
+- LinkedIn은 익명 수집이 차단(999/429)되어 수동 입력 또는 cmux 로그인 세션 경유만 가능.
+- 실패한 플랫폼은 기존 값 유지 — 부분 실패에 안전. 상세 절차는 `.claude/skills/bio-sns-refresh/SKILL.md`.
+
+## 연결 프로젝트 — cmdspace.work (`/Users/yohankoo/DEV/cmdspace-main`)
+
+두 사이트는 프로필 직함·대표 수치·링크 자산을 공유하는 **연결 프로젝트**다.
+
+| 공유 정보 | bio 위치 | cmdspace.work 위치 |
+|---|---|---|
+| 직함 (겸임교수·KIRD 객원교수) | index.html identity + docs/02-profile.md | index.html Operator 섹션 |
+| 활동 450+ / 노트 10,000+ / LG 900명 | index.html 크레덴셜 리스트 | data/activities.csv(동적) + 정적 카피 |
+| 링크 자산 | index.html + assets/bio-links.json | Ecosystem hub 카드 |
+| Last updated 표기 | 게이트웨이 칩 + 푸터 `<time>` | footer (CSV 최신 레코드 날짜) |
+
+**한쪽에서 위 정보를 바꾸면 반드시 다른 쪽도 확인·갱신할 것.** 이력 기록: 이 레포 `docs/06-worklog.md` ↔ cmdspace-main `README.md`의 연결 프로젝트 섹션.
+
 ## 폴더 구조
 
 ```

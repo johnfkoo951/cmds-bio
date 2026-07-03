@@ -7,16 +7,22 @@
 # @raycast.icon 📊
 # @raycast.description bio.cmdspace.work의 SNS 팔로워 수를 재수집해 assets/followers.json 갱신
 
-# cmds-bio SNS 팔로워/구독자 수 갱신 스크립트
-# 사용법: bash scripts/refresh-followers.sh   (이후 vercel deploy --prod 로 배포)
+# cmds-bio SNS 팔로워/구독자 수 갱신 스크립트 (헤드리스 실행 가능 — omnicontrol 스케줄러 대응)
 #
-# 수집 경로 (모두 서버사이드 curl — 브라우저에서는 CORS/로그인월로 불가):
+# 사용법:
+#   bash scripts/refresh-followers.sh                  # 5개 플랫폼 재수집 (LinkedIn 기존값 유지)
+#   bash scripts/refresh-followers.sh --linkedin 1234  # LinkedIn 팔로워 수동 입력
+#   bash scripts/refresh-followers.sh --linkedin-cmux  # cmux 브라우저(로그인 세션)로 LinkedIn 시도
+#   bash scripts/refresh-followers.sh --deploy         # 갱신 후 vercel prod 배포까지 원샷
+#   플래그 조합 가능: --linkedin-cmux --deploy
+#
+# 수집 경로 (모두 서버사이드 — 브라우저 클라이언트에서는 CORS/로그인월로 불가):
 #   YouTube    : 채널 /about 페이지의 ytInitialData 내 subscriberCountText (플랫폼이 12.6K처럼 반올림)
 #   X          : api.fxtwitter.com (비공식 프록시, 정확값)
 #   Threads    : facebookexternalhit UA로 meta description의 "N Followers" (반올림)
 #   Instagram  : web_profile_info 내부 API + x-ig-app-id 헤더 (정확값, 변경 취약)
 #   GitHub     : 공식 REST API (정확값)
-#   LinkedIn   : 공개 API 없음 — 기존 값 유지 (수동 관리)
+#   LinkedIn   : 익명 수집 불가(999/429 봇차단) — 수동(--linkedin N) 또는 cmux 로그인 세션(--linkedin-cmux)
 #
 # 실패한 플랫폼은 기존 값을 유지하므로 부분 실패에 안전.
 
@@ -25,6 +31,19 @@ cd "$(dirname "$0")/.."
 
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
 JSON="assets/followers.json"
+LINKEDIN_URL="https://www.linkedin.com/in/yohan-koo-a1baa3138/"
+
+LINKEDIN_MANUAL=""
+USE_CMUX=false
+DO_DEPLOY=false
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --linkedin) LINKEDIN_MANUAL="${2:-}"; shift 2 ;;
+        --linkedin-cmux) USE_CMUX=true; shift ;;
+        --deploy) DO_DEPLOY=true; shift ;;
+        *) echo "알 수 없는 옵션: $1"; exit 1 ;;
+    esac
+done
 
 fetch_youtube() {
     curl -s --max-time 20 -A "$UA" "https://www.youtube.com/@cmdspace/about" \
@@ -55,17 +74,37 @@ fetch_github() {
         | python3 -c "import json,sys; print(json.load(sys.stdin)['followers'])" 2>/dev/null
 }
 
+# cmux 네이티브 브라우저(WKWebView, 로그인 세션 공유)로 LinkedIn 팔로워 수집.
+# cmux 앱이 실행 중이고 LinkedIn에 로그인된 세션이 있어야 성공. 실패 시 빈 문자열.
+fetch_linkedin_cmux() {
+    command -v cmux >/dev/null 2>&1 || return 0
+    local out surface val
+    out=$(cmux browser open "$LINKEDIN_URL" 2>/dev/null) || return 0
+    surface=$(printf '%s' "$out" | grep -o 'surface=surface:[0-9]*' | cut -d= -f2)
+    [ -n "$surface" ] || return 0
+    sleep 7
+    val=$(cmux browser --surface "$surface" eval \
+        '(document.body.innerText.match(/([\d,.]+K?)\s*(followers|팔로워)/i)||[])[1]||""' 2>/dev/null | tr -d '" ')
+    printf '%s' "$val"
+}
+
 YT=$(fetch_youtube)   || YT=""
 XF=$(fetch_x)         || XF=""
 TH=$(fetch_threads)   || TH=""
 IG=$(fetch_instagram) || IG=""
 GH=$(fetch_github)    || GH=""
 
-python3 - "$JSON" "$YT" "$XF" "$TH" "$IG" "$GH" <<'PY'
+LI="$LINKEDIN_MANUAL"
+if [ -z "$LI" ] && [ "$USE_CMUX" = true ]; then
+    LI=$(fetch_linkedin_cmux)
+    [ -n "$LI" ] && echo "LinkedIn (cmux): $LI" || echo "LinkedIn (cmux): 실패 — 로그인 세션 확인 필요, 기존 값 유지"
+fi
+
+python3 - "$JSON" "$YT" "$XF" "$TH" "$IG" "$GH" "$LI" <<'PY'
 import json, re, sys
 from datetime import date
 
-path, yt, xf, th, ig, gh = sys.argv[1:7]
+path, yt, xf, th, ig, gh, li = sys.argv[1:8]
 data = json.load(open(path))
 
 def parse_display(raw):
@@ -83,7 +122,7 @@ def parse_display(raw):
         return int(num * 1_000_000), raw, True
     return int(num), f"{int(num):,}" if num >= 1000 else str(int(num)), False
 
-updates = {"youtube": yt, "x": xf, "threads": th, "instagram": ig, "github": gh}
+updates = {"youtube": yt, "x": xf, "threads": th, "instagram": ig, "github": gh, "linkedin": li}
 changed = []
 for p in data["platforms"]:
     raw = updates.get(p["id"], "")
@@ -100,10 +139,16 @@ open(path, "a").write("\n")
 
 total = sum(p["count"] for p in data["platforms"] if isinstance(p["count"], int))
 print(f"✅ {path} 갱신 완료 (asOf {data['asOf']})")
-print(f"   합계: {total:,} (LinkedIn 제외)")
+print(f"   합계: {total:,}")
 print("   변경:", "; ".join(changed) if changed else "없음")
-print("   ⚠️  index.html에 구운 폴백 숫자·aria-label·YouTube 카드 문구는 수동 확인 권장")
+print("   ⚠️  index.html에 구운 폴백 숫자·aria-label·YouTube 카드 문구는 큰 변동 시 수동 갱신 권장")
 PY
 
-echo ""
-echo "다음 단계: vercel deploy --prod --yes --scope johnfkoo951s-projects"
+if [ "$DO_DEPLOY" = true ]; then
+    echo ""
+    echo "🚀 프로덕션 배포 중..."
+    vercel deploy --prod --yes --scope johnfkoo951s-projects
+else
+    echo ""
+    echo "다음 단계: vercel deploy --prod --yes --scope johnfkoo951s-projects  (또는 --deploy 플래그)"
+fi

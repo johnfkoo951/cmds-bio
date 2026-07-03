@@ -1,0 +1,277 @@
+- generic [active] [ref=f1e1]:
+  - link "링크 목록으로 이동" [ref=f1e2] [cursor=pointer]:
+    - /url: "#links"
+  - main [ref=f1e3]:
+    - article "구요한 CMDSPACE 링크인바이오" [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - generic [ref=f1e6]:
+          - button "Switch to English" [ref=f1e7] [cursor=pointer]: EN
+          - button "라이트 모드로 전환" [pressed] [ref=f1e8] [cursor=pointer]:
+            - img [ref=f1e9]
+        - generic [ref=f1e12]:
+          - generic [ref=f1e13]:
+            - img [ref=f1e14]
+            - text: CMDSPACE
+          - img "구요한 대표사진" [ref=f1e15]
+          - generic [ref=f1e16]:
+            - strong [ref=f1e17]:
+              - generic [ref=f1e18]: COMMAND KNOWLEDGE
+              - generic [ref=f1e19]: CONNECT IDEAS
+              - generic [ref=f1e20]: ORCHESTRATE SPACES
+            - generic [ref=f1e21]: AI 전환, 지식 시스템, 임원 코칭을 한곳에.
+      - region "구요한 Yohan Koo verified" [ref=f1e22]:
+        - heading "구요한 Yohan Koo verified" [level=1] [ref=f1e23]:
+          - text: 구요한
+          - generic [ref=f1e24]: Yohan Koo
+          - img "verified" [ref=f1e25]
+        - paragraph [ref=f1e28]: 커맨드스페이스 대표 · 차의과학대 겸임교수 · KIRD 객원교수
+        - paragraph [ref=f1e29]:
+          - text: 생성형 AI, 임원코칭, Obsidian 지식관리 시스템을 현장으로 가져옵니다.
+          - strong [ref=f1e30]: 바로 쓸 수 있는 것만, 깊이 있게.
+        - generic "대표 활동 하이라이트" [ref=f1e31]:
+          - paragraph [ref=f1e32]:
+            - strong [ref=f1e33]: LG 회장단
+            - generic [ref=f1e34]: 그룹 코칭 · CEO 1:1 AI 코칭
+          - paragraph [ref=f1e35]:
+            - strong [ref=f1e36]: 900명
+            - generic [ref=f1e37]: LG 그룹 임원 AX Camp 교육
+          - paragraph [ref=f1e38]:
+            - strong [ref=f1e39]: 450+
+            - generic [ref=f1e40]: 누적 강의·코칭·자문 — 전체 이력은 cmdspace.work
+          - paragraph [ref=f1e41]:
+            - strong [ref=f1e42]: 10,000+
+            - generic [ref=f1e43]: Obsidian 노트 기반 CMDS 운영
+          - paragraph [ref=f1e44]:
+            - strong [ref=f1e45]: 2026–2028
+            - generic [ref=f1e46]: KIRD 객원교수 임기
+      - generic [ref=f1e47]:
+        - strong [ref=f1e48]: 16,000+
+        - generic [ref=f1e49]: SNS 팔로워·구독자 합계 · 2026-07-03 기준
+      - navigation "소셜 링크" [ref=f1e50]:
+        - link "LinkedIn 프로필" [ref=f1e51] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/yohan-koo-a1baa3138/
+          - img [ref=f1e53]
+        - link "X @YohanKoo · 팔로워 427" [ref=f1e55] [cursor=pointer]:
+          - /url: https://x.com/YohanKoo
+          - img [ref=f1e57]
+          - generic [ref=f1e59]: "427"
+        - link "Threads @cmds_pace · 팔로워 2.5K" [ref=f1e60] [cursor=pointer]:
+          - /url: https://www.threads.com/@cmds_pace
+          - img [ref=f1e62]
+          - generic [ref=f1e64]: 2.5K
+        - link "Instagram @cmds_pace · 팔로워 481" [ref=f1e65] [cursor=pointer]:
+          - /url: https://www.instagram.com/cmds_pace/
+          - img [ref=f1e67]
+          - generic [ref=f1e69]: "481"
+        - link "YouTube @cmdspace · 구독자 12.6K" [ref=f1e70] [cursor=pointer]:
+          - /url: https://www.youtube.com/@cmdspace
+          - img [ref=f1e72]
+          - generic [ref=f1e74]: 12.6K
+        - link "GitHub johnfkoo951 · 팔로워 32" [ref=f1e75] [cursor=pointer]:
+          - /url: https://github.com/johnfkoo951
+          - img [ref=f1e77]
+          - generic [ref=f1e79]: "32"
+        - link "이메일 보내기" [ref=f1e80] [cursor=pointer]:
+          - /url: mailto:johnfkoo951@gmail.com
+          - img [ref=f1e82]
+      - generic "주요 연락 액션" [ref=f1e85]:
+        - link "강의 · 협업 문의하기" [ref=f1e86] [cursor=pointer]:
+          - /url: mailto:johnfkoo951@gmail.com?subject=강의%20·%20협업%20문의
+        - button "Email 복사" [ref=f1e87] [cursor=pointer]
+      - region "커맨드스페이스 게이트웨이" [ref=f1e88]:
+        - generic [ref=f1e89]:
+          - heading "커맨드스페이스 게이트웨이" [level=2] [ref=f1e90]
+          - paragraph [ref=f1e91]: 전체 9개 링크
+        - paragraph [ref=f1e92]: 제가 하는 일과 만든 것들이 궁금하다면 여기서 시작하세요 — 강의와 코칭, 직접 쓴 책, 직접 만든 앱, 공개 지식 시스템, 함께하는 커뮤니티로 이어지는 공식 관문입니다.
+        - paragraph [ref=f1e93]:
+          - generic [ref=f1e94]: 2026-07-03 업데이트 · cmdspace.work와 상시 동기화
+        - group "링크 필터" [ref=f1e95]:
+          - button "전체" [pressed] [ref=f1e96] [cursor=pointer]
+          - button "강의·코칭" [ref=f1e97] [cursor=pointer]
+          - button "지식 시스템" [ref=f1e98] [cursor=pointer]
+          - button "콘텐츠·커뮤니티" [ref=f1e99] [cursor=pointer]
+        - generic [ref=f1e100]:
+          - link "CMDSPACE 지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브" [ref=f1e101] [cursor=pointer]:
+            - /url: https://cmdspace.work
+            - img [ref=f1e103]
+            - generic [ref=f1e106]:
+              - generic [ref=f1e107]: CMDSPACE
+              - generic [ref=f1e108]: 지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브
+              - generic [ref=f1e109]:
+                - generic [ref=f1e110]: "#CMDSPACE"
+                - generic [ref=f1e111]: "#AI"
+                - generic [ref=f1e112]: "#PKM"
+                - generic [ref=f1e113]: "#브랜드"
+            - img [ref=f1e115]
+          - link "강의 · 클래스 지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼" [ref=f1e117] [cursor=pointer]:
+            - /url: https://class.cmdspace.kr/
+            - img [ref=f1e119]
+            - generic [ref=f1e122]:
+              - generic [ref=f1e123]: 강의 · 클래스
+              - generic [ref=f1e124]: 지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼
+              - generic [ref=f1e125]:
+                - generic [ref=f1e126]: "#class.cmdspace.kr"
+                - generic [ref=f1e127]: "#생성형AI"
+                - generic [ref=f1e128]: "#옵시디언"
+                - generic [ref=f1e129]: "#코호트"
+            - img [ref=f1e131]
+          - link "옵시디언 프로페셔널 노트 제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)" [ref=f1e133] [cursor=pointer]:
+            - /url: https://product.kyobobook.co.kr/detail/S000219435979
+            - img [ref=f1e135]
+            - generic [ref=f1e136]:
+              - generic [ref=f1e137]: 옵시디언 프로페셔널 노트
+              - generic [ref=f1e138]: 제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)
+              - generic [ref=f1e139]:
+                - generic [ref=f1e140]: "#책"
+                - generic [ref=f1e141]: "#Obsidian"
+                - generic [ref=f1e142]: "#AI"
+                - generic [ref=f1e143]: "#지식관리"
+            - img [ref=f1e145]
+          - link "LLM Wiki AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries" [ref=f1e147] [cursor=pointer]:
+            - /url: https://llm-wiki.cmdspace.work
+            - img [ref=f1e149]
+            - generic [ref=f1e152]:
+              - generic [ref=f1e153]: LLM Wiki
+              - generic [ref=f1e154]: AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries
+              - generic [ref=f1e155]:
+                - generic [ref=f1e156]: "#LLMWiki"
+                - generic [ref=f1e157]: "#Obsidian"
+                - generic [ref=f1e158]: "#Karpathy"
+                - generic [ref=f1e159]: "#qmd"
+            - img [ref=f1e161]
+          - link "CMDS 시스템 파일 사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md" [ref=f1e163] [cursor=pointer]:
+            - /url: https://system.cmdspace.work
+            - img [ref=f1e165]
+            - generic [ref=f1e169]:
+              - generic [ref=f1e170]: CMDS 시스템 파일
+              - generic [ref=f1e171]: 사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md
+              - generic [ref=f1e172]:
+                - generic [ref=f1e173]: "#SystemFiles"
+                - generic [ref=f1e174]: "#AGENTSmd"
+                - generic [ref=f1e175]: "#CLAUDEmd"
+                - generic [ref=f1e176]: "#rules"
+            - img [ref=f1e178]
+          - link "CmdMD 직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터" [ref=f1e180] [cursor=pointer]:
+            - /url: https://cmdmd.cmdspace.work
+            - img [ref=f1e182]
+            - generic [ref=f1e186]:
+              - generic [ref=f1e187]: CmdMD
+              - generic [ref=f1e188]: 직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터
+              - generic [ref=f1e189]:
+                - generic [ref=f1e190]: "#CmdMD"
+                - generic [ref=f1e191]: "#Markdown"
+                - generic [ref=f1e192]: "#macOS"
+                - generic [ref=f1e193]: "#Preview"
+            - img [ref=f1e195]
+          - link "YouTube · 커맨드스페이스 구독자 12.6K · AI와 지식관리 실전 가이드 영상" [ref=f1e197] [cursor=pointer]:
+            - /url: https://www.youtube.com/@cmdspace
+            - img [ref=f1e199]
+            - generic [ref=f1e202]:
+              - generic [ref=f1e203]: YouTube · 커맨드스페이스
+              - generic [ref=f1e204]: 구독자 12.6K · AI와 지식관리 실전 가이드 영상
+              - generic [ref=f1e205]:
+                - generic [ref=f1e206]: "#YouTube"
+                - generic [ref=f1e207]: "#강의"
+                - generic [ref=f1e208]: "#AI도구"
+                - generic [ref=f1e209]: "#지식관리"
+            - img [ref=f1e211]
+          - link "커맨드스페이스 메인방 새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅" [ref=f1e213] [cursor=pointer]:
+            - /url: https://open.kakao.com/o/gO3Ysvof
+            - img [ref=f1e215]
+            - generic [ref=f1e217]:
+              - generic [ref=f1e218]: 커맨드스페이스 메인방
+              - generic [ref=f1e219]: 새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅
+              - generic [ref=f1e220]:
+                - generic [ref=f1e221]: "#KakaoTalk"
+                - generic [ref=f1e222]: "#커뮤니티"
+                - generic [ref=f1e223]: "#공지"
+                - generic [ref=f1e224]: "#네트워킹"
+            - img [ref=f1e226]
+          - link "더배러 커뮤니티 AI·지식관리를 함께 공부하는 오픈 커뮤니티" [ref=f1e228] [cursor=pointer]:
+            - /url: https://open.kakao.com/o/gOy1iNrf
+            - img [ref=f1e230]
+            - generic [ref=f1e235]:
+              - generic [ref=f1e236]: 더배러 커뮤니티
+              - generic [ref=f1e237]: AI·지식관리를 함께 공부하는 오픈 커뮤니티
+              - generic [ref=f1e238]:
+                - generic [ref=f1e239]: "#thebetter"
+                - generic [ref=f1e240]: "#AI"
+                - generic [ref=f1e241]: "#지식관리"
+                - generic [ref=f1e242]: "#커뮤니티"
+            - img [ref=f1e244]
+      - region "현장 갤러리" [ref=f1e246]:
+        - generic [ref=f1e247]:
+          - heading "현장 갤러리" [level=2] [ref=f1e248]
+          - paragraph [ref=f1e249]: cmdspace.work에서 가져온 24장
+        - paragraph [ref=f1e250]: 강의·워크샵·코칭·컨퍼런스 현장의 기록입니다. 사진을 누르면 크게 볼 수 있습니다.
+        - generic [ref=f1e251]:
+          - button "현장 갤러리 사진 1 확대" [ref=f1e252]:
+            - img "CMDSPACE 현장 사진 01" [ref=f1e253]
+          - button "현장 갤러리 사진 2 확대" [ref=f1e254]:
+            - img "CMDSPACE 현장 사진 02" [ref=f1e255]
+          - button "현장 갤러리 사진 3 확대" [ref=f1e256]:
+            - img "CMDSPACE 현장 사진 03" [ref=f1e257]
+          - button "현장 갤러리 사진 4 확대" [ref=f1e258]:
+            - img "CMDSPACE 현장 사진 04" [ref=f1e259]
+          - button "현장 갤러리 사진 5 확대" [ref=f1e260]:
+            - img "CMDSPACE 현장 사진 05" [ref=f1e261]
+          - button "현장 갤러리 사진 6 확대" [ref=f1e262]:
+            - img "CMDSPACE 현장 사진 06" [ref=f1e263]
+          - button "현장 갤러리 사진 7 확대" [ref=f1e264]:
+            - img "CMDSPACE 현장 사진 07" [ref=f1e265]
+          - button "현장 갤러리 사진 8 확대" [ref=f1e266]:
+            - img "CMDSPACE 현장 사진 08" [ref=f1e267]
+          - button "현장 갤러리 사진 9 확대" [ref=f1e268]:
+            - img "CMDSPACE 현장 사진 09" [ref=f1e269]
+          - button "현장 갤러리 사진 10 확대" [ref=f1e270]:
+            - img "CMDSPACE 현장 사진 10" [ref=f1e271]
+          - button "현장 갤러리 사진 11 확대" [ref=f1e272]:
+            - img "CMDSPACE 현장 사진 11" [ref=f1e273]
+          - button "현장 갤러리 사진 12 확대" [ref=f1e274]:
+            - img "CMDSPACE 현장 사진 12" [ref=f1e275]
+          - button "현장 갤러리 사진 13 확대" [ref=f1e276]:
+            - img "CMDSPACE 현장 사진 13" [ref=f1e277]
+          - button "현장 갤러리 사진 14 확대" [ref=f1e278]:
+            - img "CMDSPACE 현장 사진 14" [ref=f1e279]
+          - button "현장 갤러리 사진 15 확대" [ref=f1e280]:
+            - img "CMDSPACE 현장 사진 15" [ref=f1e281]
+          - button "현장 갤러리 사진 16 확대" [ref=f1e282]:
+            - img "CMDSPACE 현장 사진 16" [ref=f1e283]
+          - button "현장 갤러리 사진 17 확대" [ref=f1e284]:
+            - img "CMDSPACE 현장 사진 17" [ref=f1e285]
+          - button "현장 갤러리 사진 18 확대" [ref=f1e286]:
+            - img "CMDSPACE 현장 사진 18" [ref=f1e287]
+          - button "현장 갤러리 사진 19 확대" [ref=f1e288]:
+            - img "CMDSPACE 현장 사진 19" [ref=f1e289]
+          - button "현장 갤러리 사진 20 확대" [ref=f1e290]:
+            - img "CMDSPACE 현장 사진 20" [ref=f1e291]
+          - button "현장 갤러리 사진 21 확대" [ref=f1e292]:
+            - img "CMDSPACE 현장 사진 21" [ref=f1e293]
+          - button "현장 갤러리 사진 22 확대" [ref=f1e294]:
+            - img "CMDSPACE 현장 사진 22" [ref=f1e295]
+          - button "현장 갤러리 사진 23 확대" [ref=f1e296]:
+            - img "CMDSPACE 현장 사진 23" [ref=f1e297]
+          - button "현장 갤러리 사진 24 확대" [ref=f1e298]:
+            - img "CMDSPACE 현장 사진 24" [ref=f1e299]
+      - region "퍼블리시 맥락" [ref=f1e300]:
+        - heading "퍼블리시 맥락" [level=2] [ref=f1e301]
+        - paragraph [ref=f1e302]: CMDSPACE는 메인 Obsidian 볼트와 LLM Wiki 위성 볼트에서 축적한 작업을 공개 가능한 형태로 압축합니다. 이 페이지는 강의·코칭 문의와 공개 지식 시스템으로 들어가는 가장 짧은 관문입니다.
+        - generic [ref=f1e303]:
+          - generic [ref=f1e304]:
+            - strong [ref=f1e305]: Executive AI
+            - text: 임원·CEO 코칭과 조직 AX 교육
+          - generic [ref=f1e306]:
+            - strong [ref=f1e307]: Obsidian PKM
+            - text: 개인 지식관리와 Second Brain
+          - generic [ref=f1e308]:
+            - strong [ref=f1e309]: System Files
+            - text: 사람과 AI가 함께 읽는 rulebook
+          - generic [ref=f1e310]:
+            - strong [ref=f1e311]: LLM Wiki
+            - text: raw source가 축적되는 persistent wiki
+      - generic [ref=f1e312]:
+        - text: © 2026 CMDSPACE ·
+        - link "cmdspace.work" [ref=f1e313] [cursor=pointer]:
+          - /url: https://cmdspace.work
+        - text: "· Last updated:"
+        - time [ref=f1e314]: 2026-07-03
