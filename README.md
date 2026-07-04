@@ -90,9 +90,16 @@ cmds-bio/
 
 ## ⚠️ 개인정보 주의
 
-`docs/02-profile.md` 에는 **모바일 번호·카톡 참여코드** 등 비공개 정보가 들어 있습니다.
-- `.vercelignore` 로 배포에서 제외되어 `bio.cmdspace.work/docs/*` 로 공개되지 않습니다.
-- 이 폴더를 GitHub 에 push 한다면 **private 레포**로 하거나 `docs/` 를 `.gitignore` 하세요.
+`docs/` 폴더(내부 작업 문서·프로필 source of truth)는 비공개 정보를 포함할 수 있어 **git에서 제외**되어 있습니다.
+- `.gitignore` 로 커밋 제외 (로컬 전용 — 2026-07-04 히스토리에서도 완전 제거), `.vercelignore` 로 배포 제외.
+- 이 레포는 public입니다 — 새 민감정보는 반드시 `docs/` 안에만 두세요.
+
+## 따라 만들기 (Fork 가이드)
+
+이 레포는 litt.ly/Linktree를 대체하는 self-hosted 링크인바이오의 실제 운영 예시입니다. 포크 후:
+1. `index.html`의 프로필·링크·색상 토큰(`:root` CSS 변수) 교체, `assets/` 이미지 교체
+2. `scripts/refresh-followers.sh`의 SNS 핸들을 본인 계정으로 수정 → `assets/followers.json` 자동 갱신
+3. Vercel(또는 아무 정적 호스팅)에 배포 — 빌드 없음, 파일 그대로
 
 ## 링크 허브 업데이트
 
