@@ -331,6 +331,14 @@
             font-size: 13px;
             font-weight: 600;
         }
+        .cred span a {
+            color: var(--accent);
+            font-weight: 750;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+        }
+        .cred span a:hover { text-decoration-color: var(--accent); }
 
         .sns-total {
             padding: 20px 26px 0;
@@ -617,6 +625,19 @@
             line-height: 1;
         }
         [data-theme="dark"] .link-tag { color: var(--accent); }
+        .link-url {
+            display: block;
+            margin-top: 7px;
+            overflow: hidden;
+            color: var(--fg-subtle);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .link:hover .link-url { color: var(--fg-muted); }
         .link-arrow {
             color: var(--fg-subtle);
             transition: transform .16s, color .16s;
@@ -921,7 +942,7 @@
                 <div class="cred-list" aria-label="대표 활동 하이라이트" data-label-ko="대표 활동 하이라이트" data-label-en="Career highlights">
                     <p class="cred"><strong data-ko="LG 회장단" data-en="LG Chairmen">LG 회장단</strong><span data-ko="그룹 코칭 · CEO 1:1 AI 코칭" data-en="Group coaching · CEO 1:1 AI coaching">그룹 코칭 · CEO 1:1 AI 코칭</span></p>
                     <p class="cred"><strong data-ko="900명" data-en="900+">900명</strong><span data-ko="LG 그룹 임원 AX Camp 교육" data-en="LG Group executive AX Camp">LG 그룹 임원 AX Camp 교육</span></p>
-                    <p class="cred"><strong data-ko="450+" data-en="450+">450+</strong><span data-ko="누적 강의·코칭·자문 — 전체 이력은 cmdspace.work" data-en="Lectures, coaching &amp; advisory to date — full log on cmdspace.work">누적 강의·코칭·자문 — 전체 이력은 cmdspace.work</span></p>
+                    <p class="cred"><strong data-ko="450+" data-en="450+">450+</strong><span data-ko-html='누적 강의·코칭·자문 — 전체 이력은 <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a>' data-en-html='Lectures, coaching &amp; advisory to date — full log on <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a>'>누적 강의·코칭·자문 — 전체 이력은 <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a></span></p>
                     <p class="cred"><strong data-ko="10,000+" data-en="10,000+">10,000+</strong><span data-ko="Obsidian 노트 기반 CMDS 운영" data-en="Obsidian notes powering CMDS">Obsidian 노트 기반 CMDS 운영</span></p>
                     <p class="cred"><strong data-ko="2026–2028" data-en="2026–2028">2026–2028</strong><span data-ko="KIRD 객원교수 임기" data-en="KIRD Visiting Professor term">KIRD 객원교수 임기</span></p>
                 </div>
@@ -952,7 +973,7 @@
                     <p id="filterStatus" aria-live="polite">전체 9개 링크</p>
                 </div>
                 <p class="section-desc" data-ko="제가 하는 일과 만든 것들이 궁금하다면 여기서 시작하세요 — 강의와 코칭, 직접 쓴 책, 직접 만든 앱, 공개 지식 시스템, 함께하는 커뮤니티로 이어지는 공식 관문입니다." data-en="Curious what I do and what I build? Start here — the official gateway to my lectures &amp; coaching, the book I wrote, the apps I built, public knowledge systems, and the communities I run.">제가 하는 일과 만든 것들이 궁금하다면 여기서 시작하세요 — 강의와 코칭, 직접 쓴 책, 직접 만든 앱, 공개 지식 시스템, 함께하는 커뮤니티로 이어지는 공식 관문입니다.</p>
-                <p class="updated-chip"><span data-ko="2026-07-03 업데이트 · cmdspace.work와 상시 동기화" data-en="Updated 2026-07-03 · kept in sync with cmdspace.work">2026-07-03 업데이트 · cmdspace.work와 상시 동기화</span></p>
+                <p class="updated-chip"><span data-ko="2026-07-04 업데이트 · cmdspace.work와 상시 동기화" data-en="Updated 2026-07-04 · kept in sync with cmdspace.work">2026-07-04 업데이트 · cmdspace.work와 상시 동기화</span></p>
                 <div class="filterbar" role="group" aria-label="링크 필터" data-label-ko="링크 필터" data-label-en="Link filters">
                     <button class="filter-btn" type="button" data-filter="all" aria-pressed="true" data-ko="전체" data-en="All">전체</button>
                     <button class="filter-btn" type="button" data-filter="work" aria-pressed="false" data-ko="강의·코칭" data-en="Work">강의·코칭</button>
@@ -963,47 +984,47 @@
                 <div class="links">
                     <a class="link" href="https://cmdspace.work" target="_blank" rel="noopener" data-tags="work knowledge" data-title-ko="CMDSPACE" data-title-en="CMDSPACE" data-desc-ko="지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브" data-desc-en="Knowledge Spotlight · brand hub with a live log of 450+ activities" data-tags-ko="#CMDSPACE|#AI|#PKM|#브랜드" data-tags-en="#CMDSPACE|#AI|#PKM|#brand">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"/><path d="M8 4.5a3.5 3.5 0 0 0 0 7h.5M16 4.5a3.5 3.5 0 0 1 0 7h-.5M8 19.5a3.5 3.5 0 0 1 0-7h.5M16 19.5a3.5 3.5 0 0 0 0-7h-.5"/></svg></span>
-                        <span><span class="link-title">CMDSPACE</span><span class="link-sub">지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CMDSPACE</span><span class="link-tag">#AI</span><span class="link-tag">#PKM</span><span class="link-tag">#브랜드</span></span></span>
+                        <span><span class="link-title">CMDSPACE</span><span class="link-sub">지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CMDSPACE</span><span class="link-tag">#AI</span><span class="link-tag">#PKM</span><span class="link-tag">#브랜드</span></span><span class="link-url" aria-hidden="true">cmdspace.work</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://class.cmdspace.kr/" target="_blank" rel="noopener" data-tags="work" data-title-ko="강의 · 클래스" data-title-en="Classes · Programs" data-desc-ko="지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼" data-desc-en="See and join open classes &amp; cohorts · official education platform" data-tags-ko="#class.cmdspace.kr|#생성형AI|#옵시디언|#코호트" data-tags-en="#class.cmdspace.kr|#GenAI|#Obsidian|#cohort">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3.5 2 8.5 2 12 0v-5"/><path d="M22 10v6"/></svg></span>
-                        <span><span class="link-title">강의 · 클래스</span><span class="link-sub">지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#class.cmdspace.kr</span><span class="link-tag">#생성형AI</span><span class="link-tag">#옵시디언</span><span class="link-tag">#코호트</span></span></span>
+                        <span><span class="link-title">강의 · 클래스</span><span class="link-sub">지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#class.cmdspace.kr</span><span class="link-tag">#생성형AI</span><span class="link-tag">#옵시디언</span><span class="link-tag">#코호트</span></span><span class="link-url" aria-hidden="true">class.cmdspace.kr</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://product.kyobobook.co.kr/detail/S000219435979" target="_blank" rel="noopener" data-tags="profile knowledge" data-title-ko="옵시디언 프로페셔널 노트" data-title-en="Obsidian Professional Note" data-desc-ko="제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)" data-desc-en="The book I wrote — knowledge workflows with Obsidian plugins &amp; AI (Recommend)" data-tags-ko="#책|#Obsidian|#AI|#지식관리" data-tags-en="#book|#Obsidian|#AI|#KM">
                         <span class="link-ico book-cover" aria-hidden="true"><img src="/assets/obsidian-professional-note-cover.jpg" alt="" aria-hidden="true"></span>
-                        <span><span class="link-title">옵시디언 프로페셔널 노트</span><span class="link-sub">제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#책</span><span class="link-tag">#Obsidian</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span></span></span>
+                        <span><span class="link-title">옵시디언 프로페셔널 노트</span><span class="link-sub">제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#책</span><span class="link-tag">#Obsidian</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span></span><span class="link-url" aria-hidden="true">product.kyobobook.co.kr</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://llm-wiki.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="LLM Wiki" data-title-en="LLM Wiki" data-desc-ko="AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries" data-desc-en="A living wiki grown with AI · Raw Sources → Wiki → Queries" data-tags-ko="#LLMWiki|#Obsidian|#Karpathy|#qmd" data-tags-en="#LLMWiki|#Obsidian|#Karpathy|#qmd">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H12V5H6.5A2.5 2.5 0 0 0 4 7.5v12Z"/><path d="M20 19.5A2.5 2.5 0 0 0 17.5 17H12V5h5.5A2.5 2.5 0 0 1 20 7.5v12Z"/></svg></span>
-                        <span><span class="link-title">LLM Wiki</span><span class="link-sub">AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#LLMWiki</span><span class="link-tag">#Obsidian</span><span class="link-tag">#Karpathy</span><span class="link-tag">#qmd</span></span></span>
+                        <span><span class="link-title">LLM Wiki</span><span class="link-sub">AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#LLMWiki</span><span class="link-tag">#Obsidian</span><span class="link-tag">#Karpathy</span><span class="link-tag">#qmd</span></span><span class="link-url" aria-hidden="true">llm-wiki.cmdspace.work</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://system.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="CMDS 시스템 파일" data-title-en="CMDS System Files" data-desc-ko="사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md" data-desc-en="Public rulebook for humans and AI · my real CLAUDE.md in use" data-tags-ko="#SystemFiles|#AGENTSmd|#CLAUDEmd|#rules" data-tags-en="#SystemFiles|#AGENTSmd|#CLAUDEmd|#rules">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/></svg></span>
-                        <span><span class="link-title">CMDS 시스템 파일</span><span class="link-sub">사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#SystemFiles</span><span class="link-tag">#AGENTSmd</span><span class="link-tag">#CLAUDEmd</span><span class="link-tag">#rules</span></span></span>
+                        <span><span class="link-title">CMDS 시스템 파일</span><span class="link-sub">사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#SystemFiles</span><span class="link-tag">#AGENTSmd</span><span class="link-tag">#CLAUDEmd</span><span class="link-tag">#rules</span></span><span class="link-url" aria-hidden="true">system.cmdspace.work</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://cmdmd.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="CmdMD" data-title-en="CmdMD" data-desc-ko="직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터" data-desc-en="The macOS Markdown app I built · review-first editor" data-tags-ko="#CmdMD|#Markdown|#macOS|#Preview" data-tags-en="#CmdMD|#Markdown|#macOS|#Preview">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-5"/></svg></span>
-                        <span><span class="link-title">CmdMD</span><span class="link-sub">직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CmdMD</span><span class="link-tag">#Markdown</span><span class="link-tag">#macOS</span><span class="link-tag">#Preview</span></span></span>
+                        <span><span class="link-title">CmdMD</span><span class="link-sub">직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#CmdMD</span><span class="link-tag">#Markdown</span><span class="link-tag">#macOS</span><span class="link-tag">#Preview</span></span><span class="link-url" aria-hidden="true">cmdmd.cmdspace.work</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://www.youtube.com/@cmdspace" target="_blank" rel="noopener" data-tags="profile" data-title-ko="YouTube · 커맨드스페이스" data-title-en="YouTube · CMDSPACE" data-desc-ko="구독자 12.6K · AI와 지식관리 실전 가이드 영상" data-desc-en="12.6K subscribers · hands-on AI &amp; PKM guides" data-tags-ko="#YouTube|#강의|#AI도구|#지식관리" data-tags-en="#YouTube|#lecture|#AITools|#KM">
-                        <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="m10 9 5 3-5 3Z"/></svg></span>
-                        <span><span class="link-title">YouTube · 커맨드스페이스</span><span class="link-sub">구독자 12.6K · AI와 지식관리 실전 가이드 영상</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#YouTube</span><span class="link-tag">#강의</span><span class="link-tag">#AI도구</span><span class="link-tag">#지식관리</span></span></span>
+                        <span class="link-ico" aria-hidden="true"><svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg></span>
+                        <span><span class="link-title">YouTube · 커맨드스페이스</span><span class="link-sub">구독자 12.6K · AI와 지식관리 실전 가이드 영상</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#YouTube</span><span class="link-tag">#강의</span><span class="link-tag">#AI도구</span><span class="link-tag">#지식관리</span></span><span class="link-url" aria-hidden="true">youtube.com/@cmdspace</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://open.kakao.com/o/gO3Ysvof" target="_blank" rel="noopener" data-tags="profile" data-title-ko="커맨드스페이스 메인방" data-title-en="CMDSPACE Main Chat" data-desc-ko="새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅" data-desc-en="Where news lands first · KakaoTalk open chat" data-tags-ko="#KakaoTalk|#커뮤니티|#공지|#네트워킹" data-tags-en="#KakaoTalk|#community|#updates|#networking">
-                        <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-5 3 1.7-4.6A7.5 7.5 0 1 1 21 11.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span>
-                        <span><span class="link-title">커맨드스페이스 메인방</span><span class="link-sub">새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#KakaoTalk</span><span class="link-tag">#커뮤니티</span><span class="link-tag">#공지</span><span class="link-tag">#네트워킹</span></span></span>
+                        <span class="link-ico" aria-hidden="true"><svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.48 3 2 6.54 2 10.9c0 2.8 1.86 5.26 4.66 6.66l-.95 3.5c-.08.31.27.56.54.38l4.13-2.73c.53.07 1.07.1 1.62.1 5.52 0 10-3.55 10-7.91C22 6.54 17.52 3 12 3z"/></svg></span>
+                        <span><span class="link-title">커맨드스페이스 메인방</span><span class="link-sub">새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#KakaoTalk</span><span class="link-tag">#커뮤니티</span><span class="link-tag">#공지</span><span class="link-tag">#네트워킹</span></span><span class="link-url" aria-hidden="true">open.kakao.com/o/gO3Ysvof</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://open.kakao.com/o/gOy1iNrf" target="_blank" rel="noopener" data-tags="profile" data-title-ko="더배러 커뮤니티" data-title-en="The Better Community" data-desc-ko="AI·지식관리를 함께 공부하는 오픈 커뮤니티" data-desc-en="An open community learning AI &amp; knowledge management together" data-tags-ko="#thebetter|#AI|#지식관리|#커뮤니티" data-tags-en="#thebetter|#AI|#KM|#community">
-                        <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                        <span><span class="link-title">더배러 커뮤니티</span><span class="link-sub">AI·지식관리를 함께 공부하는 오픈 커뮤니티</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#thebetter</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span><span class="link-tag">#커뮤니티</span></span></span>
+                        <span class="link-ico" aria-hidden="true"><svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.48 3 2 6.54 2 10.9c0 2.8 1.86 5.26 4.66 6.66l-.95 3.5c-.08.31.27.56.54.38l4.13-2.73c.53.07 1.07.1 1.62.1 5.52 0 10-3.55 10-7.91C22 6.54 17.52 3 12 3z"/></svg></span>
+                        <span><span class="link-title">더배러 커뮤니티</span><span class="link-sub">AI·지식관리를 함께 공부하는 오픈 커뮤니티</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#thebetter</span><span class="link-tag">#AI</span><span class="link-tag">#지식관리</span><span class="link-tag">#커뮤니티</span></span><span class="link-url" aria-hidden="true">open.kakao.com/o/gOy1iNrf</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                 </div>
@@ -1111,7 +1132,7 @@
             </section>
 
             <footer class="foot">
-                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a> · Last updated: <time id="pageUpdated" datetime="2026-07-03">2026-07-03</time>
+                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a> · Last updated: <time id="pageUpdated" datetime="2026-07-04">2026-07-04</time>
             </footer>
         </article>
     </main>
