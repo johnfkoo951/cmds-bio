@@ -7,8 +7,8 @@
     <meta name="description" content="구요한 (Yohan Koo) — CMDSPACE 대표 · 차의과학대학교 겸임교수 · KIRD 객원교수. AI 강의, 임원코칭, Obsidian 지식관리와 LLM Wiki를 연결하는 모든 링크.">
     <meta name="theme-color" content="#134538" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#06080a" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" href="/assets/cmds-icon-black.png">
-    <link rel="apple-touch-icon" href="/assets/cmds-icon-black.png">
+    <link rel="icon" type="image/png" href="/assets/cmds-logo-round.png">
+    <link rel="apple-touch-icon" href="/assets/cmds-logo-round.png">
     <link rel="canonical" href="https://bio.cmdspace.work/">
 
     <!-- Pre-paint theme (prevents dark-mode white flash on load) -->
@@ -52,15 +52,18 @@
             --brand-bright: #22896a;
             --pink: #E985A2;
             --pink-light: #F4A4B8;
+            --cmds-green: var(--brand);
+            --cmds-pink: var(--pink);
             --bg: #fbfbfa;
             --bg-elev: #ffffff;
             --bg-subtle: #f5f6f4;
             --fg: #0a0d0b;
             --fg-muted: #4a544f;
-            --fg-subtle: #8a938e;
+            --fg-subtle: #69726d;
             --border: #e6e8e6;
             --border-strong: #d0d3d0;
             --accent: var(--brand);
+            --accent-on: #ffffff;
             --accent-strong: #0d3529;
             --accent-soft: #f1f7f4;
             --shadow: 0 30px 80px -44px rgba(19, 69, 56, 0.42);
@@ -73,10 +76,11 @@
             --bg-subtle: #0a1110;
             --fg: #f2f4f3;
             --fg-muted: #9aa39d;
-            --fg-subtle: #626a66;
+            --fg-subtle: #7f8883;
             --border: #1a231f;
             --border-strong: #26302a;
             --accent: var(--pink);
+            --accent-on: #1B1B1B;
             --accent-strong: var(--pink-light);
             --accent-soft: #2b1922;
             --shadow: 0 30px 90px -46px rgba(0, 0, 0, 0.8);
@@ -433,9 +437,8 @@
         }
         .contact-cta {
             background: var(--accent);
-            color: #fff;
+            color: var(--accent-on);
         }
-        [data-theme="dark"] .contact-cta { color: #0b0f0d; }
         .contact-cta:hover { transform: translateY(-1px); background: var(--accent-strong); }
         .copy-btn {
             border: 1px solid var(--border);
@@ -879,7 +882,7 @@
       "affiliation": [
         {"@type": "Organization", "name": "CMDSPACE", "url": "https://cmdspace.work"},
         {"@type": "CollegeOrUniversity", "name": "CHA University"},
-        {"@type": "Organization", "name": "Korea National Institute of Science and Technology Human Resources Development"}
+        {"@type": "Organization", "name": "Korea Institute of Human Resources Development in Science and Technology (KIRD)"}
       ],
       "url": "https://bio.cmdspace.work",
       "email": "mailto:johnfkoo951@gmail.com",
@@ -937,7 +940,7 @@
                 <h1 class="name" id="profile-name">구요한 <span>Yohan Koo</span>
                     <svg class="verified" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="verified"><path d="M12 1l2.4 2.1 3.1-.5 1.3 2.9 2.9 1.3-.5 3.1L23 12l-2.3 2.6.5 3.1-2.9 1.3-1.3 2.9-3.1-.5L12 23l-2.4-2.1-3.1.5-1.3-2.9-2.9-1.3.5-3.1L1 12l2.3-2.6-.5-3.1 2.9-1.3L7 2.6l3.1.5L12 1z"/><path d="M10.6 14.6l-2.2-2.2-1.2 1.2 3.4 3.4 6-6-1.2-1.2-4.8 4.8z" fill="#fff"/></svg>
                 </h1>
-                <p class="role" data-ko="커맨드스페이스 대표 · 차의과학대 겸임교수 · KIRD 객원교수" data-en="Founder of CMDSPACE · Adjunct Professor at CHA University · KIRD Visiting Professor">커맨드스페이스 대표 · 차의과학대 겸임교수 · KIRD 객원교수</p>
+                <p class="role" data-ko="커맨드스페이스 대표 · 차의과학대학교 겸임교수 · KIRD 객원교수" data-en="Founder of CMDSPACE · Adjunct Professor at CHA University · KIRD Visiting Professor">커맨드스페이스 대표 · 차의과학대학교 겸임교수 · KIRD 객원교수</p>
                 <p class="lede" data-ko-html="생성형 AI, 임원코칭, Obsidian 지식관리 시스템을 현장으로 가져옵니다. <strong>바로 쓸 수 있는 것만, 깊이 있게.</strong>" data-en-html="I bring generative AI, executive coaching, and Obsidian-based knowledge systems into real work. <strong>Practical, deep, and ready to use.</strong>">생성형 AI, 임원코칭, Obsidian 지식관리 시스템을 현장으로 가져옵니다. <strong>바로 쓸 수 있는 것만, 깊이 있게.</strong></p>
                 <div class="cred-list" aria-label="대표 활동 하이라이트" data-label-ko="대표 활동 하이라이트" data-label-en="Career highlights">
                     <p class="cred"><strong data-ko="LG 회장단" data-en="LG Chairmen">LG 회장단</strong><span data-ko="그룹 코칭 · CEO 1:1 AI 코칭" data-en="Group coaching · CEO 1:1 AI coaching">그룹 코칭 · CEO 1:1 AI 코칭</span></p>
@@ -950,15 +953,15 @@
 
             <div class="sns-total">
                 <strong id="snsTotal">17,000+</strong>
-                <span id="snsCaption" data-ko="SNS 팔로워·구독자 합계 · 2026-07-03 기준" data-en="Combined followers &amp; subscribers · as of 2026-07-03">SNS 팔로워·구독자 합계 · 2026-07-03 기준</span>
+                <span id="snsCaption" data-ko="SNS 팔로워·구독자 합계 · 2026-07-04 기준" data-en="Combined followers &amp; subscribers · as of 2026-07-04">SNS 팔로워·구독자 합계 · 2026-07-04 기준</span>
             </div>
             <nav class="socials" aria-label="소셜 링크" data-label-ko="소셜 링크" data-label-en="Social links">
                 <a class="social" href="https://www.linkedin.com/in/yohan-koo-a1baa3138/" target="_blank" rel="noopener" aria-label="LinkedIn · 팔로워 1,601" data-label-ko="LinkedIn · 팔로워 1,601" data-label-en="LinkedIn · 1,601 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.46-.03-3.33-2.03-3.33-2.03 0-2.34 1.58-2.34 3.22V21H9z"/></svg></span><span class="social-count" data-sns="linkedin" aria-hidden="true">1,601</span></a>
                 <a class="social" href="https://x.com/YohanKoo" target="_blank" rel="noopener" aria-label="X @YohanKoo · 팔로워 427" data-label-ko="X @YohanKoo · 팔로워 427" data-label-en="X @YohanKoo · 427 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.6-8.7L1.5 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z"/></svg></span><span class="social-count" data-sns="x" aria-hidden="true">427</span></a>
                 <a class="social" href="https://www.threads.com/@cmds_pace" target="_blank" rel="noopener" aria-label="Threads @cmds_pace · 팔로워 2.5K" data-label-ko="Threads @cmds_pace · 팔로워 2.5K" data-label-en="Threads @cmds_pace · 2.5K followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></span><span class="social-count" data-sns="threads" aria-hidden="true">2.5K</span></a>
-                <a class="social" href="https://www.instagram.com/cmds_pace/" target="_blank" rel="noopener" aria-label="Instagram @cmds_pace · 팔로워 481" data-label-ko="Instagram @cmds_pace · 팔로워 481" data-label-en="Instagram @cmds_pace · 481 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 3.3.15 4.8 1.7 5 5 .06 1.3.07 1.6.07 4.8s0 3.5-.07 4.8c-.15 3.3-1.7 4.8-5 5-1.3.06-1.6.07-4.9.07s-3.6 0-4.9-.07c-3.3-.15-4.8-1.7-5-5C2.04 15.5 2 15.2 2 12s0-3.5.07-4.8c.15-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-2.4.1-3.3 1-3.4 3.4C3.8 8.7 3.8 9 3.8 12s0 3.3.07 4.5c.1 2.4 1 3.3 3.4 3.4 1.2.06 1.6.07 4.7.07s3.5 0 4.7-.07c2.4-.1 3.3-1 3.4-3.4.06-1.2.07-1.5.07-4.5s0-3.3-.07-4.5c-.1-2.4-1-3.3-3.4-3.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5-2.4a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg></span><span class="social-count" data-sns="instagram" aria-hidden="true">481</span></a>
+                <a class="social" href="https://www.instagram.com/cmds_pace/" target="_blank" rel="noopener" aria-label="Instagram @cmds_pace · 팔로워 484" data-label-ko="Instagram @cmds_pace · 팔로워 484" data-label-en="Instagram @cmds_pace · 484 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 3.3.15 4.8 1.7 5 5 .06 1.3.07 1.6.07 4.8s0 3.5-.07 4.8c-.15 3.3-1.7 4.8-5 5-1.3.06-1.6.07-4.9.07s-3.6 0-4.9-.07c-3.3-.15-4.8-1.7-5-5C2.04 15.5 2 15.2 2 12s0-3.5.07-4.8c.15-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-2.4.1-3.3 1-3.4 3.4C3.8 8.7 3.8 9 3.8 12s0 3.3.07 4.5c.1 2.4 1 3.3 3.4 3.4 1.2.06 1.6.07 4.7.07s3.5 0 4.7-.07c2.4-.1 3.3-1 3.4-3.4.06-1.2.07-1.5.07-4.5s0-3.3-.07-4.5c-.1-2.4-1-3.3-3.4-3.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5-2.4a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg></span><span class="social-count" data-sns="instagram" aria-hidden="true">484</span></a>
                 <a class="social" href="https://www.youtube.com/@cmdspace" target="_blank" rel="noopener" aria-label="YouTube @cmdspace · 구독자 12.6K" data-label-ko="YouTube @cmdspace · 구독자 12.6K" data-label-en="YouTube @cmdspace · 12.6K subscribers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg></span><span class="social-count" data-sns="youtube" aria-hidden="true">12.6K</span></a>
-                <a class="social" href="https://github.com/johnfkoo951" target="_blank" rel="noopener" aria-label="GitHub johnfkoo951 · 팔로워 32" data-label-ko="GitHub johnfkoo951 · 팔로워 32" data-label-en="GitHub johnfkoo951 · 32 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 015.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></span><span class="social-count" data-sns="github" aria-hidden="true">32</span></a>
+                <a class="social" href="https://github.com/johnfkoo951" target="_blank" rel="noopener" aria-label="GitHub johnfkoo951 · 팔로워 34" data-label-ko="GitHub johnfkoo951 · 팔로워 34" data-label-en="GitHub johnfkoo951 · 34 followers"><span class="social-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 015.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></span><span class="social-count" data-sns="github" aria-hidden="true">34</span></a>
                 <a class="social" href="mailto:johnfkoo951@gmail.com" aria-label="이메일 보내기" data-label-ko="이메일 보내기" data-label-en="Send email"><span class="social-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="social-count" data-sns="email" aria-hidden="true"></span></a>
             </nav>
 
@@ -1383,7 +1386,18 @@
                 data.platforms.forEach(function (p) {
                     if (typeof p.count === "number") total += p.count;
                     var el = document.querySelector('[data-sns="' + p.id + '"]');
-                    if (el) el.textContent = p.display || "";
+                    if (!el) return;
+                    el.textContent = p.display || "";
+                    // aria-label·data-label 의 하드코딩 수치도 JSON 최신값으로 동기화 (끝자리 숫자만 치환)
+                    var link = el.closest ? el.closest("a.social") : null;
+                    if (link && p.display) {
+                        var koL = link.getAttribute("data-label-ko");
+                        if (koL) link.setAttribute("data-label-ko", koL.replace(/[\d.,]+K?\s*$/, p.display));
+                        var enL = link.getAttribute("data-label-en");
+                        if (enL) link.setAttribute("data-label-en", enL.replace(/[\d.,]+K?(?=\s+(?:followers|subscribers)\s*$)/, p.display));
+                        var live = currentLang === "en" ? link.getAttribute("data-label-en") : link.getAttribute("data-label-ko");
+                        if (live) link.setAttribute("aria-label", live);
+                    }
                 });
                 if (!total || !snsCaptionEl) return;
                 var koCaption = "SNS 팔로워·구독자 합계 · " + data.asOf + " 기준";

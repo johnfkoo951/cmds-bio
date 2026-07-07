@@ -73,7 +73,7 @@ cmds-bio/
 │   ├── bio-links.json            # 링크 허브 데이터 원본(JSON)
 │   ├── followers.json            # SNS 팔로워 수 + asOf (페이지가 fetch, 스크립트로 갱신)
 │   ├── obsidian-professional-note-cover.jpg # 출판 도서 표지
-│   ├── cmds-logo-round.png       # 이전 원형 로고 보존
+│   ├── cmds-logo-round.png       # 파비콘·apple-touch-icon (DESIGN.md §1.3 round logo 표준)
 │   └── og-bio.png                # 1200×630 공유 카드 이미지
 ├── vercel.json         # cleanUrls 설정
 ├── .vercelignore       # docs·README·scripts·미참조 이미지 배포 제외

@@ -141,7 +141,48 @@ total = sum(p["count"] for p in data["platforms"] if isinstance(p["count"], int)
 print(f"✅ {path} 갱신 완료 (asOf {data['asOf']})")
 print(f"   합계: {total:,}")
 print("   변경:", "; ".join(changed) if changed else "없음")
-print("   ⚠️  index.html에 구운 폴백 숫자·aria-label·YouTube 카드 문구는 큰 변동 시 수동 갱신 권장")
+PY
+
+# ── index.html 정적 폴백 동기화 (no-JS/fetch 실패 시 노출되는 값) ──
+# followers.json 을 진리 소스로: .social-count 폴백 숫자, aria-label/data-label 끝자리 수치,
+# snsCaption 기준일(data-ko/data-en/텍스트)을 함께 치환해 이중 소스 드리프트를 막는다.
+python3 - "$JSON" index.html <<'PY'
+import json, re, sys
+
+json_path, html_path = sys.argv[1:3]
+data = json.load(open(json_path))
+html = open(html_path, encoding="utf-8").read()
+orig = html
+
+for p in data["platforms"]:
+    pid, disp = p["id"], p.get("display") or ""
+    if not disp:
+        continue
+    # .social-count 폴백 텍스트
+    html = re.sub(
+        r'(data-sns="' + re.escape(pid) + r'"[^>]*>)[^<]*(</span>)',
+        lambda m: m.group(1) + disp + m.group(2), html)
+    # 해당 소셜 <a> 태그의 aria-label / data-label-ko / data-label-en 끝자리 수치
+    def fix_anchor(m):
+        tag = m.group(0)
+        tag = re.sub(r'(aria-label="[^"]*?)[\d.,]+K?(")', r'\g<1>' + disp + r'\g<2>', tag)
+        tag = re.sub(r'(data-label-ko="[^"]*?)[\d.,]+K?(")', r'\g<1>' + disp + r'\g<2>', tag)
+        tag = re.sub(r'(data-label-en="[^"]*?)[\d.,]+K?(\s+(?:followers|subscribers)")', r'\g<1>' + disp + r'\g<2>', tag)
+        return tag
+    html = re.sub(r'<a class="social"[^>]*>(?=(?:(?!</a>).)*data-sns="' + re.escape(pid) + '")',
+                  fix_anchor, html, flags=re.S)
+
+# snsCaption 기준일 (data-ko · data-en · 폴백 텍스트)
+as_of = data["asOf"]
+html = re.sub(r'(SNS 팔로워·구독자 합계 · )\d{4}-\d{2}-\d{2}( 기준)', r'\g<1>' + as_of + r'\g<2>', html)
+html = re.sub(r'(Combined followers &amp; subscribers · as of )\d{4}-\d{2}-\d{2}', r'\g<1>' + as_of, html)
+
+if html != orig:
+    open(html_path, "w", encoding="utf-8").write(html)
+    print("✅ index.html 정적 폴백 동기화 완료 (social-count · aria-label · snsCaption)")
+else:
+    print("ℹ️  index.html 폴백은 이미 최신")
+print("   ⚠️  YouTube 카드 문구('구독자 12.6K')와 게이트웨이 칩·푸터 날짜는 콘텐츠 변경 시 수동 갱신")
 PY
 
 if [ "$DO_DEPLOY" = true ]; then
