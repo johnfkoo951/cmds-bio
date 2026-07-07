@@ -172,17 +172,24 @@ for p in data["platforms"]:
     html = re.sub(r'<a class="social"[^>]*>(?=(?:(?!</a>).)*data-sns="' + re.escape(pid) + '")',
                   fix_anchor, html, flags=re.S)
 
-# snsCaption 기준일 (data-ko · data-en · 폴백 텍스트)
+# 신선도 마커 3종을 asOf 로 잠금 (드리프트 방지):
 as_of = data["asOf"]
+# 1) snsCaption 기준일 (data-ko · data-en · 폴백 텍스트)
 html = re.sub(r'(SNS 팔로워·구독자 합계 · )\d{4}-\d{2}-\d{2}( 기준)', r'\g<1>' + as_of + r'\g<2>', html)
 html = re.sub(r'(Combined followers &amp; subscribers · as of )\d{4}-\d{2}-\d{2}', r'\g<1>' + as_of, html)
+# 2) 게이트웨이 칩 (data-ko / data-en) — 페이지 업데이트 날짜
+html = re.sub(r'\d{4}-\d{2}-\d{2}( 업데이트 · cmdspace\.work와 상시 동기화)', as_of + r'\g<1>', html)
+html = re.sub(r'(Updated )\d{4}-\d{2}-\d{2}( · kept in sync with cmdspace\.work)', r'\g<1>' + as_of + r'\g<2>', html)
+# 3) 푸터 <time id="pageUpdated"> (datetime 속성 + 표시 텍스트) — page last-updated
+html = re.sub(r'(<time id="pageUpdated" datetime=")\d{4}-\d{2}-\d{2}("\s*>)\d{4}-\d{2}-\d{2}(</time>)',
+              r'\g<1>' + as_of + r'\g<2>' + as_of + r'\g<3>', html)
 
 if html != orig:
     open(html_path, "w", encoding="utf-8").write(html)
-    print("✅ index.html 정적 폴백 동기화 완료 (social-count · aria-label · snsCaption)")
+    print("✅ index.html 정적 폴백 동기화 완료 (social-count · aria-label · 신선도 날짜 3종)")
 else:
     print("ℹ️  index.html 폴백은 이미 최신")
-print("   ⚠️  YouTube 카드 문구('구독자 12.6K')와 게이트웨이 칩·푸터 날짜는 콘텐츠 변경 시 수동 갱신")
+print("   ⚠️  YouTube 카드 문구('구독자 12.6K')만 플랫폼 큰 변동 시 수동 갱신")
 PY
 
 if [ "$DO_DEPLOY" = true ]; then
