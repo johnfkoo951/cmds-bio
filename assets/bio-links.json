@@ -8,20 +8,44 @@
       "knowledge"
     ],
     "icon": "brand",
-    "description": "지식의 Spotlight · 활동 이력 450+건이 쌓이는 브랜드 허브",
+    "description": "기업 AI 지식운영체계 · 진단·파일럿·확산·운영",
     "tags": [
       "#CMDSPACE",
-      "#AI",
-      "#PKM",
-      "#브랜드"
+      "#EnterpriseAX",
+      "#ContextArchitecture",
+      "#KnowledgeOperations"
     ],
     "title_en": "CMDSPACE",
-    "description_en": "Knowledge Spotlight · brand hub with a live log of 450+ activities",
+    "description_en": "Enterprise AI knowledge operations · diagnosis, pilot, scale, and operations",
     "tags_en": [
       "#CMDSPACE",
-      "#AI",
-      "#PKM",
-      "#brand"
+      "#EnterpriseAX",
+      "#ContextArchitecture",
+      "#KnowledgeOperations"
+    ]
+  },
+  {
+    "id": "yohan-ax-portfolio",
+    "title": "구요한 AX 포트폴리오",
+    "href": "https://cmdspace.work/assets/downloads/yohan-ax-portfolio.pdf",
+    "filters": [
+      "work"
+    ],
+    "icon": "files",
+    "description": "기업 AX·컨텍스트 설계 역할·수행 근거·서비스 모듈",
+    "tags": [
+      "#Portfolio",
+      "#EnterpriseAX",
+      "#PDF",
+      "#ContextArchitecture"
+    ],
+    "title_en": "Yohan Koo AX Portfolio",
+    "description_en": "Enterprise AX and context-architecture role, evidence, and service modules",
+    "tags_en": [
+      "#Portfolio",
+      "#EnterpriseAX",
+      "#PDF",
+      "#ContextArchitecture"
     ]
   },
   {

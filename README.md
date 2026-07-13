@@ -49,7 +49,7 @@ cd /Users/yohankoo/DEV/cmds-bio && claude -p "/bio-sns-refresh" --dangerously-sk
 | 공유 정보 | bio 위치 | cmdspace.work 위치 |
 |---|---|---|
 | 직함 (겸임교수·KIRD 객원교수) | index.html identity + docs/02-profile.md | index.html Operator 섹션 |
-| 활동 450+ / 노트 10,000+ / LG 900명 | index.html 크레덴셜 리스트 | data/activities.csv(동적) + 정적 카피 |
+| 전체 활동 450+ / 지식 파일 1만여 / 그룹 임원 855명 대상 | index.html 크레덴셜 리스트 | data/activities.csv(동적) + 정적 카피 |
 | 링크 자산 | index.html + assets/bio-links.json | Ecosystem hub 카드 |
 | Last updated 표기 | 게이트웨이 칩 + 푸터 `<time>` | footer (CSV 최신 레코드 날짜) |
 
