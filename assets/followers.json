@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-20",
+  "asOf": "2026-07-27",
   "note": "scripts/refresh-followers.sh 로 갱신. LinkedIn은 공개 API가 없어 수동 관리(count: null 유지 또는 직접 입력).",
   "platforms": [
     {
@@ -26,8 +26,8 @@
     {
       "id": "instagram",
       "label": "Instagram",
-      "count": 494,
-      "display": "494",
+      "count": 495,
+      "display": "495",
       "approx": false
     },
     {
@@ -40,8 +40,8 @@
     {
       "id": "github",
       "label": "GitHub",
-      "count": 43,
-      "display": "43",
+      "count": 45,
+      "display": "45",
       "approx": false
     },
     {
