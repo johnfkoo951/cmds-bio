@@ -455,6 +455,19 @@
             background: var(--accent-soft);
             color: var(--accent-strong);
         }
+        .contact-email {
+            margin: 10px 24px 0;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 650;
+            color: var(--fg-subtle);
+        }
+        .contact-email a {
+            color: var(--fg-muted);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--border-strong);
+        }
+        .contact-email a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
         .section-head {
             display: flex;
@@ -992,11 +1005,12 @@
                 <a class="contact-cta" href="mailto:johnfkoo951@gmail.com?subject=강의%20·%20협업%20문의" data-ko="강의 · 협업 문의하기" data-en="Invite / Collaborate">강의 · 협업 문의하기</a>
                 <button class="copy-btn" id="copyEmail" type="button" data-copy="johnfkoo951@gmail.com" data-ko="Email 복사" data-en="Copy email">Email 복사</button>
             </div>
+            <p class="contact-email"><span data-ko="연락처" data-en="Contact">연락처</span> · <a href="mailto:johnfkoo951@gmail.com">johnfkoo951@gmail.com</a></p>
 
             <section aria-labelledby="links-title" id="links">
                 <div class="section-head">
                     <h2 id="links-title" data-ko="커맨드스페이스 게이트웨이" data-en="CMDSPACE Gateway">커맨드스페이스 게이트웨이</h2>
-                    <p id="filterStatus" aria-live="polite">전체 10개 링크</p>
+                    <p id="filterStatus" aria-live="polite">전체 12개 링크</p>
                 </div>
                 <p class="section-desc" data-ko="기업 AX 프로그램과 포트폴리오, 공개 교육, 저서·앱·지식 시스템·커뮤니티로 이어지는 공식 관문입니다." data-en="The official gateway to enterprise AX programs and portfolio, public education, books, apps, knowledge systems, and communities.">기업 AX 프로그램과 포트폴리오, 공개 교육, 저서·앱·지식 시스템·커뮤니티로 이어지는 공식 관문입니다.</p>
                 <p class="updated-chip"><span data-ko="2026-08-21 업데이트 · cmdspace.work와 상시 동기화" data-en="Updated 2026-08-21 · kept in sync with cmdspace.work">2026-08-21 업데이트 · cmdspace.work와 상시 동기화</span></p>
@@ -1177,7 +1191,7 @@
                     <img src="/assets/qr-bio.svg" alt="bio.cmdspace.work QR 코드" data-alt-ko="bio.cmdspace.work QR 코드" data-alt-en="QR code for bio.cmdspace.work" width="112" height="112" loading="lazy" decoding="async">
                     <span data-ko="이 페이지를 QR로 공유 · bio.cmdspace.work" data-en="Share this page via QR · bio.cmdspace.work">이 페이지를 QR로 공유 · bio.cmdspace.work</span>
                 </div>
-                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a> · Last updated: <time id="pageUpdated" datetime="2026-08-21">2026-08-21</time>
+                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a> · <a href="mailto:johnfkoo951@gmail.com">johnfkoo951@gmail.com</a> · Last updated: <time id="pageUpdated" datetime="2026-08-21">2026-08-21</time>
             </footer>
         </article>
     </main>
