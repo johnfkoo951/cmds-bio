@@ -1,5 +1,29 @@
 [
   {
+    "id": "labs",
+    "title": "CMDSPACE Labs",
+    "title_en": "CMDSPACE Labs",
+    "href": "https://labs.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "flask",
+    "description": "강의·세미나·포럼 발표자료와 실습 키트, 연구 과제 기록을 행사별로 모은 자료실",
+    "description_en": "Lecture, seminar & forum decks, hands-on kits and research-task notes, filed by event",
+    "tags": [
+      "#자료실",
+      "#실습키트",
+      "#발표자료",
+      "#세션"
+    ],
+    "tags_en": [
+      "#Labs",
+      "#HandsOnKit",
+      "#Decks",
+      "#Sessions"
+    ]
+  },
+  {
     "id": "cmdspace",
     "title": "CMDSPACE",
     "href": "https://cmdspace.work",
@@ -217,54 +241,6 @@
       "#JudgmentModel",
       "#FieldNotes",
       "#VaultSearch"
-    ]
-  },
-  {
-    "id": "labs",
-    "title": "CMDSPACE Labs",
-    "title_en": "CMDSPACE Labs",
-    "href": "https://labs.cmdspace.work",
-    "filters": [
-      "knowledge"
-    ],
-    "icon": "flask",
-    "description": "강의·세미나·포럼 발표자료와 실습 키트, 연구 과제 기록을 행사별로 모은 자료실",
-    "description_en": "Lecture, seminar & forum decks, hands-on kits and research-task notes, filed by event",
-    "tags": [
-      "#자료실",
-      "#실습키트",
-      "#발표자료",
-      "#세션"
-    ],
-    "tags_en": [
-      "#Labs",
-      "#HandsOnKit",
-      "#Decks",
-      "#Sessions"
-    ]
-  },
-  {
-    "id": "cmdmd",
-    "title": "CmdMD",
-    "href": "https://cmdmd.cmdspace.work",
-    "filters": [
-      "knowledge"
-    ],
-    "icon": "md",
-    "description": "직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터",
-    "tags": [
-      "#CmdMD",
-      "#Markdown",
-      "#macOS",
-      "#Preview"
-    ],
-    "title_en": "CmdMD",
-    "description_en": "The macOS Markdown app I built · review-first editor",
-    "tags_en": [
-      "#CmdMD",
-      "#Markdown",
-      "#macOS",
-      "#Preview"
     ]
   },
   {
