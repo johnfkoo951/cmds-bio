@@ -1,48 +1,60 @@
 {
-  "asOf": "2026-09-07",
-  "note": "scripts/refresh-followers.sh 로 갱신. LinkedIn은 공개 API가 없어 수동 관리(count: null 유지 또는 직접 입력).",
+  "asOf": "2026-10-06",
+  "note": "플랫폼별 checkedAt은 실제 확인일. 수집 실패·미시도 시 이전 값과 확인일을 유지하며 lastAttemptAt은 전체 수집 시도일만 뜻함.",
   "platforms": [
     {
       "id": "linkedin",
       "label": "LinkedIn",
       "count": 1601,
       "display": "1,601",
-      "approx": false
+      "approx": false,
+      "checkedAt": "2026-07-03",
+      "status": "retained"
     },
     {
       "id": "x",
       "label": "X",
-      "count": 428,
-      "display": "428",
-      "approx": false
+      "count": 433,
+      "display": "433",
+      "approx": false,
+      "checkedAt": "2026-10-06",
+      "status": "verified"
     },
     {
       "id": "threads",
       "label": "Threads",
-      "count": 2600,
-      "display": "2.6K",
-      "approx": true
+      "count": 2700,
+      "display": "2.7K",
+      "approx": true,
+      "checkedAt": "2026-10-06",
+      "status": "verified"
     },
     {
       "id": "instagram",
       "label": "Instagram",
       "count": 514,
       "display": "514",
-      "approx": false
+      "approx": false,
+      "checkedAt": null,
+      "status": "retained"
     },
     {
       "id": "youtube",
       "label": "YouTube",
       "count": 12600,
       "display": "12.6K",
-      "approx": true
+      "approx": true,
+      "checkedAt": null,
+      "status": "retained"
     },
     {
       "id": "github",
       "label": "GitHub",
-      "count": 55,
-      "display": "55",
-      "approx": false
+      "count": 62,
+      "display": "62",
+      "approx": false,
+      "checkedAt": "2026-10-06",
+      "status": "verified"
     },
     {
       "id": "email",
@@ -51,5 +63,6 @@
       "display": "",
       "approx": false
     }
-  ]
+  ],
+  "lastAttemptAt": "2026-10-06"
 }

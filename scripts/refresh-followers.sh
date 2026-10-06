@@ -130,10 +130,16 @@ for p in data["platforms"]:
     if parsed:
         old = p["count"]
         p["count"], p["display"], p["approx"] = parsed
+        p["checkedAt"] = date.today().isoformat()
+        p["status"] = "verified"
         if old != p["count"]:
             changed.append(f"{p['label']}: {old} → {p['count']}")
+    elif isinstance(p.get("count"), int):
+        p["status"] = "retained"
 
-data["asOf"] = date.today().isoformat()
+data["lastAttemptAt"] = date.today().isoformat()
+# Legacy consumers still receive the collection-attempt date, not a verification date.
+data["asOf"] = data["lastAttemptAt"]
 json.dump(data, open(path, "w"), ensure_ascii=False, indent=2)
 open(path, "a").write("\n")
 
@@ -172,21 +178,26 @@ for p in data["platforms"]:
     html = re.sub(r'<a class="social"[^>]*>(?=(?:(?!</a>).)*data-sns="' + re.escape(pid) + '")',
                   fix_anchor, html, flags=re.S)
 
-# 신선도 마커 3종을 asOf 로 잠금 (드리프트 방지):
-as_of = data["asOf"]
-# 1) snsCaption 기준일 (data-ko · data-en · 폴백 텍스트)
-html = re.sub(r'(SNS 팔로워·구독자 합계 · )\d{4}-\d{2}-\d{2}( 기준)', r'\g<1>' + as_of + r'\g<2>', html)
-html = re.sub(r'(Combined followers &amp; subscribers · as of )\d{4}-\d{2}-\d{2}', r'\g<1>' + as_of, html)
-# 2) 게이트웨이 칩 (data-ko / data-en) — 페이지 업데이트 날짜
-html = re.sub(r'\d{4}-\d{2}-\d{2}( 업데이트 · cmdspace\.work와 상시 동기화)', as_of + r'\g<1>', html)
-html = re.sub(r'(Updated )\d{4}-\d{2}-\d{2}( · kept in sync with cmdspace\.work)', r'\g<1>' + as_of + r'\g<2>', html)
-# 3) 푸터 <time id="pageUpdated"> (datetime 속성 + 표시 텍스트) — page last-updated
-html = re.sub(r'(<time id="pageUpdated" datetime=")\d{4}-\d{2}-\d{2}("\s*>)\d{4}-\d{2}-\d{2}(</time>)',
-              r'\g<1>' + as_of + r'\g<2>' + as_of + r'\g<3>', html)
+# Only SNS collection metadata changes here; profile/link dates belong to content edits.
+from html import escape
+as_of = data.get("lastAttemptAt", data["asOf"])
+ko = "SNS 팔로워·구독자 합계 · 수집 시도 " + as_of + " · 미확인 수치는 이전 값 유지"
+en = "Combined followers & subscribers · collection attempted " + as_of + " · unverified counts retained"
+html = re.sub(r'<span id="snsCaption"[^>]*>.*?</span>',
+              '<span id="snsCaption" data-ko="' + escape(ko, quote=True) + '" data-en="' + escape(en, quote=True) + '">' + escape(ko) + '</span>', html)
+items = []
+for p in data["platforms"]:
+    if not isinstance(p.get("count"), int):
+        continue
+    retained = p.get("status") != "verified"
+    ko = p["label"] + " · " + (p.get("checkedAt") or "확인일 미기록") + (" · 이전 값 유지" if retained else " · 확인 완료")
+    en = p["label"] + " · " + (p.get("checkedAt") or "verification date unrecorded") + (" · previous count retained" if retained else " · verified")
+    items.append('<li data-ko="' + escape(ko, quote=True) + '" data-en="' + escape(en, quote=True) + '">' + escape(ko) + '</li>')
+html = re.sub(r'<ul id="snsDates">.*?</ul>', '<ul id="snsDates">' + ''.join(items) + '</ul>', html, flags=re.S)
 
 if html != orig:
     open(html_path, "w", encoding="utf-8").write(html)
-    print("✅ index.html 정적 폴백 동기화 완료 (social-count · aria-label · 신선도 날짜 3종)")
+    print("✅ index.html 정적 폴백 동기화 완료 (social-count · aria-label · SNS 시도일·플랫폼별 확인일)")
 else:
     print("ℹ️  index.html 폴백은 이미 최신")
 print("   ⚠️  YouTube 카드 문구('구독자 12.6K')만 플랫폼 큰 변동 시 수동 갱신")

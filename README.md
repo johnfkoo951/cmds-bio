@@ -14,7 +14,7 @@ cd /Users/yohankoo/DEV/cmds-bio
 
 # 1) 편집 — index.html 만 고치면 됨
 #    (링크/소셜/바이오/색상 전부 이 파일 안에)
-#    콘텐츠 변경 시 신선도 날짜 2곳 갱신: 게이트웨이 칩 + 푸터 <time id="pageUpdated">
+#    프로필·링크 변경 시 확인 날짜 2곳 갱신: 게이트웨이 칩 + 푸터 <time id="pageUpdated">
 
 # 2) (선택) SNS 팔로워 수 재수집 — assets/followers.json 갱신
 bash scripts/refresh-followers.sh
@@ -49,7 +49,7 @@ cd /Users/yohankoo/DEV/cmds-bio && claude -p "/bio-sns-refresh" --dangerously-sk
 | 공유 정보 | bio 위치 | cmdspace.work 위치 |
 |---|---|---|
 | 직함 (겸임교수·KIRD 객원교수) | index.html identity + docs/02-profile.md | index.html Operator 섹션 |
-| 전체 활동 450+ / 지식 파일 1만여 / 그룹 임원 855명 대상 | index.html 크레덴셜 리스트 | data/activities.csv(동적) + 정적 카피 |
+| 전체 활동 480+ / 지식 파일 1만여 / 그룹 임원 855명 대상 | index.html 크레덴셜 리스트 (활동 수는 `cmdspace-main/sync-activities.sh`가 Airtable 건수를 10단위 내림으로 자동 갱신 — 손으로 고치지 말 것) | data/activities.csv(동적, Airtable 소스) + 정적 카피 |
 | 링크 자산 | index.html + assets/bio-links.json | Ecosystem hub 카드 |
 | Last updated 표기 | 게이트웨이 칩 + 푸터 `<time>` | footer (CSV 최신 레코드 날짜) |
 
@@ -107,3 +107,11 @@ cmds-bio/
 - 프로젝트 데이터: `assets/bio-links.json`
 - 메인 볼트 원본 노트: `/Users/yohankoo/Local Obsidian_MBP/CMDSPACE_Local_MBP/70. Outputs/71. Published/bio-cmdspace-work-link-hub.md`
 - `cmdspace.work`와 `bio.cmdspace.work`는 같은 링크 자산을 공유하므로, 링크 변경 시 두 사이트를 같이 확인합니다.
+
+## Freshness semantics
+
+- Profile/link verification dates (gateway + footer) change only after a content review, never on a follower refresh.
+- `followers.json`: `lastAttemptAt` is the collection attempt; per-platform `checkedAt` is the actual successful verification date; `status` is `verified` or `retained`.
+- Missing historical verification dates stay `null`, not inferred from a previous global timestamp. Failed or skipped fetches preserve the count and verification date.
+- Offline regression check: `python3 scripts/test-follower-freshness.py`.
+- 2026-09-12: education and community roles added; KIRD title/name and filter labels aligned with the canonical profile. Main hub reviewed in parallel.

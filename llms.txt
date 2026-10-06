@@ -5,7 +5,7 @@
 ## 프로필
 
 - 소속: CMDSPACE(커맨드스페이스) 대표 — https://cmdspace.work
-- 겸직: 차의과학대학교 겸임교수, 국가과학기술인력개발원(KIRD) 초빙교수
+- 겸직: 차의과학대학교 겸임교수, 국가과학기술인력개발원(KIRD) 객원교수
 - 저서: 『옵시디언 프로페셔널 노트』 (리코멘드, ISBN 9791194084327)
 - 전문 분야: 기업 AX(AI Transformation), AI 지식운영체계(Agentic Knowledge Management), 컨텍스트 아키텍처, Obsidian/PKM 지식관리
 - 연락처: johnfkoo951@gmail.com
