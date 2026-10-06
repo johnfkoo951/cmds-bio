@@ -1,294 +1,342 @@
 [
- {
-  "id": "cmdspace",
-  "title": "CMDSPACE",
-  "href": "https://cmdspace.work",
-  "filters": [
-   "work",
-   "knowledge"
-  ],
-  "icon": "brand",
-  "description": "기업 AI 지식운영체계 · 진단·파일럿·확산·운영",
-  "tags": [
-   "#CMDSPACE",
-   "#EnterpriseAX",
-   "#ContextArchitecture",
-   "#KnowledgeOperations"
-  ],
-  "title_en": "CMDSPACE",
-  "description_en": "Enterprise AI knowledge operations · diagnosis, pilot, scale, and operations",
-  "tags_en": [
-   "#CMDSPACE",
-   "#EnterpriseAX",
-   "#ContextArchitecture",
-   "#KnowledgeOperations"
-  ]
- },
- {
-  "id": "yohan-ax-portfolio",
-  "title": "구요한 AX 포트폴리오",
-  "href": "https://cmdspace.work/assets/downloads/yohan-ax-portfolio.pdf",
-  "filters": [
-   "work"
-  ],
-  "icon": "files",
-  "description": "기업 AX·컨텍스트 설계 역할·수행 근거·서비스 모듈",
-  "tags": [
-   "#Portfolio",
-   "#EnterpriseAX",
-   "#PDF",
-   "#ContextArchitecture"
-  ],
-  "title_en": "Yohan Koo AX Portfolio",
-  "description_en": "Enterprise AX and context-architecture role, evidence, and service modules",
-  "tags_en": [
-   "#Portfolio",
-   "#EnterpriseAX",
-   "#PDF",
-   "#ContextArchitecture"
-  ]
- },
- {
-  "id": "class",
-  "title": "강의 · 클래스",
-  "href": "https://class.cmdspace.kr/",
-  "filters": [
-   "work"
-  ],
-  "icon": "lecture",
-  "description": "지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼",
-  "tags": [
-   "#class.cmdspace.kr",
-   "#생성형AI",
-   "#옵시디언",
-   "#코호트"
-  ],
-  "title_en": "Classes · Programs",
-  "description_en": "See and join open classes & cohorts · official education platform",
-  "tags_en": [
-   "#class.cmdspace.kr",
-   "#GenAI",
-   "#Obsidian",
-   "#cohort"
-  ]
- },
- {
-  "id": "obsidian-professional-note",
-  "title": "옵시디언 프로페셔널 노트",
-  "title_en": "Obsidian Professional Note",
-  "href": "https://product.kyobobook.co.kr/detail/S000219435979",
-  "filters": [
-   "profile",
-   "knowledge"
-  ],
-  "icon": "book-cover",
-  "image": "/assets/obsidian-professional-note-cover.jpg",
-  "description": "제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)",
-  "description_en": "The book I wrote — knowledge workflows with Obsidian plugins & AI (Recommend)",
-  "tags": [
-   "#책",
-   "#Obsidian",
-   "#AI",
-   "#지식관리"
-  ],
-  "tags_en": [
-   "#book",
-   "#Obsidian",
-   "#AI",
-   "#KM"
-  ]
- },
- {
-  "id": "jisan-blog",
-  "title": "紙散 · 지산 블로그",
-  "title_en": "Jisan Blog",
-  "href": "https://jisan.cmdspace.work",
-  "filters": [
-   "profile",
-   "knowledge"
-  ],
-  "icon": "pen",
-  "description": "제 저자 블로그 · 에세이와 프레임워크의 인용 정본, 영속 URL",
-  "description_en": "My author blog — citation-ready essays & frameworks, permanent URLs",
-  "tags": [
-   "#지산",
-   "#블로그",
-   "#에세이",
-   "#지식관리"
-  ],
-  "tags_en": [
-   "#Jisan",
-   "#blog",
-   "#essays",
-   "#PKM"
-  ]
- },
- {
-  "id": "llm-wiki",
-  "title": "LLM Wiki",
-  "href": "https://llm-wiki.cmdspace.work",
-  "filters": [
-   "knowledge"
-  ],
-  "icon": "wiki",
-  "description": "AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries",
-  "tags": [
-   "#LLMWiki",
-   "#Obsidian",
-   "#Karpathy",
-   "#qmd"
-  ],
-  "title_en": "LLM Wiki",
-  "description_en": "A living wiki grown with AI · Raw Sources → Wiki → Queries",
-  "tags_en": [
-   "#LLMWiki",
-   "#Obsidian",
-   "#Karpathy",
-   "#qmd"
-  ]
- },
- {
-  "id": "system-files",
-  "title": "CMDS 시스템 파일",
-  "href": "https://system.cmdspace.work",
-  "filters": [
-   "knowledge"
-  ],
-  "icon": "files",
-  "description": "사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md",
-  "tags": [
-   "#SystemFiles",
-   "#AGENTSmd",
-   "#CLAUDEmd",
-   "#rules"
-  ],
-  "title_en": "CMDS System Files",
-  "description_en": "Public rulebook for humans and AI · my real CLAUDE.md in use",
-  "tags_en": [
-   "#SystemFiles",
-   "#AGENTSmd",
-   "#CLAUDEmd",
-   "#rules"
-  ]
- },
- {
-  "id": "akm-index",
-  "title": "AKM Index",
-  "href": "https://akm.cmdspace.work",
-  "filters": [
-   "knowledge"
-  ],
-  "icon": "gauge",
-  "description": "에이전틱 지식관리 자가평가 · 5기둥 × 25기준 루브릭과 공개 평가 보드",
-  "tags": [
-   "#AKM",
-   "#루브릭",
-   "#평가보드",
-   "#AgenticKM"
-  ],
-  "title_en": "AKM Index",
-  "description_en": "Agentic knowledge management self-assessment · 5-pillar × 25-criterion rubric & public board",
-  "tags_en": [
-   "#AKM",
-   "#rubric",
-   "#board",
-   "#AgenticKM"
-  ]
- },
- {
-  "id": "cmdmd",
-  "title": "CmdMD",
-  "href": "https://cmdmd.cmdspace.work",
-  "filters": [
-   "knowledge"
-  ],
-  "icon": "md",
-  "description": "직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터",
-  "tags": [
-   "#CmdMD",
-   "#Markdown",
-   "#macOS",
-   "#Preview"
-  ],
-  "title_en": "CmdMD",
-  "description_en": "The macOS Markdown app I built · review-first editor",
-  "tags_en": [
-   "#CmdMD",
-   "#Markdown",
-   "#macOS",
-   "#Preview"
-  ]
- },
- {
-  "id": "youtube",
-  "title": "YouTube · 커맨드스페이스",
-  "href": "https://www.youtube.com/@cmdspace",
-  "filters": [
-   "profile"
-  ],
-  "icon": "video",
-  "description": "구독자 12.6K · AI와 지식관리 실전 가이드 영상",
-  "tags": [
-   "#YouTube",
-   "#강의",
-   "#AI도구",
-   "#지식관리"
-  ],
-  "title_en": "YouTube · CMDSPACE",
-  "description_en": "12.6K subscribers · hands-on AI & PKM guides",
-  "tags_en": [
-   "#YouTube",
-   "#lecture",
-   "#AITools",
-   "#KM"
-  ]
- },
- {
-  "id": "cmdspace-main-chat",
-  "title": "커맨드스페이스 메인방",
-  "href": "https://open.kakao.com/o/gO3Ysvof",
-  "filters": [
-   "profile"
-  ],
-  "icon": "chat",
-  "description": "새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅",
-  "tags": [
-   "#KakaoTalk",
-   "#커뮤니티",
-   "#공지",
-   "#네트워킹"
-  ],
-  "title_en": "CMDSPACE Main Chat",
-  "description_en": "Where news lands first · KakaoTalk open chat",
-  "tags_en": [
-   "#KakaoTalk",
-   "#community",
-   "#updates",
-   "#networking"
-  ]
- },
- {
-  "id": "thebetter",
-  "title": "더배러 커뮤니티",
-  "href": "https://open.kakao.com/o/gOy1iNrf",
-  "filters": [
-   "profile"
-  ],
-  "icon": "users",
-  "description": "AI·지식관리를 함께 공부하는 오픈 커뮤니티",
-  "tags": [
-   "#thebetter",
-   "#AI",
-   "#지식관리",
-   "#커뮤니티"
-  ],
-  "title_en": "The Better Community",
-  "description_en": "An open community learning AI & knowledge management together",
-  "tags_en": [
-   "#thebetter",
-   "#AI",
-   "#KM",
-   "#community"
-  ]
- }
+  {
+    "id": "cmdspace",
+    "title": "CMDSPACE",
+    "href": "https://cmdspace.work",
+    "filters": [
+      "work",
+      "knowledge"
+    ],
+    "icon": "brand",
+    "description": "기업 AI 지식운영체계 · 진단·파일럿·확산·운영",
+    "tags": [
+      "#CMDSPACE",
+      "#EnterpriseAX",
+      "#ContextArchitecture",
+      "#KnowledgeOperations"
+    ],
+    "title_en": "CMDSPACE",
+    "description_en": "Enterprise AI knowledge operations · diagnosis, pilot, scale, and operations",
+    "tags_en": [
+      "#CMDSPACE",
+      "#EnterpriseAX",
+      "#ContextArchitecture",
+      "#KnowledgeOperations"
+    ]
+  },
+  {
+    "id": "yohan-ax-portfolio",
+    "title": "구요한 AX 포트폴리오",
+    "href": "https://cmdspace.work/assets/downloads/yohan-ax-portfolio.pdf",
+    "filters": [
+      "work"
+    ],
+    "icon": "files",
+    "description": "기업 AX·컨텍스트 설계 역할·수행 근거·서비스 모듈",
+    "tags": [
+      "#Portfolio",
+      "#EnterpriseAX",
+      "#PDF",
+      "#ContextArchitecture"
+    ],
+    "title_en": "Yohan Koo AX Portfolio",
+    "description_en": "Enterprise AX and context-architecture role, evidence, and service modules",
+    "tags_en": [
+      "#Portfolio",
+      "#EnterpriseAX",
+      "#PDF",
+      "#ContextArchitecture"
+    ]
+  },
+  {
+    "id": "class",
+    "title": "강의 · 클래스",
+    "href": "https://class.cmdspace.kr/",
+    "filters": [
+      "work"
+    ],
+    "icon": "lecture",
+    "description": "지금 열려 있는 강의·코호트 확인과 신청 · 공식 교육 플랫폼",
+    "tags": [
+      "#class.cmdspace.kr",
+      "#생성형AI",
+      "#옵시디언",
+      "#코호트"
+    ],
+    "title_en": "Classes · Programs",
+    "description_en": "See and join open classes & cohorts · official education platform",
+    "tags_en": [
+      "#class.cmdspace.kr",
+      "#GenAI",
+      "#Obsidian",
+      "#cohort"
+    ]
+  },
+  {
+    "id": "obsidian-professional-note",
+    "title": "옵시디언 프로페셔널 노트",
+    "title_en": "Obsidian Professional Note",
+    "href": "https://product.kyobobook.co.kr/detail/S000219435979",
+    "filters": [
+      "profile",
+      "knowledge"
+    ],
+    "icon": "book-cover",
+    "image": "/assets/obsidian-professional-note-cover.jpg",
+    "description": "제가 쓴 책 · 플러그인과 AI로 만드는 지식관리 워크플로우 (리코멘드)",
+    "description_en": "The book I wrote — knowledge workflows with Obsidian plugins & AI (Recommend)",
+    "tags": [
+      "#책",
+      "#Obsidian",
+      "#AI",
+      "#지식관리"
+    ],
+    "tags_en": [
+      "#book",
+      "#Obsidian",
+      "#AI",
+      "#KM"
+    ]
+  },
+  {
+    "id": "jisan-blog",
+    "title": "紙散 · 지산 블로그",
+    "title_en": "Jisan Blog",
+    "href": "https://jisan.cmdspace.work",
+    "filters": [
+      "profile",
+      "knowledge"
+    ],
+    "icon": "pen",
+    "description": "제 저자 블로그 · 에세이와 프레임워크의 인용 정본, 영속 URL",
+    "description_en": "My author blog — citation-ready essays & frameworks, permanent URLs",
+    "tags": [
+      "#지산",
+      "#블로그",
+      "#에세이",
+      "#지식관리"
+    ],
+    "tags_en": [
+      "#Jisan",
+      "#blog",
+      "#essays",
+      "#PKM"
+    ]
+  },
+  {
+    "id": "llm-wiki",
+    "title": "LLM Wiki",
+    "href": "https://llm-wiki.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "wiki",
+    "description": "AI와 함께 기르는 살아있는 위키 · Raw Sources → Wiki → Queries",
+    "tags": [
+      "#LLMWiki",
+      "#Obsidian",
+      "#Karpathy",
+      "#qmd"
+    ],
+    "title_en": "LLM Wiki",
+    "description_en": "A living wiki grown with AI · Raw Sources → Wiki → Queries",
+    "tags_en": [
+      "#LLMWiki",
+      "#Obsidian",
+      "#Karpathy",
+      "#qmd"
+    ]
+  },
+  {
+    "id": "system-files",
+    "title": "CMDS 시스템 파일",
+    "href": "https://system.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "files",
+    "description": "사람과 AI가 함께 읽는 공개 rulebook · 실제로 쓰는 CLAUDE.md",
+    "tags": [
+      "#SystemFiles",
+      "#AGENTSmd",
+      "#CLAUDEmd",
+      "#rules"
+    ],
+    "title_en": "CMDS System Files",
+    "description_en": "Public rulebook for humans and AI · my real CLAUDE.md in use",
+    "tags_en": [
+      "#SystemFiles",
+      "#AGENTSmd",
+      "#CLAUDEmd",
+      "#rules"
+    ]
+  },
+  {
+    "id": "akm-index",
+    "title": "AKM Index",
+    "href": "https://akm.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "gauge",
+    "description": "에이전틱 지식관리 자가평가 · 5기둥 × 25기준 루브릭과 공개 평가 보드",
+    "tags": [
+      "#AKM",
+      "#루브릭",
+      "#평가보드",
+      "#AgenticKM"
+    ],
+    "title_en": "AKM Index",
+    "description_en": "Agentic knowledge management self-assessment · 5-pillar × 25-criterion rubric & public board",
+    "tags_en": [
+      "#AKM",
+      "#rubric",
+      "#board",
+      "#AgenticKM"
+    ]
+  },
+  {
+    "id": "jev",
+    "title": "Jev × CMDS 실측 기록",
+    "title_en": "Jev × CMDS Field Notes",
+    "href": "https://jev.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "scale",
+    "description": "판단만 하는 모델 Jev를 1만+ 노트 볼트의 입력·검색에 붙여 잰 기록 · 제안은 Jev, 실행은 코드와 사람",
+    "description_en": "Field notes on wiring Jev, a judgment-only model, into a 10k+ note vault · Jev proposes, code and people execute",
+    "tags": [
+      "#Jev",
+      "#판단모델",
+      "#실측",
+      "#볼트검색"
+    ],
+    "tags_en": [
+      "#Jev",
+      "#JudgmentModel",
+      "#FieldNotes",
+      "#VaultSearch"
+    ]
+  },
+  {
+    "id": "labs",
+    "title": "CMDSPACE Labs",
+    "title_en": "CMDSPACE Labs",
+    "href": "https://labs.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "flask",
+    "description": "강의·세미나·포럼 발표자료와 실습 키트, 연구 과제 기록을 행사별로 모은 자료실",
+    "description_en": "Lecture, seminar & forum decks, hands-on kits and research-task notes, filed by event",
+    "tags": [
+      "#자료실",
+      "#실습키트",
+      "#발표자료",
+      "#세션"
+    ],
+    "tags_en": [
+      "#Labs",
+      "#HandsOnKit",
+      "#Decks",
+      "#Sessions"
+    ]
+  },
+  {
+    "id": "cmdmd",
+    "title": "CmdMD",
+    "href": "https://cmdmd.cmdspace.work",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "md",
+    "description": "직접 만든 macOS 마크다운 앱 · 리뷰 우선 에디터",
+    "tags": [
+      "#CmdMD",
+      "#Markdown",
+      "#macOS",
+      "#Preview"
+    ],
+    "title_en": "CmdMD",
+    "description_en": "The macOS Markdown app I built · review-first editor",
+    "tags_en": [
+      "#CmdMD",
+      "#Markdown",
+      "#macOS",
+      "#Preview"
+    ]
+  },
+  {
+    "id": "youtube",
+    "title": "YouTube · 커맨드스페이스",
+    "href": "https://www.youtube.com/@cmdspace",
+    "filters": [
+      "profile"
+    ],
+    "icon": "video",
+    "description": "구독자 12.6K · AI와 지식관리 실전 가이드 영상",
+    "tags": [
+      "#YouTube",
+      "#강의",
+      "#AI도구",
+      "#지식관리"
+    ],
+    "title_en": "YouTube · CMDSPACE",
+    "description_en": "12.6K subscribers · hands-on AI & PKM guides",
+    "tags_en": [
+      "#YouTube",
+      "#lecture",
+      "#AITools",
+      "#KM"
+    ]
+  },
+  {
+    "id": "cmdspace-main-chat",
+    "title": "커맨드스페이스 메인방",
+    "href": "https://open.kakao.com/o/gO3Ysvof",
+    "filters": [
+      "profile"
+    ],
+    "icon": "chat",
+    "description": "새 소식이 가장 먼저 도착하는 곳 · 카카오 오픈채팅",
+    "tags": [
+      "#KakaoTalk",
+      "#커뮤니티",
+      "#공지",
+      "#네트워킹"
+    ],
+    "title_en": "CMDSPACE Main Chat",
+    "description_en": "Where news lands first · KakaoTalk open chat",
+    "tags_en": [
+      "#KakaoTalk",
+      "#community",
+      "#updates",
+      "#networking"
+    ]
+  },
+  {
+    "id": "thebetter",
+    "title": "더배러 커뮤니티",
+    "href": "https://open.kakao.com/o/gOy1iNrf",
+    "filters": [
+      "profile"
+    ],
+    "icon": "users",
+    "description": "AI·지식관리를 함께 공부하는 오픈 커뮤니티",
+    "tags": [
+      "#thebetter",
+      "#AI",
+      "#지식관리",
+      "#커뮤니티"
+    ],
+    "title_en": "The Better Community",
+    "description_en": "An open community learning AI & knowledge management together",
+    "tags_en": [
+      "#thebetter",
+      "#AI",
+      "#KM",
+      "#community"
+    ]
+  }
 ]

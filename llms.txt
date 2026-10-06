@@ -19,6 +19,8 @@
 - [CMDS System Files](https://system.cmdspace.work): 공개 지식 아키텍처
 - [紙散(지산) 블로그](https://jisan.cmdspace.work): 구요한의 저자 블로그 — 에세이·프레임워크 인용 정본
 - [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 평가 보드
+- [Jev × CMDS 실측 기록](https://jev.cmdspace.work): 판단만 하는 모델 Jev를 볼트 입력·검색에 붙여 잰 기록
+- [CMDSPACE Labs](https://labs.cmdspace.work): 강의·세션 발표자료와 실습 키트 자료실
 
 ## 표기
 
