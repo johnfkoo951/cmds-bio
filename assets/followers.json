@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-06",
+  "asOf": "2026-10-12",
   "note": "플랫폼별 checkedAt은 실제 확인일. 수집 실패·미시도 시 이전 값과 확인일을 유지하며 lastAttemptAt은 전체 수집 시도일만 뜻함.",
   "platforms": [
     {
@@ -14,10 +14,10 @@
     {
       "id": "x",
       "label": "X",
-      "count": 433,
-      "display": "433",
+      "count": 431,
+      "display": "431",
       "approx": false,
-      "checkedAt": "2026-10-06",
+      "checkedAt": "2026-10-12",
       "status": "verified"
     },
     {
@@ -26,7 +26,7 @@
       "count": 2700,
       "display": "2.7K",
       "approx": true,
-      "checkedAt": "2026-10-06",
+      "checkedAt": "2026-10-12",
       "status": "verified"
     },
     {
@@ -50,10 +50,10 @@
     {
       "id": "github",
       "label": "GitHub",
-      "count": 62,
-      "display": "62",
+      "count": 63,
+      "display": "63",
       "approx": false,
-      "checkedAt": "2026-10-06",
+      "checkedAt": "2026-10-12",
       "status": "verified"
     },
     {
@@ -64,5 +64,5 @@
       "approx": false
     }
   ],
-  "lastAttemptAt": "2026-10-06"
+  "lastAttemptAt": "2026-10-12"
 }
