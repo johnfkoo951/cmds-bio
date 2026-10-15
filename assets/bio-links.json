@@ -1,5 +1,78 @@
 [
   {
+    "id": "cmds-bootcamp",
+    "title": "CMDS Bootcamp 1기",
+    "title_en": "CMDS Bootcamp · Cohort 1",
+    "href": "https://landing.cmdspace.kr/cmds-bootcamp-2026",
+    "icon": "layers",
+    "description": "옵시디언부터 PKM, LLM Wiki, AI 에이전트 워크플로우까지 4과정 · 온라인과 오프라인(영등포)",
+    "description_en": "Four tracks from Obsidian to PKM, LLM Wiki and AI agent workflows · online and offline (Seoul)",
+    "tags": [
+      "#부트캠프",
+      "#옵시디언",
+      "#LLMWiki",
+      "#AI에이전트"
+    ],
+    "tags_en": [
+      "#Bootcamp",
+      "#Obsidian",
+      "#LLMWiki",
+      "#AIAgents"
+    ],
+    "section": "now",
+    "phases": [
+      {
+        "until": "2026-10-20",
+        "ko": "1기 모집 중 · LLM Wiki 10.21 개강",
+        "en": "Cohort 1 open · LLM Wiki starts Oct 21"
+      },
+      {
+        "until": "2026-11-04",
+        "ko": "1기 모집 중 · Agent Workflow 11.5 개강",
+        "en": "Cohort 1 open · Agent Workflow starts Nov 5"
+      },
+      {
+        "until": "2026-11-07",
+        "ko": "1기 진행 중 · 11.7 마지막 수업",
+        "en": "Cohort 1 in progress · final session Nov 7"
+      }
+    ]
+  },
+  {
+    "id": "fastcampus-research-wiki",
+    "title": "패스트캠퍼스 · 연구자 지식 관리",
+    "title_en": "Knowledge Systems for Researchers · FastCampus",
+    "href": "https://fastcampus.co.kr/biz_online_researchWiki",
+    "icon": "play",
+    "description": "온라인 강의 · 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지",
+    "description_en": "Online course · Obsidian for research, a research wiki, and knowledge-management agents",
+    "tags": [
+      "#패스트캠퍼스",
+      "#연구자",
+      "#연구WIKI",
+      "#에이전트"
+    ],
+    "tags_en": [
+      "#FastCampus",
+      "#Researchers",
+      "#ResearchWiki",
+      "#Agents"
+    ],
+    "section": "now",
+    "phases": [
+      {
+        "until": "2026-11-12",
+        "ko": "사전 예약 중 · 11.13 1차 공개",
+        "en": "Pre-order open · Part 1 releases Nov 13"
+      },
+      {
+        "until": "2027-01-21",
+        "ko": "순차 공개 중 · 2027.1.22 완결",
+        "en": "Releasing in parts · complete Jan 22, 2027"
+      }
+    ]
+  },
+  {
     "id": "labs",
     "title": "CMDSPACE Labs",
     "title_en": "CMDSPACE Labs",
@@ -145,6 +218,30 @@
       "#blog",
       "#essays",
       "#PKM"
+    ]
+  },
+  {
+    "id": "agents",
+    "title": "에이전트와 하네스",
+    "title_en": "Agents & Harness",
+    "href": "https://bio.cmdspace.work/agents",
+    "filters": [
+      "knowledge"
+    ],
+    "icon": "agents",
+    "description": "Zotero 원문 연결부터 하네스, 9요한 에이전트, 스킬까지 구조와 규모, 대표작",
+    "description_en": "From Zotero sources to harness, 9Yohan agents and skills: structure, scale, highlights",
+    "tags": [
+      "#에이전트",
+      "#하네스",
+      "#Zotero",
+      "#9요한"
+    ],
+    "tags_en": [
+      "#Agents",
+      "#Harness",
+      "#Zotero",
+      "#9Yohan"
     ]
   },
   {

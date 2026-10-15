@@ -107,6 +107,8 @@ cmds-bio/
 - 프로젝트 데이터: `assets/bio-links.json`
 - 메인 볼트 원본 노트: `/Users/yohankoo/Local Obsidian_MBP/CMDSPACE_Local_MBP/70. Outputs/71. Published/bio-cmdspace-work-link-hub.md`
 - `cmdspace.work`와 `bio.cmdspace.work`는 같은 링크 자산을 공유하므로, 링크 변경 시 두 사이트를 같이 확인합니다.
+- **지금 열려 있는 강의** (`#now`, 게이트웨이 위): 신청·공개 기간이 있는 강의만 둡니다. 카드의 `data-phases`(until·ko·en)를 KST 날짜로 골라 상태 문구를 바꾸고, 마지막 until 이 지나면 카드가, 카드가 0개면 섹션이 사라집니다. `data-tags` 를 넣지 않아 게이트웨이 필터·개수에서 빠집니다. 상시 링크만 게이트웨이에 둡니다.
+- **/agents** (에이전트와 하네스 소개): 정본은 `scripts/build-agents.py` 의 DATA. 고친 뒤 `python3 scripts/build-agents.py` → `agents.html`. 수치 재측정 방법은 `docs/06-worklog.md` 2026-10-15 항목.
 
 ## Freshness semantics
 

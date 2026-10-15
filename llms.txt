@@ -16,11 +16,17 @@
 - [CMDSPACE](https://cmdspace.work): 회사·서비스 소개
 - [GitHub](https://github.com/johnfkoo951)
 - [LinkedIn](https://www.linkedin.com/in/yohan-koo-a1baa3138/)
+- [에이전트와 하네스](https://bio.cmdspace.work/agents): Zotero 원문 연결, 하네스(Claude Code, Codex), 9요한 전문 에이전트 9개, 스킬 120여 개, 정기 작업 16개의 구조와 대표작 (2026-10-15 실측)
 - [CMDS System Files](https://system.cmdspace.work): 공개 지식 아키텍처
 - [紙散(지산) 블로그](https://jisan.cmdspace.work): 구요한의 저자 블로그 — 에세이·프레임워크 인용 정본
 - [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 평가 보드
 - [Jev × CMDS 실측 기록](https://jev.cmdspace.work): 판단만 하는 모델 Jev를 볼트 입력·검색에 붙여 잰 기록
 - [CMDSPACE Labs](https://labs.cmdspace.work): 강의·세션 발표자료와 실습 키트 자료실
+
+## 지금 열려 있는 강의 (기간 한정)
+
+- [CMDS Bootcamp 1기](https://landing.cmdspace.kr/cmds-bootcamp-2026): 옵시디언·PKM·LLM Wiki·AI 에이전트 워크플로우 4과정 부트캠프 (1기 2026-09-29 ~ 11-07)
+- [연구자의 지식 관리 시스템 (패스트캠퍼스)](https://fastcampus.co.kr/biz_online_researchWiki): 연구 WIKI부터 지식 관리 에이전트까지 온라인 강의 (사전 예약, 2026-11-13부터 2027-01-22까지 순차 공개)
 
 ## 표기
 
