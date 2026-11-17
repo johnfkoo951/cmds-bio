@@ -627,6 +627,23 @@
         }
         [data-theme="dark"] .link-when { color: var(--accent); }
         [data-theme="dark"] .link-when::before { background: var(--accent); }
+        .link-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 11px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--accent-on);
+            font-size: 12.5px;
+            font-weight: 820;
+            letter-spacing: 0;
+            transition: background .16s;
+        }
+        .link-cta[hidden] { display: none; }
+        .link-cta svg { width: 13px; height: 13px; }
+        .link:hover .link-cta { background: var(--accent-strong); }
         .link-title {
             display: block;
             color: var(--fg);
@@ -1008,7 +1025,7 @@
                 <div class="cred-list" aria-label="대표 활동 하이라이트" data-label-ko="대표 활동 하이라이트" data-label-en="Career highlights">
                     <p class="cred"><strong data-ko="15명·8.5h" data-en="15 people·8.5h">15명·8.5h</strong><span data-ko="국내 대기업 회장단·CEO 프로그램" data-en="Chairmen and CEO program at a major Korean enterprise">국내 대기업 회장단·CEO 프로그램</span></p>
                     <p class="cred"><strong data-ko="855명" data-en="855 people">855명</strong><span data-ko="그룹 임원 대상 AX 프로그램" data-en="Group-wide executive AX program">그룹 임원 대상 AX 프로그램</span></p>
-                    <p class="cred"><strong data-ko="490+" data-en="490+">490+</strong><span data-ko-html='강의·코칭·연구·자문 전체 활동 기록 — <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a>' data-en-html='Total activity records across lectures, coaching, research, and advisory — <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a>'>강의·코칭·연구·자문 전체 활동 기록 — <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a></span></p>
+                    <p class="cred"><strong data-ko="500+" data-en="500+">500+</strong><span data-ko-html='강의·코칭·연구·자문 전체 활동 기록 — <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a>' data-en-html='Total activity records across lectures, coaching, research, and advisory — <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a>'>강의·코칭·연구·자문 전체 활동 기록 — <a href="https://cmdspace.work" target="_blank" rel="noopener">cmdspace.work</a></span></p>
                     <p class="cred"><strong data-ko="1만여" data-en="About 10K">1만여</strong><span data-ko="CMDS로 운영하는 지식 파일" data-en="Knowledge files operated through CMDS">CMDS로 운영하는 지식 파일</span></p>
                     <p class="cred"><strong data-ko="2026–2028" data-en="2026–2028">2026–2028</strong><span data-ko="KIRD 객원교수 임기" data-en="KIRD Visiting Professor term">KIRD 객원교수 임기</span></p>
                 </div>
@@ -1045,14 +1062,14 @@
                 </div>
                 <p class="section-desc" data-ko="신청·공개 기간이 정해진 강의와 프로그램입니다. 기간이 끝난 과정은 이 목록에서 자동으로 내려갑니다." data-en="Courses and programs with enrollment or release windows. Ended programs drop off this list automatically.">신청·공개 기간이 정해진 강의와 프로그램입니다. 기간이 끝난 과정은 이 목록에서 자동으로 내려갑니다.</p>
                 <div class="links">
-                    <a class="link link-now" data-phases="[{&quot;until&quot;: &quot;2026-10-20&quot;, &quot;ko&quot;: &quot;1기 모집 중 · LLM Wiki 10.21 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · LLM Wiki starts Oct 21&quot;}, {&quot;until&quot;: &quot;2026-11-04&quot;, &quot;ko&quot;: &quot;1기 모집 중 · Agent Workflow 11.5 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · Agent Workflow starts Nov 5&quot;}, {&quot;until&quot;: &quot;2026-11-07&quot;, &quot;ko&quot;: &quot;1기 진행 중 · 11.7 마지막 수업&quot;, &quot;en&quot;: &quot;Cohort 1 in progress · final session Nov 7&quot;}]" href="https://landing.cmdspace.kr/cmds-bootcamp-2026" target="_blank" rel="noopener" data-title-ko="CMDS Bootcamp 1기" data-title-en="CMDS Bootcamp · Cohort 1" data-desc-ko="옵시디언부터 PKM, LLM Wiki, AI 에이전트 워크플로우까지 4과정 · 온라인과 오프라인(영등포)" data-desc-en="Four tracks from Obsidian to PKM, LLM Wiki and AI agent workflows · online and offline (Seoul)" data-tags-ko="#부트캠프|#옵시디언|#LLMWiki|#AI에이전트" data-tags-en="#Bootcamp|#Obsidian|#LLMWiki|#AIAgents">
+                    <a class="link link-now" data-phases="[{&quot;until&quot;: &quot;2026-10-20&quot;, &quot;ko&quot;: &quot;1기 모집 중 · LLM Wiki 10.21 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · LLM Wiki starts Oct 21&quot;, &quot;cta_ko&quot;: &quot;신청하기&quot;, &quot;cta_en&quot;: &quot;Apply&quot;}, {&quot;until&quot;: &quot;2026-11-04&quot;, &quot;ko&quot;: &quot;1기 모집 중 · Agent Workflow 11.5 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · Agent Workflow starts Nov 5&quot;, &quot;cta_ko&quot;: &quot;신청하기&quot;, &quot;cta_en&quot;: &quot;Apply&quot;}, {&quot;until&quot;: &quot;2026-11-07&quot;, &quot;ko&quot;: &quot;1기 진행 중 · 11.7 마지막 수업&quot;, &quot;en&quot;: &quot;Cohort 1 in progress · final session Nov 7&quot;}]" href="https://landing.cmdspace.kr/cmds-bootcamp-2026" target="_blank" rel="noopener" data-title-ko="CMDS Bootcamp 1기" data-title-en="CMDS Bootcamp · Cohort 1" data-desc-ko="옵시디언부터 PKM, LLM Wiki, AI 에이전트 워크플로우까지 4과정 · 온라인과 오프라인(영등포)" data-desc-en="Four tracks from Obsidian to PKM, LLM Wiki and AI agent workflows · online and offline (Seoul)" data-tags-ko="#부트캠프|#옵시디언|#LLMWiki|#AI에이전트" data-tags-en="#Bootcamp|#Obsidian|#LLMWiki|#AIAgents">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7Z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg></span>
-                        <span><span class="link-when">1기 모집 중 · LLM Wiki 10.21 개강</span><span class="link-title">CMDS Bootcamp 1기</span><span class="link-sub">옵시디언부터 PKM, LLM Wiki, AI 에이전트 워크플로우까지 4과정 · 온라인과 오프라인(영등포)</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#부트캠프</span><span class="link-tag">#옵시디언</span><span class="link-tag">#LLMWiki</span><span class="link-tag">#AI에이전트</span></span><span class="link-url" aria-hidden="true">landing.cmdspace.kr/cmds-bootcamp-2026</span></span>
+                        <span><span class="link-when">1기 모집 중 · LLM Wiki 10.21 개강</span><span class="link-title">CMDS Bootcamp 1기</span><span class="link-sub">옵시디언부터 PKM, LLM Wiki, AI 에이전트 워크플로우까지 4과정 · 온라인과 오프라인(영등포)</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#부트캠프</span><span class="link-tag">#옵시디언</span><span class="link-tag">#LLMWiki</span><span class="link-tag">#AI에이전트</span></span><span class="link-url" aria-hidden="true">landing.cmdspace.kr/cmds-bootcamp-2026</span><span class="link-cta"><span class="link-cta-label">신청하기</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <a class="link link-now" data-phases="[{&quot;until&quot;: &quot;2026-11-12&quot;, &quot;ko&quot;: &quot;사전 예약 중 · 11.13 1차 공개&quot;, &quot;en&quot;: &quot;Pre-order open · Part 1 releases Nov 13&quot;}, {&quot;until&quot;: &quot;2027-01-21&quot;, &quot;ko&quot;: &quot;순차 공개 중 · 2027.1.22 완결&quot;, &quot;en&quot;: &quot;Releasing in parts · complete Jan 22, 2027&quot;}]" href="https://fastcampus.co.kr/biz_online_researchWiki" target="_blank" rel="noopener" data-title-ko="패스트캠퍼스 · 연구자 지식 관리" data-title-en="Knowledge Systems for Researchers · FastCampus" data-desc-ko="온라인 강의 · 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지" data-desc-en="Online course · Obsidian for research, a research wiki, and knowledge-management agents" data-tags-ko="#패스트캠퍼스|#연구자|#연구WIKI|#에이전트" data-tags-en="#FastCampus|#Researchers|#ResearchWiki|#Agents">
+                    <a class="link link-now" data-phases="[{&quot;until&quot;: &quot;2026-11-12&quot;, &quot;ko&quot;: &quot;사전 예약 중 · 11.13 1차 공개&quot;, &quot;en&quot;: &quot;Pre-order open · Part 1 releases Nov 13&quot;, &quot;cta_ko&quot;: &quot;사전 예약하기&quot;, &quot;cta_en&quot;: &quot;Pre-order&quot;}, {&quot;until&quot;: &quot;2027-01-21&quot;, &quot;ko&quot;: &quot;순차 공개 중 · 2027.1.22 완결&quot;, &quot;en&quot;: &quot;Releasing in parts · complete Jan 22, 2027&quot;, &quot;cta_ko&quot;: &quot;수강 신청하기&quot;, &quot;cta_en&quot;: &quot;Enroll&quot;}]" href="https://fastcampus.co.kr/biz_online_researchWiki" target="_blank" rel="noopener" data-title-ko="앞서가는 연구자의 지식 관리 시스템" data-title-en="Knowledge Systems for Leading Researchers" data-desc-ko="패스트캠퍼스 신규 온라인 강의 · 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지" data-desc-en="New FastCampus course (in Korean) · Obsidian for research, a research wiki, and knowledge-management agents" data-tags-ko="#패스트캠퍼스|#연구자|#연구WIKI|#에이전트" data-tags-en="#FastCampus|#Researchers|#ResearchWiki|#Agents">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3Z"/><path d="M8 21h8"/></svg></span>
-                        <span><span class="link-when">사전 예약 중 · 11.13 1차 공개</span><span class="link-title">패스트캠퍼스 · 연구자 지식 관리</span><span class="link-sub">온라인 강의 · 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#패스트캠퍼스</span><span class="link-tag">#연구자</span><span class="link-tag">#연구WIKI</span><span class="link-tag">#에이전트</span></span><span class="link-url" aria-hidden="true">fastcampus.co.kr/biz_online_researchWiki</span></span>
+                        <span><span class="link-when">사전 예약 중 · 11.13 1차 공개</span><span class="link-title">앞서가는 연구자의 지식 관리 시스템</span><span class="link-sub">패스트캠퍼스 신규 온라인 강의 · 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#패스트캠퍼스</span><span class="link-tag">#연구자</span><span class="link-tag">#연구WIKI</span><span class="link-tag">#에이전트</span></span><span class="link-url" aria-hidden="true">fastcampus.co.kr/biz_online_researchWiki</span><span class="link-cta"><span class="link-cta-label">사전 예약하기</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                 </div>
@@ -1064,7 +1081,7 @@
                     <p id="filterStatus" aria-live="polite">전체 12개 링크</p>
                 </div>
                 <p class="section-desc" data-ko="기업 AX 프로그램과 포트폴리오, 공개 교육, 저서·앱·지식 시스템·커뮤니티로 이어지는 공식 관문입니다." data-en="The official gateway to enterprise AX programs and portfolio, public education, books, apps, knowledge systems, and communities.">기업 AX 프로그램과 포트폴리오, 공개 교육, 저서·앱·지식 시스템·커뮤니티로 이어지는 공식 관문입니다.</p>
-                <p class="updated-chip"><span data-ko="2026-10-15 프로필·링크 확인 · 활동 DB 최신 기록 2026-08-26" data-en="Profile &amp; links checked 2026-10-15 · latest activity record 2026-08-26">2026-10-15 프로필·링크 확인 · 활동 DB 최신 기록 2026-08-26</span></p>
+                <p class="updated-chip"><span data-ko="2026-11-04 프로필·링크 확인 · 활동 DB 최신 기록 2026-08-26" data-en="Profile &amp; links checked 2026-11-04 · latest activity record 2026-08-26">2026-11-04 프로필·링크 확인 · 활동 DB 최신 기록 2026-08-26</span></p>
                 <div class="filterbar" role="group" aria-label="링크 필터" data-label-ko="링크 필터" data-label-en="Link filters">
                     <button class="filter-btn" type="button" data-filter="all" aria-pressed="true" data-ko="전체" data-en="All">전체</button>
                     <button class="filter-btn" type="button" data-filter="work" aria-pressed="false" data-ko="기업 AX·교육" data-en="Enterprise AX">기업 AX·교육</button>
@@ -1103,6 +1120,11 @@
                         <span><span class="link-title">紙散 · 지산 블로그</span><span class="link-sub">제 저자 블로그 · 에세이와 프레임워크의 인용 정본, 영속 URL</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#지산</span><span class="link-tag">#블로그</span><span class="link-tag">#에세이</span><span class="link-tag">#지식관리</span></span><span class="link-url" aria-hidden="true">jisan.cmdspace.work</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
+                    <a class="link" href="https://labs.cmdspace.work/generative-art/" target="_blank" rel="noopener" data-tags="profile" data-title-ko="Generative Art Lab" data-title-en="Generative Art Lab" data-desc-ko="코드로 만드는 미디어 아트 시안 랩 · 하이진재즈블렌드 2회 공연 LED와 3D 홀 몰입 보기" data-desc-en="Code-made media-art drafts for a jazz concert&#39;s LED walls · with an immersive 3D hall view" data-tags-ko="#미디어아트|#p5js|#Threejs|#LED" data-tags-en="#MediaArt|#p5js|#Threejs|#LED">
+                        <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.12a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2Z"/></svg></span>
+                        <span><span class="link-title">Generative Art Lab</span><span class="link-sub">코드로 만드는 미디어 아트 시안 랩 · 하이진재즈블렌드 2회 공연 LED와 3D 홀 몰입 보기</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#미디어아트</span><span class="link-tag">#p5js</span><span class="link-tag">#Threejs</span><span class="link-tag">#LED</span></span><span class="link-url" aria-hidden="true">labs.cmdspace.work/generative-art</span></span>
+                        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
                     <a class="link" href="/agents" data-tags="knowledge" data-title-ko="에이전트와 하네스" data-title-en="Agents &amp; Harness" data-desc-ko="Zotero 원문 연결부터 하네스, 9요한 에이전트, 스킬까지 구조와 규모, 대표작" data-desc-en="From Zotero sources to harness, 9Yohan agents and skills: structure, scale, highlights" data-tags-ko="#에이전트|#하네스|#Zotero|#9요한" data-tags-en="#Agents|#Harness|#Zotero|#9Yohan">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M9 13h.01M15 13h.01"/><path d="M9.5 17h5"/></svg></span>
                         <span><span class="link-title">에이전트와 하네스</span><span class="link-sub">Zotero 원문 연결부터 하네스, 9요한 에이전트, 스킬까지 구조와 규모, 대표작</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#에이전트</span><span class="link-tag">#하네스</span><span class="link-tag">#Zotero</span><span class="link-tag">#9요한</span></span><span class="link-url" aria-hidden="true">bio.cmdspace.work/agents</span></span>
@@ -1126,6 +1148,11 @@
                     <a class="link" href="https://jev.cmdspace.work" target="_blank" rel="noopener" data-tags="knowledge" data-title-ko="Jev × CMDS 실측 기록" data-title-en="Jev × CMDS Field Notes" data-desc-ko="판단만 하는 모델 Jev를 1만+ 노트 볼트의 입력·검색에 붙여 잰 기록 · 제안은 Jev, 실행은 코드와 사람" data-desc-en="Field notes on wiring Jev, a judgment-only model, into a 10k+ note vault &middot; Jev proposes, code and people execute" data-tags-ko="#Jev|#판단모델|#실측|#볼트검색" data-tags-en="#Jev|#JudgmentModel|#FieldNotes|#VaultSearch">
                         <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>
                         <span><span class="link-title">Jev × CMDS 실측 기록</span><span class="link-sub">판단만 하는 모델 Jev를 1만+ 노트 볼트의 입력·검색에 붙여 잰 기록 · 제안은 Jev, 실행은 코드와 사람</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#Jev</span><span class="link-tag">#판단모델</span><span class="link-tag">#실측</span><span class="link-tag">#볼트검색</span></span><span class="link-url" aria-hidden="true">jev.cmdspace.work</span></span>
+                        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a class="link" href="https://ask.cmdspace.work" target="_blank" rel="noopener" data-tags="profile" data-title-ko="질문 남기기 · Ask CMDSPACE" data-title-en="Ask CMDSPACE" data-desc-ko="무엇이든 질문하세요 · 모든 질문을 기록하고, 공개된 자료로 답이 되면 바로 안내" data-desc-en="Leave any question · every one is recorded and pointed to published answers when they exist" data-tags-ko="#질문|#QnA|#문의" data-tags-en="#Ask|#QnA|#Contact">
+                        <span class="link-ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+                        <span><span class="link-title">질문 남기기 · Ask CMDSPACE</span><span class="link-sub">무엇이든 질문하세요 · 모든 질문을 기록하고, 공개된 자료로 답이 되면 바로 안내</span><span class="link-tags" aria-hidden="true"><span class="link-tag">#질문</span><span class="link-tag">#QnA</span><span class="link-tag">#문의</span></span><span class="link-url" aria-hidden="true">ask.cmdspace.work</span></span>
                         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
                     <a class="link" href="https://www.youtube.com/@cmdspace" target="_blank" rel="noopener" data-tags="profile" data-title-ko="YouTube · 커맨드스페이스" data-title-en="YouTube · CMDSPACE" data-desc-ko="구독자 12.6K · AI와 지식관리 실전 가이드 영상" data-desc-en="12.6K subscribers · hands-on AI &amp; PKM guides" data-tags-ko="#YouTube|#강의|#AI도구|#지식관리" data-tags-en="#YouTube|#lecture|#AITools|#KM">
@@ -1252,7 +1279,7 @@
                     <img src="/assets/qr-bio.svg" alt="bio.cmdspace.work QR 코드" data-alt-ko="bio.cmdspace.work QR 코드" data-alt-en="QR code for bio.cmdspace.work" width="112" height="112" loading="lazy" decoding="async">
                     <span data-ko="이 페이지를 QR로 공유 · bio.cmdspace.work" data-en="Share this page via QR · bio.cmdspace.work">이 페이지를 QR로 공유 · bio.cmdspace.work</span>
                 </div>
-                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a> · <a href="mailto:johnfkoo951@gmail.com">johnfkoo951@gmail.com</a> · Profile &amp; links checked: <time id="pageUpdated" datetime="2026-10-15">2026-10-15</time>
+                © <span id="yr">2026</span> CMDSPACE · <a href="https://cmdspace.work">cmdspace.work</a> · <a href="mailto:johnfkoo951@gmail.com">johnfkoo951@gmail.com</a> · Profile &amp; links checked: <time id="pageUpdated" datetime="2026-11-04">2026-11-04</time>
             </footer>
         </article>
     </main>
@@ -1308,6 +1335,13 @@
                     if (!phase) return;
                     shown += 1;
                     card.querySelector(".link-when").textContent = currentLang === "en" ? phase.en : phase.ko;
+                    // 신청 버튼: 이 단계에 cta 문구가 있을 때만 보인다 (예: 진행 중 단계에는 버튼 없음)
+                    var cta = card.querySelector(".link-cta");
+                    if (cta) {
+                        var ctaText = currentLang === "en" ? phase.cta_en : phase.cta_ko;
+                        cta.hidden = !ctaText;
+                        if (ctaText) cta.querySelector(".link-cta-label").textContent = ctaText;
+                    }
                 });
                 section.hidden = shown === 0;
                 var nowStatus = document.getElementById("nowStatus");
@@ -1581,10 +1615,9 @@
         var a = e.target.closest('a.link, a.social');
         if (!a || !window.va) return;
         var isCard = a.classList.contains('link');
-        window.va('event', {
-            name: isCard ? 'link_click' : 'social_click',
-            data: { title: a.dataset.titleKo || a.getAttribute('aria-label') || a.textContent.trim().slice(0, 40), href: a.href }
-        });
+        var data = { title: a.dataset.titleKo || a.getAttribute('aria-label') || a.textContent.trim().slice(0, 40), href: a.href };
+        if (isCard && a.querySelector('.link-cta')) data.part = e.target.closest('.link-cta') ? 'cta' : 'card';
+        window.va('event', { name: isCard ? 'link_click' : 'social_click', data: data });
     });
     </script>
 </body>

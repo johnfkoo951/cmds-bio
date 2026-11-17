@@ -24,12 +24,16 @@
       {
         "until": "2026-10-20",
         "ko": "1기 모집 중 · LLM Wiki 10.21 개강",
-        "en": "Cohort 1 open · LLM Wiki starts Oct 21"
+        "en": "Cohort 1 open · LLM Wiki starts Oct 21",
+        "cta_ko": "신청하기",
+        "cta_en": "Apply"
       },
       {
         "until": "2026-11-04",
         "ko": "1기 모집 중 · Agent Workflow 11.5 개강",
-        "en": "Cohort 1 open · Agent Workflow starts Nov 5"
+        "en": "Cohort 1 open · Agent Workflow starts Nov 5",
+        "cta_ko": "신청하기",
+        "cta_en": "Apply"
       },
       {
         "until": "2026-11-07",
@@ -40,12 +44,12 @@
   },
   {
     "id": "fastcampus-research-wiki",
-    "title": "패스트캠퍼스 · 연구자 지식 관리",
-    "title_en": "Knowledge Systems for Researchers · FastCampus",
+    "title": "앞서가는 연구자의 지식 관리 시스템",
+    "title_en": "Knowledge Systems for Leading Researchers",
     "href": "https://fastcampus.co.kr/biz_online_researchWiki",
     "icon": "play",
-    "description": "온라인 강의 · 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지",
-    "description_en": "Online course · Obsidian for research, a research wiki, and knowledge-management agents",
+    "description": "패스트캠퍼스 신규 온라인 강의 · 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지",
+    "description_en": "New FastCampus course (in Korean) · Obsidian for research, a research wiki, and knowledge-management agents",
     "tags": [
       "#패스트캠퍼스",
       "#연구자",
@@ -63,12 +67,16 @@
       {
         "until": "2026-11-12",
         "ko": "사전 예약 중 · 11.13 1차 공개",
-        "en": "Pre-order open · Part 1 releases Nov 13"
+        "en": "Pre-order open · Part 1 releases Nov 13",
+        "cta_ko": "사전 예약하기",
+        "cta_en": "Pre-order"
       },
       {
         "until": "2027-01-21",
         "ko": "순차 공개 중 · 2027.1.22 완결",
-        "en": "Releasing in parts · complete Jan 22, 2027"
+        "en": "Releasing in parts · complete Jan 22, 2027",
+        "cta_ko": "수강 신청하기",
+        "cta_en": "Enroll"
       }
     ]
   },
@@ -221,6 +229,30 @@
     ]
   },
   {
+    "id": "generative-art-lab",
+    "title": "Generative Art Lab",
+    "title_en": "Generative Art Lab",
+    "href": "https://labs.cmdspace.work/generative-art/",
+    "filters": [
+      "profile"
+    ],
+    "icon": "palette",
+    "description": "코드로 만드는 미디어 아트 시안 랩 · 하이진재즈블렌드 2회 공연 LED와 3D 홀 몰입 보기",
+    "description_en": "Code-made media-art drafts for a jazz concert's LED walls · with an immersive 3D hall view",
+    "tags": [
+      "#미디어아트",
+      "#p5js",
+      "#Threejs",
+      "#LED"
+    ],
+    "tags_en": [
+      "#MediaArt",
+      "#p5js",
+      "#Threejs",
+      "#LED"
+    ]
+  },
+  {
     "id": "agents",
     "title": "에이전트와 하네스",
     "title_en": "Agents & Harness",
@@ -338,6 +370,28 @@
       "#JudgmentModel",
       "#FieldNotes",
       "#VaultSearch"
+    ]
+  },
+  {
+    "id": "ask-cmdspace",
+    "title": "질문 남기기 · Ask CMDSPACE",
+    "title_en": "Ask CMDSPACE",
+    "href": "https://ask.cmdspace.work",
+    "filters": [
+      "profile"
+    ],
+    "icon": "question",
+    "description": "무엇이든 질문하세요 · 모든 질문을 기록하고, 공개된 자료로 답이 되면 바로 안내",
+    "description_en": "Leave any question · every one is recorded and pointed to published answers when they exist",
+    "tags": [
+      "#질문",
+      "#QnA",
+      "#문의"
+    ],
+    "tags_en": [
+      "#Ask",
+      "#QnA",
+      "#Contact"
     ]
   },
   {

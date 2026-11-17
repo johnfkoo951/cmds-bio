@@ -22,11 +22,13 @@
 - [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 평가 보드
 - [Jev × CMDS 실측 기록](https://jev.cmdspace.work): 판단만 하는 모델 Jev를 볼트 입력·검색에 붙여 잰 기록
 - [CMDSPACE Labs](https://labs.cmdspace.work): 강의·세션 발표자료와 실습 키트 자료실
+- [Generative Art Lab](https://labs.cmdspace.work/generative-art/): 코드로 만드는 미디어 아트 시안 랩 — 하이진재즈블렌드 2회 공연 LED와 3D 홀 몰입 보기
+- [Ask CMDSPACE](https://ask.cmdspace.work): 구요한에게 질문 남기기 — 모든 질문을 기록하고, 공개 자료로 답이 되면 안내
 
 ## 지금 열려 있는 강의 (기간 한정)
 
 - [CMDS Bootcamp 1기](https://landing.cmdspace.kr/cmds-bootcamp-2026): 옵시디언·PKM·LLM Wiki·AI 에이전트 워크플로우 4과정 부트캠프 (1기 2026-09-29 ~ 11-07)
-- [연구자의 지식 관리 시스템 (패스트캠퍼스)](https://fastcampus.co.kr/biz_online_researchWiki): 연구 WIKI부터 지식 관리 에이전트까지 온라인 강의 (사전 예약, 2026-11-13부터 2027-01-22까지 순차 공개)
+- [앞서가는 연구자의 지식 관리 시스템 (패스트캠퍼스)](https://fastcampus.co.kr/biz_online_researchWiki): 연구 WIKI부터 지식 관리 에이전트까지 신규 온라인 강의, 수강 신청은 이 링크 (사전 예약, 2026-11-13부터 2027-01-22까지 순차 공개)
 
 ## 표기
 

@@ -9,3 +9,7 @@ assets/cmds-lockup-black.png
 assets/cmds-lockup-white.png
 assets/profile-yohan.jpg
 assets/profile-yohan-square.jpg
+
+# 로컬 도구 산출물·배포 스크립트 — 공개 사이트에 올리지 않음
+.playwright-mcp
+deploy.sh
